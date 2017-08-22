@@ -36,6 +36,13 @@ public class LinkedList<T> {
 		return t;
 	}
 	
+	public T top() {
+		if (N == 0) {
+			return null;
+		}
+		return first.get();
+	}
+	
 	public static class Node<T> {
 		
 		private T t;

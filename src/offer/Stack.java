@@ -24,5 +24,9 @@ public class Stack<T> {
 	public T pop() {
 		return list.pop();
 	}
+	
+	public T top() {
+		return list.top();
+	}
 
 }
