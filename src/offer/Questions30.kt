@@ -1,5 +1,7 @@
 package offer
 
+//一个包含min方法的栈，永远都可以知道栈内最小的数字是多少
+
 fun main(arg0: Array<String>) {
 	val stack = MinStack()
 	fun myPrintln() {
@@ -17,8 +19,7 @@ fun main(arg0: Array<String>) {
 	stack push 1
 	myPrintln()
 	while (!stack.isEnpty) {
-		println("栈顶：${stack.top()}")
-		println("最小值：${stack.min()}")
+		myPrintln()
 		stack.pop()
 	}
 }
@@ -38,14 +39,12 @@ class MinStack : Stack<Int> {
 		if (assistStack.size() == 0) {
 			assistStack.push(i)
 			return
-		}
-		else if (i < assistStack.top()) {
+		} else if (i < assistStack.top()) {
 			assistStack.push(i)
 			return
 		}
 		else {
-			val min: Int = assistStack.top()
-			assistStack.push(min)
+			assistStack.push(assistStack.top())
 		}
 	}
 	
