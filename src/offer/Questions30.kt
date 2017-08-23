@@ -42,8 +42,7 @@ class MinStack : Stack<Int> {
 		} else if (i < assistStack.top()) {
 			assistStack.push(i)
 			return
-		}
-		else {
+		} else {
 			assistStack.push(assistStack.top())
 		}
 	}
