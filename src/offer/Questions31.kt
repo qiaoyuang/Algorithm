@@ -20,15 +20,26 @@ fun judgment(enter: IntArray, out: IntArray): Boolean {
 		while (j < enter.size) {
 			if (stack.size() == 0) {
 				stack.push(enter[j])
+				j++
 			}
-			j++
 			if (stack.top() == out[i]) {
 				stack.pop()
 				break
 			} else {
 				stack.push(enter[j])
+				j++
 			}
 		}
+		if (j >= enter.size) {
+			while (stack.size() != 0) {
+				if (stack.top() == out[i]) {
+				    stack.pop()
+				    break
+			    } else {
+				    return false
+			    }
+		    }
+		}
 	}
-	return false
+	return true
 }
