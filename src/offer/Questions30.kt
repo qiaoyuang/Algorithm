@@ -24,9 +24,7 @@ fun main(arg0: Array<String>) {
 	}
 }
 
-class MinStack : Stack<Int> {
-	
-	constructor() : super()
+class MinStack() : Stack<Int>() {
 	
 	val assistStack: Stack<Int>
 	
