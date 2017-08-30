@@ -9,9 +9,10 @@ fun main(arg0: Array<String>) {
 	val node1 = ComplexNode<String>("B", node2, node4)
 	val node0 = ComplexNode<String>("A", node1, node2)
 	node3.sibling = node1
-	var first: ComplexNode<String>? = copy(node0)
+	var first: ComplexNode<String>? = node0
 	while (first != null) {
-		println(first.t)
+		println("next:${first.t}")
+		if (first.sibling != null) println("sibling:${first.sibling!!.t}")
 		first = first.next
 	}
 }
@@ -25,34 +26,22 @@ fun <T> copy(first: ComplexNode<T>): ComplexNode<T> {
 	}
 	pointer = first
 	while (pointer != null) {
-		if (pointer.sibling != null) {
-			pointer.next.sibling = pointer.sibling.next
-		}
-		val nextNode: ComplexNode<T>? = pointer.next
-		if (nextNode != null) {
-			pointer = nextNode.next
-		}
+		pointer.next!!.sibling = pointer
+				.sibling!!.next
+		pointer = pointer.next!!
+				.next!!
 	}
 	val nativeFirst = first
-	var copyFirst: ComplexNode<T>
-	if (nativeFirst.next != null) {
-		copyFirst = nativeFirst.next as ComplexNode<T>
-	} else {
-		copyFirst = first
-	}
+	var copyFirst = nativeFirst.next
 	var nativePointer = nativeFirst
 	var copyPointer = copyFirst
-	while (copyPointer.next != null) {
+	while (copyPointer!!.next != null) {
 		nativePointer.next = copyPointer.next
-		if (nativePointer.next != null) {
-			nativePointer = nativePointer.next
-		}
+		nativePointer = nativePointer.next!!
 		copyPointer.next = nativePointer.next
-		if (copyPointer.next != null) {
-			copyPointer = copyPointer.next
-		}
+		copyPointer = copyPointer.next
 	}
-	return copyFirst
+	return copyFirst!!
 }
 
 data class ComplexNode<T>(var t: T,

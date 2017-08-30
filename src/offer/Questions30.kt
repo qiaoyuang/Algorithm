@@ -40,9 +40,7 @@ class MinStack() : Stack<Int>() {
 		} else if (i < assistStack.top()) {
 			assistStack.push(i)
 			return
-		} else {
-			assistStack.push(assistStack.top())
-		}
+		} else assistStack.push(assistStack.top())
 	}
 	
 	override fun pop(): Int {

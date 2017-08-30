@@ -11,9 +11,7 @@ fun main(arg0: Array<String>) {
 }
 
 fun judgment(enter: IntArray, out: IntArray): Boolean {
-	if (enter.size != out.size) {
-		return false
-	}
+	if (enter.size != out.size) return false
 	val stack: Stack<Int> = Stack()
 	var j = 0
 	for (i in 0 until out.size) {
