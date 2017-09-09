@@ -5,7 +5,7 @@ package offer;
 public class Questions38 {
 	
 	public static void main(String[] arg0) {
-		permutation("abcd");
+		/*permutation("abcd");
 		permutation("abc");
 		permutation("ab");
 		permutation("a");
@@ -16,8 +16,8 @@ public class Questions38 {
 		int[] i = {1,2,3,4,5,6,7,8};
 		System.out.println(vertex(i));
 		int[] a = {1,1,1,1,1,1,1,1};
-		System.out.println(vertex(a));
-		System.out.println(eightQueen());
+		System.out.println(vertex(a));*/
+		System.out.println("皇后共有" + eightQueen() + "种摆放方法。");
 	}
 	
 	//字符串的全排列
@@ -143,10 +143,12 @@ public class Questions38 {
 					d[i] = d[j];
 					d[j] = temp;
 					if (judgmentEightQueen(d)) {
+						show(d);
 						count++;
 					}
 				} else if (i == 0) {
 					if (judgmentEightQueen(d)) {
+						show(d);
 						count++;
 					}
 				}
@@ -157,8 +159,8 @@ public class Questions38 {
 	}
 	
 	private static boolean judgmentEightQueen(int[] a) {
-		for (int i = 0; i < 7; i++) {
-			for (int j = i + 1; j < 8; j++) {
+		for (int i = 0; i < a.length- 1; i++) {
+			for (int j = i + 1; j < a.length; j++) {
 				int var = j - i;
 				if (a[i] + var == a[j] || a[i] - var == a[j]) {
 					return false;
@@ -166,6 +168,20 @@ public class Questions38 {
 			}
 		}
 		return true;
+	}
+	
+	private static void show(int[] a) {
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a.length; j ++) {
+				if (a[j] == i) {
+					System.out.print(1);
+				} else {
+					System.out.print(0);
+				}
+			}
+			System.out.print("\n");
+		}
+		System.out.print("\n");
 	}
 
 }
