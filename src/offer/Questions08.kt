@@ -3,9 +3,9 @@ package offer
 //二叉树中的某一节点的中序遍历序列中的下一节点
 
 class BinaryTreeNodeWithFather<T>(var mValues: T? = null,
-						var mFather: BinaryTreeNodeWithFather<T>? = null,
-						var mLeft: BinaryTreeNodeWithFather<T>? = null,
-						var mRight: BinaryTreeNodeWithFather<T>? = null)
+								  var mFather: BinaryTreeNodeWithFather<T>? = null,
+								  var mLeft: BinaryTreeNodeWithFather<T>? = null,
+								  var mRight: BinaryTreeNodeWithFather<T>? = null)
 
 fun main(args: Array<String>) {
 	val a = BinaryTreeNodeWithFather<Char>('a')
