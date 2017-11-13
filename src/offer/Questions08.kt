@@ -1,6 +1,6 @@
 package offer
 
-//¶ş²æÊ÷½ÚµãÔÚÖĞĞò±éÀúÖĞµÄÏÂÒ»¸ö½Úµã
+//äºŒå‰æ ‘ä¸­çš„æŸä¸€èŠ‚ç‚¹çš„ä¸­åºéå†åºåˆ—ä¸­çš„ä¸‹ä¸€èŠ‚ç‚¹
 
 class BinaryTreeNodeWithFather<T>(var mValues: T? = null,
 						var mFather: BinaryTreeNodeWithFather<T>? = null,
@@ -25,15 +25,16 @@ fun main(args: Array<String>) {
 	c.mRight = g
 	e.mLeft = h
 	e.mRight = i
-	println("a:${getNext(a) ?: "¿Õ"}")
-	println("b:${getNext(b) ?: "¿Õ"}")
-	println("c:${getNext(c) ?: "¿Õ"}")
-	println("d:${getNext(d) ?: "¿Õ"}")
-	println("e:${getNext(e) ?: "¿Õ"}")
-	println("f:${getNext(f) ?: "¿Õ"}")
-	println("g:${getNext(g) ?: "¿Õ"}")
-	println("h:${getNext(h) ?: "¿Õ"}")
-	println("i:${getNext(i) ?: "¿Õ"}")
+	val str = "ç©º"
+	println("a:${getNext(a) ?: str}")
+	println("b:${getNext(b) ?: str}")
+	println("c:${getNext(c) ?: str}")
+	println("d:${getNext(d) ?: str}")
+	println("e:${getNext(e) ?: str}")
+	println("f:${getNext(f) ?: str}")
+	println("g:${getNext(g) ?: str}")
+	println("h:${getNext(h) ?: str}")
+	println("i:${getNext(i) ?: str}")
 }
 
 fun <T> getNext(node: BinaryTreeNodeWithFather<T>): T? {
