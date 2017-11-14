@@ -1,6 +1,6 @@
 package offer
 
-//根据先序遍历和中序遍历重建二叉树
+//根据先序遍历序列和中序遍历序列重建二叉树
 
 fun main(args: Array<String>) {
 	val preorder = listOf(1, 2, 4, 7, 3, 5, 6, 8)

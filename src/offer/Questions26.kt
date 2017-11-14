@@ -1,7 +1,9 @@
 package offer
 
+//åˆ¤æ–­ä¸€ä¸ªæ ‘æ˜¯å¦æ˜¯å¦ä¸€ä¸ªæ ‘çš„å­æ ‘
+
 fun main(args: Array<String>) {
-	//¹¹Ôì¸¸Ê÷
+	//æ„é€ çˆ¶æ ‘
 	val father = BinaryTreeNode<Int>(8)
 	val b = BinaryTreeNode<Int>(8)
 	val c = BinaryTreeNode<Int>(7)
@@ -15,7 +17,7 @@ fun main(args: Array<String>) {
 	b.mRight = e
 	e.mLeft = f
 	e.mRight = g
-	//¹¹Ôì×ÓÊ÷
+	//æ„é€ å­æ ‘
 	val son = BinaryTreeNode<Int>(8)
 	val h = BinaryTreeNode<Int>(9)
 	val i = BinaryTreeNode<Int>(2)
@@ -29,7 +31,7 @@ fun main(args: Array<String>) {
 }
 
 fun <T> hasSubtree(father: BinaryTreeNode<T>, son: BinaryTreeNode<T>): Boolean {
-	//µ±Á½¸öÅĞ¶Ïµ±Ç°Á½¸ö½ÚµãµÄ×ÓÊ÷ÊÇ·ñÏàÍ¬
+	//åˆ¤æ–­ä¸€ä¸ªæ ‘çš„åŠå…¶å­æ ‘æ˜¯å¦æ˜¯å¦ä¸€ä¸ªæ ‘çš„çˆ¶æ ‘
 	fun hasSubtreeSon(father: BinaryTreeNode<T>, son: BinaryTreeNode<T>): Boolean {
 		var boo = false
 		if (father.mValue == son.mValue) {
