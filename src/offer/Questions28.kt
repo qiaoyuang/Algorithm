@@ -1,5 +1,7 @@
 package offer
 
+//åˆ¤æ–­ä¸€ä¸ªäºŒå‰æ ‘æ˜¯ä¸æ˜¯å¯¹ç§°äºŒå‰æ ‘
+
 fun main(args: Array<String>) {
 	val a = BinaryTreeNode<Int>(8)
 	val b = BinaryTreeNode<Int>(6)
@@ -40,7 +42,7 @@ fun <T> BinaryTreeNode<T>.isSymmetrical(): Boolean {
 	return false
 }
 
-//ÏÈĞò±éÀúÀ´ÅĞ¶ÏÃ¿¸ö½ÚµãÊÇ·ñ×óÓÒ½ÚµãÍ¬Ê±Îª¿Õ»òÍ¬Ê±²»Îª¿Õ
+//ä½¿ç”¨å…ˆåºéå†æ£€æŸ¥ä¸€ä¸ªäºŒå‰æ ‘æ˜¯ä¸æ˜¯æ‰€æœ‰å­èŠ‚ç‚¹çš„å·¦å³èŠ‚ç‚¹æ˜¯ä¸æ˜¯åŒæ—¶ä¸ºç©ºæˆ–åŒæ—¶ä¸ä¸ºç©º
 fun <T> BinaryTreeNode<T>.preorderJudgment(): Boolean {
 	var boo = judgment()
 	if (boo) {
@@ -50,10 +52,10 @@ fun <T> BinaryTreeNode<T>.preorderJudgment(): Boolean {
 	return boo
 }
 
-//ÅĞ¶ÏÒ»¸ö¶ş²æÊ÷½ÚµãµÄ×óÓÒ×ÓÊ÷ÊÇ·ñÍ¬Ê±Îª¿Õ»òÍ¬Ê±²»Îª¿Õ
+//åˆ¤æ–­ä¸€ä¸ªäºŒå‰æ ‘çš„èŠ‚ç‚¹æ˜¯ä¸æ˜¯å·¦å³èŠ‚ç‚¹åŒæ—¶ä¸ºç©ºæˆ–åŒæ—¶ä¸ä¸ºç©º
 private fun <T> BinaryTreeNode<T>.judgment(): Boolean = (mLeft == null && mRight == null) || (mLeft != null && mRight != null)
 
-//ÏÈĞò±éÀúµÄÓĞ·µ»ØÖµµÄ°æ±¾
+//å…ˆåºéå†çš„å¸¦è¿”å›åºåˆ—ç‰ˆæœ¬
 fun <T> BinaryTreeNode<T>.preorderBack(): String {
 	var str: String = mValue.toString()
 	str = str + mLeft?.preorderBack()
@@ -61,7 +63,7 @@ fun <T> BinaryTreeNode<T>.preorderBack(): String {
 	return str
 }
 
-//ÏÈĞò±éÀúµÄ¶Ô³Æ±éÀú·½·¨£¬¼´ÏÈ±éÀúÓÒ×ÓÊ÷ÔÙ±éÀú×ó×ÓÊ÷
+//å…ˆåºéå†æ”¹ç‰ˆï¼Œè°ƒæ¢éå†å·¦å­æ ‘å’Œå³å­æ ‘çš„é¡ºåº
 fun <T> BinaryTreeNode<T>._preorderBack(): String {
 	var str: String = mValue.toString()
 	str = str + mRight?._preorderBack()

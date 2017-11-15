@@ -1,6 +1,6 @@
 package offer
 
-//ÊäÈëÒ»¿Å¶ş²æÊ÷µÄ¸ù½Úµã£¬½«Õâ¿Å¶ş²æÊ÷×ª»¯ÎªËüµÄ¾µÏñ
+//è¾“å…¥ä¸€ä¸ªäºŒå‰æ ‘çš„æ ¹ç»“ç‚¹ï¼Œå¹¶å°†å®ƒè½¬åŒ–ä¸ºåŸäºŒå‰æ ‘çš„é•œåƒ
 
 fun main(args: Array<String>) {
 	val a = BinaryTreeNode<Int>(8)
@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
 	c.mLeft = f
 	c.mRight = g
 	a.inorder()
-	println("/***************·Ö¸îÏß***************/")
+	println("/***************åˆ†å‰²çº¿***************/")
 	a.mirrorRecursively()
 	a.inorder()
 }
