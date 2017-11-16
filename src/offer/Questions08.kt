@@ -1,6 +1,6 @@
 package offer
 
-//浜屽弶鏍戜腑鐨勬煇涓�鑺傜偣鐨勪腑搴忛亶鍘嗗簭鍒椾腑鐨勪笅涓�鑺傜偣
+//给定一颗二叉树及其中一个节点，找出其中序遍历序列的下一个节点
 
 class BinaryTreeNodeWithFather<T>(var mValues: T,
 								  var mFather: BinaryTreeNodeWithFather<T>? = null,
@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
 	c.mRight = g
 	e.mLeft = h
 	e.mRight = i
-	val str = "绌�"
+	val str = "空"
 	println("a:${getNext(a) ?: str}")
 	println("b:${getNext(b) ?: str}")
 	println("c:${getNext(c) ?: str}")
