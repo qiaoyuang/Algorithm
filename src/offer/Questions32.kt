@@ -2,10 +2,10 @@ package offer
 
 import java.util.LinkedList
 
-//²ãĞò±éÀú¶ş²æÊ÷
+//å±‚åºéå†äºŒå‰æ ‘
 
 fun main(args: Array<String>) {
-	//¹¹Ôì¶ş²æÊ÷
+	//æ„é€ äºŒå‰æ ‘
 	val a = BinaryTreeNode<Int>(1)
 	
 	val b = BinaryTreeNode<Int>(2)
@@ -49,7 +49,7 @@ fun main(args: Array<String>) {
 	a.printFromTopToBottom3()
 }
 
-//´ÓÉÏµ½ÏÂ²ãĞò±éÀú¶ş²æÊ÷
+//ä»ä¸Šåˆ°ä¸‹å±‚åºéå†äºŒå‰æ ‘
 fun <T> BinaryTreeNode<T>.printFromTopToBottom1() {
 	val list = LinkedList<BinaryTreeNode<T>>()
 	print("${mValue} ")
@@ -63,7 +63,7 @@ fun <T> BinaryTreeNode<T>.printFromTopToBottom1() {
 	}
 }
 
-//·ÖĞĞ´ÓÉÏµ½ÏÂ´òÓ¡¶ş²æÊ÷
+//åˆ†è¡Œä»ä¸Šåˆ°ä¸‹æ‰“å°äºŒå‰æ ‘
 fun <T> BinaryTreeNode<T>.printFromTopToBottom2() {
 	val list = LinkedList<BinaryTreeNode<T>>()
 	print("${mValue} ")
@@ -91,7 +91,7 @@ fun <T> BinaryTreeNode<T>.printFromTopToBottom2() {
 	}
 }
 
-//¡°Ö®¡±×ÖĞÍ±éÀú´òÓ¡¶ş²æÊ÷
+//â€œä¹‹â€å­—å‹éå†æ‰“å°äºŒå‰æ ‘
 fun <T> BinaryTreeNode<T>.printFromTopToBottom3() {
 	val list = LinkedList<BinaryTreeNode<T>>()
 	print("${mValue} ")
