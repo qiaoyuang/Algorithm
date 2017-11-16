@@ -14,8 +14,7 @@ fun <T> binaryTreeConstruct(preorder: List<T>, inorder: List<T>): BinaryTreeNode
 		return null
 	}
 	val rootValue = preorder[0]
-    val root = BinaryTreeNode<T>()
-	root.mValue = rootValue
+    val root = BinaryTreeNode<T>(rootValue)
 	var isRoot = false
 	val sonInorderLeft = ArrayList<T>()
 	val sonInorderRight = ArrayList<T>()

@@ -1,8 +1,8 @@
 package offer
 
-//二叉树中的某一节点的中序遍历序列中的下一节点
+//浜屽弶鏍戜腑鐨勬煇涓�鑺傜偣鐨勪腑搴忛亶鍘嗗簭鍒椾腑鐨勪笅涓�鑺傜偣
 
-class BinaryTreeNodeWithFather<T>(var mValues: T? = null,
+class BinaryTreeNodeWithFather<T>(var mValues: T,
 								  var mFather: BinaryTreeNodeWithFather<T>? = null,
 								  var mLeft: BinaryTreeNodeWithFather<T>? = null,
 								  var mRight: BinaryTreeNodeWithFather<T>? = null)
@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
 	c.mRight = g
 	e.mLeft = h
 	e.mRight = i
-	val str = "空"
+	val str = "绌�"
 	println("a:${getNext(a) ?: str}")
 	println("b:${getNext(b) ?: str}")
 	println("c:${getNext(c) ?: str}")
