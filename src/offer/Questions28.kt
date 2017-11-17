@@ -57,16 +57,16 @@ private fun <T> BinaryTreeNode<T>.judgment() = (mLeft == null && mRight == null)
 
 //鍏堝簭閬嶅巻鐨勫甫杩斿洖搴忓垪鐗堟湰
 fun <T> BinaryTreeNode<T>.preorderBack(): String {
-	var str: String = mValue.toString()
-	str = str + mLeft?.preorderBack()
-	str = str + mRight?.preorderBack()
+	var str = mValue.toString()
+	str += mLeft?.preorderBack()
+	str += mRight?.preorderBack()
 	return str
 }
 
 //鍏堝簭閬嶅巻鏀圭増锛岃皟鎹㈤亶鍘嗗乏瀛愭爲鍜屽彸瀛愭爲鐨勯『搴�
 fun <T> BinaryTreeNode<T>._preorderBack(): String {
-	var str: String = mValue.toString()
-	str = str + mRight?._preorderBack()
-	str = str + mLeft?._preorderBack()
+	var str = mValue.toString()
+	str += mRight?._preorderBack()
+	str += mLeft?._preorderBack()
 	return str
 }
