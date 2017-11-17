@@ -1,6 +1,6 @@
 package offer
 
-//判断一个二叉树是不是对称二叉树
+//鍒ゆ柇涓�涓簩鍙夋爲鏄笉鏄绉颁簩鍙夋爲
 
 fun main(args: Array<String>) {
 	val a = BinaryTreeNode<Int>(8)
@@ -42,7 +42,7 @@ fun <T> BinaryTreeNode<T>.isSymmetrical(): Boolean {
 	return false
 }
 
-//使用先序遍历检查一个二叉树是不是所有子节点的左右节点是不是同时为空或同时不为空
+//浣跨敤鍏堝簭閬嶅巻妫�鏌ヤ竴涓簩鍙夋爲鏄笉鏄墍鏈夊瓙鑺傜偣鐨勫乏鍙宠妭鐐规槸涓嶆槸鍚屾椂涓虹┖鎴栧悓鏃朵笉涓虹┖
 fun <T> BinaryTreeNode<T>.preorderJudgment(): Boolean {
 	var boo = judgment()
 	if (boo) {
@@ -52,10 +52,10 @@ fun <T> BinaryTreeNode<T>.preorderJudgment(): Boolean {
 	return boo
 }
 
-//判断一个二叉树的节点是不是左右节点同时为空或同时不为空
-private fun <T> BinaryTreeNode<T>.judgment(): Boolean = (mLeft == null && mRight == null) || (mLeft != null && mRight != null)
+//鍒ゆ柇涓�涓簩鍙夋爲鐨勮妭鐐规槸涓嶆槸宸﹀彸鑺傜偣鍚屾椂涓虹┖鎴栧悓鏃朵笉涓虹┖
+private fun <T> BinaryTreeNode<T>.judgment() = (mLeft == null && mRight == null) || (mLeft != null && mRight != null)
 
-//先序遍历的带返回序列版本
+//鍏堝簭閬嶅巻鐨勫甫杩斿洖搴忓垪鐗堟湰
 fun <T> BinaryTreeNode<T>.preorderBack(): String {
 	var str: String = mValue.toString()
 	str = str + mLeft?.preorderBack()
@@ -63,7 +63,7 @@ fun <T> BinaryTreeNode<T>.preorderBack(): String {
 	return str
 }
 
-//先序遍历改版，调换遍历左子树和右子树的顺序
+//鍏堝簭閬嶅巻鏀圭増锛岃皟鎹㈤亶鍘嗗乏瀛愭爲鍜屽彸瀛愭爲鐨勯『搴�
 fun <T> BinaryTreeNode<T>._preorderBack(): String {
 	var str: String = mValue.toString()
 	str = str + mRight?._preorderBack()
