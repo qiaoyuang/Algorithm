@@ -1,5 +1,7 @@
 package offer
 
+//将一颗二叉排序树转换成一个排序的双向链表,并返回较小一端的端点
+
 fun main(args: Array<String>) {
 	val a = BinaryTreeNode<Int>(10)
 	val b = BinaryTreeNode<Int>(6)
@@ -14,11 +16,18 @@ fun main(args: Array<String>) {
 	b.mRight = e
 	c.mLeft = f
 	c.mRight = g
-	var x: BinaryTreeNode<Int>? = a.convert()
-	while (x != null) {
-		println(x.mValue)
-		x = x.mRight
+	var x = a.convert()
+	while (x.mRight != null) {
+		print("${x.mValue} ")
+		x = x.mRight!!
 	}
+	print("${x.mValue} ")
+	println()
+	while (x.mLeft != null) {
+		print("${x.mValue} ")
+		x = x.mLeft!!
+	}
+	print("${x.mValue} ")
 }
 
 fun <T> BinaryTreeNode<T>.convert(): BinaryTreeNode<T> {
@@ -42,16 +51,21 @@ fun <T> BinaryTreeNode<T>.convert(): BinaryTreeNode<T> {
 			}
 			else -> {
 				if (isBig) {
-					return mLeft!!.traverse(false, this)
+					mRight!!.traverse(true, this)
+					val node = mLeft!!.traverse(false, this)
+					node.mLeft = father
+					return node
 				} else {
-					return mRight!!.traverse(true, this)
+					mLeft!!.traverse(false, this)
+					val node = mRight!!.traverse(true, this)
+					node.mRight = father
+					return node
 				}
 			}
 		}
-			
 	}
-	mLeft = mLeft?.traverse(false)
-	mRight = mRight?.traverse(true)
+	mLeft = mLeft?.traverse(false, this)
+	mRight = mRight?.traverse(true, this)
 	var head = this
 	while (head.mLeft != null) {
 		head = head.mLeft!!

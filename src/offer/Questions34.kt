@@ -2,7 +2,7 @@ package offer
 
 import java.util.LinkedList
 
-//寻找二叉树的和为某一值的全部路径
+//瀵绘壘浜屽弶鏍戠殑鍜屼负鏌愪竴鍊肩殑鍏ㄩ儴璺緞
 
 fun main(args: Array<String>) {
 	val a = BinaryTreeNode<Int>(10)
