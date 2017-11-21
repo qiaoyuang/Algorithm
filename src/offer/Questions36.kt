@@ -10,12 +10,16 @@ fun main(args: Array<String>) {
 	val e = BinaryTreeNode<Int>(8)
 	val f = BinaryTreeNode<Int>(12)
 	val g = BinaryTreeNode<Int>(16)
+	val h = BinaryTreeNode<Int>(3)
+	val i = BinaryTreeNode<Int>(5)
 	a.mLeft = b
 	a.mRight = c
 	b.mLeft = d
 	b.mRight = e
 	c.mLeft = f
 	c.mRight = g
+	d.mLeft = h
+	d.mRight = i
 	var x = a.convert()
 	while (x.mRight != null) {
 		print("${x.mValue} ")
@@ -44,10 +48,26 @@ fun <T> BinaryTreeNode<T>.convert(): BinaryTreeNode<T> {
 				return this
 		    }
 			mLeft == null && mRight != null -> {
-				return mRight!!.traverse(true, this)
+				if (isBig) {
+					mLeft = father
+				    mRight!!.traverse(true, this)
+				    return this
+				} else {
+					val node = mRight!!.traverse(true, this)
+					father?.let { mRight!!.mRight = it }
+					return node
+				}
 			}
 			mLeft != null && mRight == null -> {
-				return mLeft!!.traverse(false, this)
+				if (isBig) {
+					val node = mLeft!!.traverse(false, this)
+					father?.let { mLeft!!.mLeft = it }
+					return node
+				} else {
+					mRight = father
+				    mLeft!!.traverse(false, this)
+				    return this
+				}
 			}
 			else -> {
 				if (isBig) {
