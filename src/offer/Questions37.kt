@@ -21,6 +21,7 @@ fun main(args: Array<String>) {
 	node.preorder()
 }
 
+//序列化
 fun <T> BinaryTreeNode<T>.serialize(): String {
 	var str = ""
 	fun BinaryTreeNode<T>.preorderSerialize() {
@@ -40,6 +41,7 @@ fun <T> BinaryTreeNode<T>.serialize(): String {
 	return str
 }
 
+//反序列化
 fun String.deserialize(): BinaryTreeNode<String> {
 	val strs = split(",")
 	var i = 0
