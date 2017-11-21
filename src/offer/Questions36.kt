@@ -3,15 +3,26 @@ package offer
 //将一颗二叉排序树转换成一个排序的双向链表,并返回较小一端的端点
 
 fun main(args: Array<String>) {
+	//构造一个四层的排序二叉树
 	val a = BinaryTreeNode<Int>(10)
+	
 	val b = BinaryTreeNode<Int>(6)
 	val c = BinaryTreeNode<Int>(14)
+	
 	val d = BinaryTreeNode<Int>(4)
 	val e = BinaryTreeNode<Int>(8)
 	val f = BinaryTreeNode<Int>(12)
 	val g = BinaryTreeNode<Int>(16)
+	
 	val h = BinaryTreeNode<Int>(3)
 	val i = BinaryTreeNode<Int>(5)
+	val j = BinaryTreeNode<Int>(7)
+	val k = BinaryTreeNode<Int>(9)
+	val l = BinaryTreeNode<Int>(11)
+	val m = BinaryTreeNode<Int>(13)
+	val n = BinaryTreeNode<Int>(15)
+	val o = BinaryTreeNode<Int>(17)
+	
 	a.mLeft = b
 	a.mRight = c
 	b.mLeft = d
@@ -20,6 +31,13 @@ fun main(args: Array<String>) {
 	c.mRight = g
 	d.mLeft = h
 	d.mRight = i
+	e.mLeft = j
+	e.mRight = k
+	f.mLeft = l
+	f.mRight = m
+	g.mLeft = n
+	g.mRight = o
+	
 	var x = a.convert()
 	while (x.mRight != null) {
 		print("${x.mValue} ")
@@ -36,56 +54,50 @@ fun main(args: Array<String>) {
 
 fun <T> BinaryTreeNode<T>.convert(): BinaryTreeNode<T> {
 	fun BinaryTreeNode<T>.traverse(isBig: Boolean, father: BinaryTreeNode<T>? = null): BinaryTreeNode<T> {
-		when {
-			mLeft == null && mRight == null -> {
-			    father?.let {
-				    if (isBig) {
-					    mLeft = it
-				    } else {
-					    mRight = it
-				    }
-			    }
-				return this
-		    }
-			mLeft == null && mRight != null -> {
-				if (isBig) {
-					mLeft = father
-				    mRight!!.traverse(true, this)
-				    return this
-				} else {
-					val node = mRight!!.traverse(true, this)
-					father?.let { mRight!!.mRight = it }
-					return node
-				}
+		if (mLeft == null && mRight == null) {
+			if (isBig) {
+				mLeft = father
+			} else {
+				mRight = father
 			}
-			mLeft != null && mRight == null -> {
-				if (isBig) {
-					val node = mLeft!!.traverse(false, this)
-					father?.let { mLeft!!.mLeft = it }
-					return node
-				} else {
-					mRight = father
-				    mLeft!!.traverse(false, this)
-				    return this
+			return this
+		}
+		mLeft?.let {
+			mLeft = it.traverse(false, this)
+			mLeft!!.mRight = this
+		}
+		mRight?.let {
+			mRight = it.traverse(true, this)
+			mRight!!.mLeft = this
+		}
+		if (isBig) {
+			if (mLeft != null) {
+				var node = mLeft
+				while (node!!.mLeft != null) {
+					node = node.mLeft
 				}
+				return node
 			}
-			else -> {
-				if (isBig) {
-					mRight!!.traverse(true, this)
-					val node = mLeft!!.traverse(false, this)
-					node.mLeft = father
-					return node
-				} else {
-					mLeft!!.traverse(false, this)
-					val node = mRight!!.traverse(true, this)
-					node.mRight = father
-					return node
+			return this
+		} else {
+			if (mRight != null) {
+				var node = mRight
+				while (node!!.mRight != null) {
+					node = node.mRight
 				}
+				return node
 			}
+			return this
 		}
 	}
-	mLeft = mLeft?.traverse(false, this)
-	mRight = mRight?.traverse(true, this)
+	mLeft?.let {
+		mLeft = it.traverse(false, this)
+		mLeft!!.mRight = this
+	}
+	mRight?.let {
+		mRight = it.traverse(true, this)
+		mRight!!.mLeft = this
+	}
 	var head = this
 	while (head.mLeft != null) {
 		head = head.mLeft!!
