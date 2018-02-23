@@ -5,7 +5,7 @@ fun main(args: Array<String>) {
 	val arg1 = intArrayOf(1, 0, 1, 1, 1)
 	val arg2 = intArrayOf(1, 1, 1, 0, 1)
 	val arg3 = intArrayOf(1, 1, 1, 1, 1)
-	val message = "数组中最小的数字为："
+	val message = "鏈�灏忕殑鏁板瓧涓猴細"
 	println("$message${min(arg0)}")
 	println("$message${min(arg1)}")
 	println("$message${min(arg2)}")
