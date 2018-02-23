@@ -1,5 +1,7 @@
 package offer
 
+//找出旋转数组中最小的数
+
 fun main(args: Array<String>) {
 	val arg0 = intArrayOf(3, 4, 5, 1, 2)
 	val arg1 = intArrayOf(1, 0, 1, 1, 1)

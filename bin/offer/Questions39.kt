@@ -1,21 +1,21 @@
 package offer
 
-//Ñ°ÕÒÊı×éÖĞ³öÏÖ´ÎÊıÔÚÊı×é³¤¶ÈÒ»°ëÒÔÉÏµÄÊı×Ö
+//æ‰¾å‡ºä¸€ä¸ªæ•°ç»„ä¸­å‡ºç°æ¬¡æ•°è¶…è¿‡æ•°ç»„é•¿åº¦ä¸€èˆ¬çš„æ•°å­—
 
 fun main(args: Array<String>) {
 	val arg0 = intArrayOf(1, 2, 3, 2, 2, 2, 5, 4, 2)
 	val arg1 = intArrayOf(1, 2, 3, 2, 2, 2, 5, 4)
-	val message = "³¬¹ıÒ»°ëµÄÊı×ÖÎª£º"
+	val message = "è¶…è¿‡æ•°ç»„é•¿åº¦ä¸€åŠçš„æ•°ä¸ºï¼š"
 	println("$message${moreThanHalfNum2(arg0)}")
 	println("$message${moreThanHalfNum2(arg1)}")
 	//println("$message${moreThanHalfNum1(arg0)}")
 	//println("$message${moreThanHalfNum1(arg1)}")
 }
 
-//½â·¨Ò»£¬¸Ä±äÊäÈëµÄÊı×é£¬Ê±¼ä¸´ÔÓ¶ÈÎªO(n)
+//è§£æ³•ä¸€ï¼Œéœ€è¦ä¿®æ”¹è¾“å…¥æ•°ç»„ï¼Œæ—¶é—´å¤æ‚åº¦ä¸ºO(n)
 //fun moreThanHalfNum1(args: IntArray): Int 
 
-//½â·¨¶ş£¬¿ÉÒÔ²»ĞŞ¸ÄÊäÈëÊı×é£¬Ê±¼ä¸´ÔÓ¶ÈO(n)
+//è§£æ³•äºŒï¼Œæ— éœ€ä¿®æ”¹è¾“å…¥æ•°ç»„ï¼Œæ—¶é—´å¤æ‚åº¦ä¸ºO(n)
 fun moreThanHalfNum2(args: IntArray): Int {
 	var index = 0
 	var number = args[index]
@@ -34,6 +34,6 @@ fun moreThanHalfNum2(args: IntArray): Int {
 	if (count > 1) {
 		return number
 	} else {
-		throw RuntimeException("Ã»ÓĞ·ûºÏÒªÇóµÄÊı×Ö")
+		throw RuntimeException("Ã»ï¿½Ğ·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
 	}
 }
