@@ -73,7 +73,6 @@ private fun binarySearch(array: IntArray, first: Int, last: Int): Int {
 /*
  *题目三：在一个递增排序切没有元素重复的数组中找出下标和值相等的数字
  */
-
 fun getNumberSameAsIndex(array: IntArray): Int {
 	var first = 0
 	var last = array.size - 1

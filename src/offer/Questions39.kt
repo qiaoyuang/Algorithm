@@ -34,6 +34,6 @@ fun moreThanHalfNum2(args: IntArray): Int {
 	if (count > 1) {
 		return number
 	} else {
-		throw RuntimeException("û�з���Ҫ�������")
+		throw RuntimeException("数组中没有长度超过一般的数字")
 	}
 }
