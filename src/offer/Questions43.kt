@@ -3,7 +3,7 @@ package offer
 //从n到一个整数中1出现的次数
 
 fun main(args: Array<String>) {
-	println("1出现的次数为：${numberOf1Between1AndN(211)}")
+	println("1出现的次数为：${numberOf1Between1AndN(101)}")
 }
 
 fun numberOf1Between1AndN(number: Int): Int {
@@ -20,29 +20,38 @@ fun numberOf1Between1AndN(number: Int): Int {
 		divisor /= 10
 	}
 	var count = 0
+	
+	fun front(i: Int): Int {
+		var a = 1
+		var index = 0
+		for (j in i+2..numberArray.size-1) {
+			index += numberArray[j] * Math.pow(10.0, a.toDouble()).toInt()	
+			a++ 
+		}
+		return index
+	}
+	
 	for (i in b-1 downTo 0) {
 		//当某一数位上的数字是1和0的时候要特殊处理
-		count += if (i + 1 >= b) {
-			1 * Math.pow(10.0, i.toDouble()).toInt()
-		} else {
-			numberArray[i+1] * Math.pow(10.0, i.toDouble()).toInt()
-		}
-				/*if (numberArray[i] == 1) {
+		count += if (numberArray[i] == 1) {
 			var value = 1
 			for (j in 0 until i) {
-				value += numberArray[j] * Math.pow(10.0, j.toDouble()).toInt()
+				value += Math.pow(10.0, j.toDouble()).toInt()
 			}
-			value
+			if (i + 1 >= b) {
+				1 + number - Math.pow(10.0, (numberArray.size - 1).toDouble()).toInt()
+			} else {
+				value + (front(i) + numberArray[i+1]) * Math.pow(10.0, i.toDouble()).toInt()	
+			}
 		} else if (numberArray[i] == 0) {
-			0
+			(front(i) + numberArray[i+1]) * Math.pow(10.0, i.toDouble()).toInt()
 		} else {
 			if (i + 1 >= b) {
-			    1 * Math.pow(10.0, i.toDouble()).toInt()
+			    Math.pow(10.0, i.toDouble()).toInt()
 		    } else {
-			    numberArray[i+1] * Math.pow(10.0, i.toDouble()).toInt()
+				(front(i) + numberArray[i+1] + 1) * Math.pow(10.0, i.toDouble()).toInt()
 		    }
-		}*/
-		
+		}
 	}
 	return count
 }
