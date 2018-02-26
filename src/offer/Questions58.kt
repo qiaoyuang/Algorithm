@@ -14,8 +14,12 @@ fun main(args: Array<String>) {
 fun String.reverseSentence(): String {
 	val array = this.split(" ")
 	val builder = StringBuilder("")
-	for (i in array.size downTo 0) {
-		builder.append(array[0])
+	for (i in array.size-1 downTo 0) {
+		if (i == 0) {
+			builder.append("${array[i]}")
+		} else {
+			builder.append("${array[i]} ")
+		}
 	}
 	return builder.toString()
 }
