@@ -49,11 +49,10 @@ private fun <T> BinaryTreeNode<T>.isBalancedCore(depth: IntArray): Boolean {
 	val right = intArrayOf(0)
 	if (mLeft?.isBalancedCore(left) ?: true && mRight?.isBalancedCore(right) ?: true) {
 		if (Math.abs(left[0] - right[0]) <= 1) {
-			depth[0] = 1 + if (left[0] > right[0]) {
+			depth[0] = 1 + if (left[0] > right[0])
 				left[0]
-			} else {
+			else
 				right[0]
-			}
 			return true
 		} else 
 			return false

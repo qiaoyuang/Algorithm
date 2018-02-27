@@ -5,7 +5,7 @@ fun main(args: Array<String>) {
 	println("翻转后得到：${str1.reverseSentence()}")
 	println()
 	val str2 = "abcdefg"
-	println("输入：$str2，左旋转2位后得到：${str2.leftRoate(2)}")
+	println("输入：$str2。左旋转2位后得到：${str2.leftRoate(2)}")
 }
 
 /*
