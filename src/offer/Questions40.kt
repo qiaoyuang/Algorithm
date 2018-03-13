@@ -15,12 +15,12 @@ fun main(args: Array<String>) {
 
 //解法一，需要修改输入数组，时间复杂度为O(n)
 infix fun IntArray.getLeastNumbers1(k: Int): IntArray {
-	var index = partition(this, 0, this.size - 1)
+	var index = partition(0, this.size - 1)
 	while (index != k - 1) {
 		if (index > k - 1) {
-			index = partition(this, 0, index - 1)
+			index = partition(0, index - 1)
 		} else {
-			index = partition(this, index + 1, this.size - 1)
+			index = partition(index + 1, this.size - 1)
 		}
 	}
 	val output = IntArray(k)
