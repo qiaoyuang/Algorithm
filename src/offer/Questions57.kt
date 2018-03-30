@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
 	println()
 	println()
 	val list1 = findContinuousSequence(15)
-	while (!list1.isEnpty()) {
+	while (!list1.isEmpty()) {
 		val value = list1.pop()
 		print("和为15的序列为：")
 		value.forEach { print("$it ") }
@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
 	}
 	println()
 	val list2 = findContinuousSequence(19)
-	while (!list2.isEnpty()) {
+	while (!list2.isEmpty()) {
 		val value = list2.pop()
 		print("和为19的序列为：")
 		value.forEach { print("$it ") }

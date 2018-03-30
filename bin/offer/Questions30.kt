@@ -18,7 +18,7 @@ fun main(arg0: Array<String>) {
 	myPrintln()
 	stack push 1
 	myPrintln()
-	while (!stack.isEnpty) {
+	while (!stack.isEmpty) {
 		myPrintln()
 		stack.pop()
 	}

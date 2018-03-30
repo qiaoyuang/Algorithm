@@ -10,7 +10,7 @@ public class LinkedList<T> {
 		return first;
 	}
 	
-	public boolean isEnpty() {
+	public boolean isEmpty() {
 		return N == 0;
 	}
 	

@@ -13,8 +13,8 @@ public class Stack<T> {
 		return list.size();
 	}
 	
-	public boolean isEnpty() {
-		return list.isEnpty();
+	public boolean isEmpty() {
+		return list.isEmpty();
 	}
 	
 	public void push(T t) {
