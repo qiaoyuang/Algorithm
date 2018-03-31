@@ -82,5 +82,9 @@ public class Questions10 {
 		}
 		return value;
 	}
-
+	
+	/*
+	 * 相关题目：用1*2的矩形拼成n*2的矩形有多少种拼法
+	 * 解法和题目二完全相同
+	 */
 }

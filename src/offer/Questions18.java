@@ -2,8 +2,6 @@ package offer;
 
 import offer.LinkedList.Node;
 
-//在O(n)时间内删除链表的某一个节点
-
 public class Questions18 {
 	
 	public static void main(String[] arg0) {
@@ -48,7 +46,7 @@ public class Questions18 {
 		}
 	}
 	
-	//原题目解法
+	//题目一：在O(n)时间内删除链表的某一个节点
 	public static <T> T delete(Node<T> first, Node<T> node) {
 		if (node.getNext() == null) {
 			Node<T> oldFirst = first;
@@ -66,7 +64,7 @@ public class Questions18 {
 		return t;
 	}
 	
-	//题目变种：删除链表重复节点（重复节点数量不定，重复次数不定）
+	//题目二：删除链表重复节点（重复节点数量不定，重复次数不定）
 	public static <T> void deleteRepeat(Node<T> first) {
 		Node<T> oldFirst = first;
 		while (first.getNext() != null) {
