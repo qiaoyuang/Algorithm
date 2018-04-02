@@ -19,18 +19,35 @@ fun IntArray.maxInWindow(): IntArray {
 	val result = IntArray(size - 2)
 	for (i in 0 until size) {
 		if (queue.size == 0) {
-			queue.addFirst(i)
-		} else if (this[queue.last()] > this[i]) {
-			queue.addFirst(i)
+			queue.addFirst(this[i])
+		} else if (queue.last() > this[i]) {
+			queue.addFirst(this[i])
 		} else {
-			while (queue.size != 0)
+			while (queue.size != 0) {
 				queue.removeLast()
-			queue.addFirst(i)
+			}
+			queue.addFirst(this[i])
 		}
 		while (queue.size > 3)
 			queue.removeLast()
+		while (true) {
+			if (queue.size >= 3) {
+				if (queue.get(0) < queue.get(1) && queue.get(1) > queue.get(2)) {
+					queue.removeLast()
+				    break
+				} else {
+					queue.removeLast()
+				}
+			} else if (queue.size == 2) {
+				if (queue.get(0) < queue.get(1))
+					queue.removeLast()
+				break
+			} else if (queue.size == 1) {
+				break
+			}
+		}
 		if (i >= 2) {
-			result[i - 2] = this[queue.last]
+			result[i - 2] = queue.last
 		}
 	}
 	return result
