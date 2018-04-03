@@ -45,7 +45,7 @@ public class Questions15 {
 	}
 	
 	/*
-	 * 相关题目一：用一条语句判断一个数是不是2的证书次方
+	 * 相关题目一：用一条语句判断一个数是不是2的整数次方
 	 */
 	public static boolean judgment(int number) {
 		int _number = number - 1;
@@ -60,10 +60,10 @@ public class Questions15 {
 	public static int calculate(int m, int n) {
 		int result = m ^ n;
 		int count = 0;
-		while (result != 0) {
-			int mod = result % 2;
-			result >>= 1;
-			if (mod == 1) count++;
+		int bitMusk = 1;
+		while (bitMusk != 0) {
+			if ((result & bitMusk) != 0) count++;
+			bitMusk <<= 1;
 		}
 		return count;
 	}

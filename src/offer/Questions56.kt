@@ -7,8 +7,9 @@ import kotlin.collections.ArrayList
 fun main(args: Array<String>) {
 	val array1 = intArrayOf(2, 4, 3, 6, 3, 2, 5, 5)
 	val array2 = intArrayOf(1, 3, 9, 6, 6, 8, 1, 3, 8, 0)
+	print("重复数字：")
 	findNumAppearOnce(array1).forEach { print("$it ") }
-	println()
+	print("\n重复数字：")
 	findNumAppearOnce(array2).forEach { print("$it ") }
 	println()
 	val array3 = intArrayOf(6, 7, 6, 8, 8, 7, 5, 7, 8, 6)
@@ -25,16 +26,18 @@ fun findNumAppearOnce(array: IntArray): IntArray {
 	for (i in 1 until array.size)
 		temp = temp xor array[i]
 	var index = 0
-	while (temp % 2 != 1) {
+	var bitMusk = 1
+	while (true) {
+		if (temp and bitMusk != 0) break
 		index++
-		temp = temp shr 1
+		bitMusk = bitMusk shl 1
 	}
 	val left = ArrayList<Int>()
 	val right = ArrayList<Int>()
+	bitMusk = 1
 	array.forEach {
 		val a = it shr index
-		val b = a % 2
-		if (b == 0) left.add(it)
+		if (a and bitMusk == 0) left.add(it)
 		else right.add(it)
 	}
 	val result = IntArray(2)

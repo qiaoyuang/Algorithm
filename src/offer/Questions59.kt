@@ -60,6 +60,7 @@ class Queue<T : Comparable<T>>() {
 	private var tail: Node<T>? = null
 	
 	var size = 0
+	    private set
 	
 	fun isEmpty(): Boolean = size == 0
 	
