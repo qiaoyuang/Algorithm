@@ -1,9 +1,12 @@
 package offer
 
+import kotlin.math.*
+
 //求n个骰子的和的所有可能值出现的概率
 
 fun main(args: Array<String>) {
 	printProbability1(6)
+	println()
 	printProbability2(6)
 }
 
@@ -11,6 +14,7 @@ const val MAX_VALUE = 6
 
 //基于递归
 fun printProbability1(number: Int) {
+	if (number < 1) return
 	val array = IntArray(number) { 1 }
 	val sumArray = IntArray(MAX_VALUE * number - number + 1)
 	fun sum(): Int {
@@ -19,25 +23,46 @@ fun printProbability1(number: Int) {
 		return sum
 	}
 	fun printProbability(index: Int) {
-		if (index >= number) return
-		while (array[index] < MAX_VALUE) {
-			if (index != 0) array[index]++
+		if (index >= number) {
 			val sum = sum()
 		    sumArray[sum - MAX_VALUE]++
-		    printProbability(index + 1)
-			if (index == 0) array[index]++
+			return
 		}
+		while (array[index] <= MAX_VALUE) {
+		    printProbability(index + 1)
+			array[index]++
+		}
+		array[index] = 1
 	}
 	printProbability(0)
 	var sum = 0
-	sumArray.forEach {
-		sum += it
-	}
+	sumArray.forEach { sum += it }
 	for (i in 0 until sumArray.size)
-		println("和为：${i + MAX_VALUE}，概率为：${sumArray[i]} / $sum")
+		println("和为：${i + MAX_VALUE}，概率为：${sumArray[i]}/$sum")
 }
 
 //基于循环
 fun printProbability2(number: Int) {
-	
+	if (number < 1) return
+	val length = MAX_VALUE * number + 1
+	val probabilities = Array<IntArray>(2) { IntArray(length) }
+	var flag = 0
+	for (i in 1..MAX_VALUE)
+		probabilities[flag][i] = 1
+	for (k in 2..number) {
+		for (i in 0 until k)
+			probabilities[1 - flag][i] = 0
+		for (i in k..MAX_VALUE) {
+			probabilities[1 - flag][i] = 0
+			var j = 1
+			while (j <= i && j <= MAX_VALUE) {
+				probabilities[1 - flag][i] += probabilities[flag][i - j]
+				j++
+			}
+		}
+		flag = 1 - flag
+	}
+	val total = MAX_VALUE.toFloat().pow(number.toFloat()).toInt()
+	for (i in number until length)
+		println("和为：$i，概率为：${probabilities[flag][i]}/$total")
 }
