@@ -25,7 +25,7 @@ fun printProbability1(number: Int) {
 	fun printProbability(index: Int) {
 		if (index >= number) {
 			val sum = sum()
-		    sumArray[sum - MAX_VALUE]++
+		    sumArray[sum - number]++
 			return
 		}
 		while (array[index] <= MAX_VALUE) {
@@ -38,7 +38,7 @@ fun printProbability1(number: Int) {
 	var sum = 0
 	sumArray.forEach { sum += it }
 	for (i in 0 until sumArray.size)
-		println("和为：${i + MAX_VALUE}，概率为：${sumArray[i]}/$sum")
+		println("和为：${i + number}，概率为：${sumArray[i]}/$sum")
 }
 
 //基于循环
