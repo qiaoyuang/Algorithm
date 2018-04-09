@@ -49,6 +49,12 @@ public class LinkedList<T> {
 		
 		private Node<T> next;
 		
+		public Node() {}
+		
+		public Node(T t) {
+			this.t = t;
+		}
+		
 		public void set(T t) {
 			this.t = t;
 		}

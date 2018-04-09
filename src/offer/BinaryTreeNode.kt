@@ -1,6 +1,6 @@
 package offer
 
-class BinaryTreeNode<T>(var mValue: T,
+data class BinaryTreeNode<T>(var mValue: T,
 						var mLeft: BinaryTreeNode<T>? = null,
 						var mRight: BinaryTreeNode<T>? = null) {
 	
