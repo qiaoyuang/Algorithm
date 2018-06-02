@@ -58,11 +58,13 @@ infix private fun Int.compare(value: Int): Int {
 		b /= 10
 		bitB++
 	}
+	
 	infix fun Int.getBit(bit: Int): Int {
 		var num = this
 		for (i in 1 until bit) num /= 10
 		return num.rem(10)
-	}
+    }
+	
 	when {
 		bitA == bitB -> {
 			while (bitA != 0) {
