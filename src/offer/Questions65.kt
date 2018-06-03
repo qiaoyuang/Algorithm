@@ -22,7 +22,7 @@ infix fun Int.myAdd(n: Int): Int {
 	var carry: Int
 	do {
 		sum = num1 xor num2
-		carry = (num1 and num2) shl 1
+		carry = num1 and num2 shl 1
 		num1 = sum
 		num2 = carry
 	} while(num2 != 0)
@@ -30,7 +30,7 @@ infix fun Int.myAdd(n: Int): Int {
 }
 
 /*
- * 相关问题：不使用新变量，交换两个变量的值,见Questions65.java
+ * 相关问题：不使用新变量
  */
 
 //基于加减法
