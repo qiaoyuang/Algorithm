@@ -1,0 +1,45 @@
+package offer
+
+//数组中的逆序对
+
+fun main(args: Array<String>) {
+	val array = intArrayOf(7, 3, 5, 2, 1, 8, 6, 4)
+	println("数组中的逆序对共有：${inversePairs(array)}对")
+}
+
+fun inversePairs(array: IntArray): Int {
+	if (array.size <= 0) return 0
+	val substitute = IntArray(array.size)
+	val aux = IntArray(array.size)
+	for (i in 0 until array.size) {
+		substitute[i] = array[i]
+		aux[i] = array[i]
+	}
+	return sort(substitute, aux, 0, array.size - 1)
+}
+
+private fun sort(a: IntArray, aux: IntArray, lo: Int, hi: Int): Int {
+	if (hi <= lo) return 0
+	val mid = lo + (hi - lo) / 2
+	val myCount = sort(a, aux, lo, mid) + sort(a, aux, mid + 1, hi)
+	return myCount / 2 + merge(a, aux, lo ,mid, hi, myCount)
+}
+
+private fun merge(a: IntArray, aux: IntArray, lo: Int, mid: Int, hi: Int, count: Int): Int {
+	var i = lo
+	var j = mid + 1
+	var myCount = count
+	for (k in lo..hi)
+		aux[k] = a[k]
+	for (k in lo..hi)
+		when {
+			i > mid -> a[k] = aux[j++]
+			j > hi ->a[k] = aux[i++]
+			aux[j] < aux[i] -> {
+				a[k] = aux[j++]
+				myCount++
+			}
+			else -> a[k] = aux[i++]
+		}
+	return myCount
+}
