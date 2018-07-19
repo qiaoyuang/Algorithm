@@ -33,7 +33,8 @@ class MaxPriorityQueue {
 			if (size == 0) null
 	        else pq[1]
 	
-	fun poll(): Int {
+	fun poll(): Int? {
+		if (size == 0) return null
 		val min = pq[1]
 		exch(1, size--)
 		pq[size + 1] = 0

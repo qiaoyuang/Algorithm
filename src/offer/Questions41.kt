@@ -35,15 +35,22 @@ class MedianContainer() {
 	private val minQueue = PriorityQueue<Int>()//存放最大一半的数
 	
 	fun offer(e: Int) {
+		if (maxQueue.size == 0) {
+			maxQueue.offer(e)
+			return
+		}
 		minQueue.offer(e)
 		reSize()
 	}
 	
 	private fun reSize() {
-		while (minQueue.size != 0)
+		while (minQueue.size != 0 && minQueue.peek() < maxQueue.peek()!!) {
 			maxQueue.offer(minQueue.poll())
+		}
+		while (minQueue.size - maxQueue.size > 0)
+            maxQueue.offer(minQueue.poll()!!)
 		while (maxQueue.size - minQueue.size > 1)
-            minQueue.offer(maxQueue.poll())
+            minQueue.offer(maxQueue.poll()!!)
 	}
 	
 	fun getMedian(): Int =
