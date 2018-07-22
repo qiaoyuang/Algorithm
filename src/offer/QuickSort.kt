@@ -28,12 +28,10 @@ fun IntArray.partition(low: Int, height: Int): Int {
 	var i = low
 	var j = height + 1
 	while (true) {
-		while (this[++i] < this[low]) {
+		while (this[++i] < this[low])
 			if (i == height) break
-		}
-		while (this[low] < this[--j]) {
+		while (this[low] < this[--j])
 			if (j == low) break
-		}
 		if (i >= j) break
 		exchange(i, j)
 	}

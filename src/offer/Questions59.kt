@@ -7,6 +7,20 @@ fun main(args: Array<String>) {
 	val result = array.maxInWindow()
 	result.forEach { print("$it ") }
 	println()
+	val queue = MaxQueue<Int>()
+	queue.push(2)
+	queue.push(5)
+	queue.push(8)
+	queue.push(6)
+	queue.printlnMax()
+	queue.pop()
+	queue.pop()
+	queue.pop()
+	queue.push(1)
+	queue.printlnMax()
+	queue.push(3)
+	queue.push(9)
+	queue.printlnMax()
 }
 
 /*
@@ -54,54 +68,65 @@ fun IntArray.maxInWindow(): IntArray {
 /*
  * 题目二：定义一个入队和出队以及查询最大值，时间复杂度都是O(1)的队列
  */
-class Queue<T : Comparable<T>>() {
+@Suppress("UNCHECKED_CAST")
+class MaxQueue<T : Comparable<T>>() {
 	
-	private var head: Node<T>? = null
-	private var tail: Node<T>? = null
+	/*
+     * 尚不完善，没有加入数组扩容机制
+     */
 	
-	var size = 0
-	    private set
+	private var array = Array<Comparable<T>?>(16) { null }
+	
+	private var head = 0
+	private var tail = 0
+	
+	private var size = 0
+	
+	private val queue by lazy { LinkedList<Int>() }
 	
 	fun isEmpty(): Boolean = size == 0
 	
-	fun enqueue(t: T) {
-		val node = Node<T>(t)
-		if (size == 0) {
-			head = node
-			tail = node
-		} else {
-			node.next = head
-			head!!.front = node
-			head = node
+	fun push(t: T) {
+		if (isEmpty()) {
+			array[size++] = t
+			queue.offer(head)
+			return
 		}
+		array[++tail] = t
+		if (t > array[queue.peek()] as T)
+			while (queue.peek() != null) 
+				queue.poll()
+		queue.offer(tail)
 		size++
 	}
 	
-	fun dequeue(): T {
-		if (size == 0) {
+	fun pop(): T {
+		if (isEmpty())
 			throw RuntimeException("队列为空")
-		} else if (size == 1) {
-			try {
-				return head!!.value
-			} finally {
-				head == null
-				tail == null
-				size--
+		if (head == queue.peek()) {
+			queue.poll()
+			queue.forEachIndexed { e, index ->
+				val start = index + 1
+				for (i in start until queue.size)
+					if (array[e] as T <= array[i] as T)
+						queue.poll()
 			}
-		} else {
-			val node = tail
-			val front = tail!!.front
-			front!!.next = null
-			tail!!.front = null
-			tail = front
-			return node!!.value
+		}
+		try {
+			return array[head] as T
+		} finally {
+			array[head++] = null
 		}
 	}
 	
-	/*fun max(): T {
-		
-	}*/
+	fun max(): T {
+		if (isEmpty())
+			throw RuntimeException("队列为空")
+		return array[queue.peek()] as T
+	}
 	
-	data class Node<T>(val value: T, var front: Node<T>? = null, var next: Node<T>? = null)
-	
+}
+
+fun MaxQueue<*>.printlnMax() {
+	println("队列的最大值是：${max()}")
 }
