@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
 
 class MedianContainer() {
 	
-	private val maxQueue = MaxPriorityQueue()//存放最小一半的数
+	private val maxQueue = MaxPriorityQueue<Int>()//存放最小一半的数
 	private val minQueue = PriorityQueue<Int>()//存放最大一半的数
 	
 	fun offer(e: Int) {
