@@ -5,9 +5,15 @@ import kotlin.math.*
 //求n个骰子的和的所有可能值出现的概率
 
 fun main(args: Array<String>) {
+	val start1Time = System.currentTimeMillis()
 	printProbability1(6)
+	val end1Time = System.currentTimeMillis()
+	println("递归的执行时间为：${end1Time - start1Time}ms")
 	println()
+	val start2Time = System.currentTimeMillis()
 	printProbability2(6)
+	val end2Time = System.currentTimeMillis()
+	println("递归的执行时间为：${end2Time - start2Time}ms")
 }
 
 const val MAX_VALUE = 6
