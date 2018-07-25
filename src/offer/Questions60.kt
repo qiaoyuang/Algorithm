@@ -52,7 +52,7 @@ fun printProbability2(number: Int) {
 	for (k in 2..number) {
 		for (i in 0 until k)
 			probabilities[1 - flag][i] = 0
-		for (i in k..MAX_VALUE) {
+		for (i in k until length) {
 			probabilities[1 - flag][i] = 0
 			var j = 1
 			while (j <= i && j <= MAX_VALUE) {
