@@ -44,27 +44,20 @@ class MedianContainer() {
 	}
 	
 	private fun reSize() {
-		while (minQueue.size != 0 && minQueue.peek() < maxQueue.peek()!!) {
+		while (minQueue.size != 0 && minQueue.peek() < maxQueue.peek()) {
 			maxQueue.offer(minQueue.poll())
 		}
 		while (minQueue.size - maxQueue.size > 0)
-            maxQueue.offer(minQueue.poll()!!)
+            maxQueue.offer(minQueue.poll())
 		while (maxQueue.size - minQueue.size > 1)
             minQueue.offer(maxQueue.poll()!!)
 	}
 	
 	fun getMedian(): Int =
 			if (maxQueue.size == minQueue.size) {
-				maxQueue.peek()!! + minQueue.peek() shr 1
+				maxQueue.peek() + minQueue.peek() shr 1
 			} else {
-				maxQueue.peek()!!
+				maxQueue.peek()
 			}
-	
-	fun PriorityQueue<Int>.print() {
-		for (e in this) {
-			print("$e,")
-		}
-		println()
-	}
 	
 }

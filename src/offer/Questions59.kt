@@ -71,11 +71,8 @@ fun IntArray.maxInWindow(): IntArray {
 @Suppress("UNCHECKED_CAST")
 class MaxQueue<T : Comparable<T>>() {
 	
-	/*
-     * 尚不完善，没有加入数组扩容机制
-     */
-	
-	private var array = Array<Comparable<T>?>(16) { null }
+	private var maxSize = 16
+	private var array = Array<Comparable<T>?>(maxSize) { null }
 	
 	private var head = 0
 	private var tail = 0
@@ -92,12 +89,34 @@ class MaxQueue<T : Comparable<T>>() {
 			queue.offer(head)
 			return
 		}
+		if (tail + 1 > maxSize)
+			if (size + 1 > maxSize) {
+				expansion()
+			} else resize()
 		array[++tail] = t
 		if (t > array[queue.peek()] as T)
 			while (queue.peek() != null) 
 				queue.poll()
 		queue.offer(tail)
 		size++
+	}
+	
+	private fun resize() {
+		var j = 0
+		for (i in head until tail) {
+			array[j++] = array[head]
+			array[head++] = null
+		}
+		head = 0
+		tail = j
+	}
+	
+	private fun expansion() {
+		maxSize = maxSize shl 1
+		val oldArray = array
+		array = Array<Comparable<T>?>(maxSize) { null }
+		for (i in 0 until oldArray.size)
+			array[i] = oldArray[i]
 	}
 	
 	fun pop(): T {

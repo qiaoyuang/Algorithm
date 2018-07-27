@@ -4,7 +4,7 @@ package offer
 @Suppress("UNCHECKED_CAST")
 class MaxPriorityQueue<T : Comparable<T>> {
 	
-	private val maxSize = 16
+	private var maxSize = 16
 	
 	private var pq = Array<Comparable<T>?>(maxSize) { null }
 	var size = 0
@@ -13,8 +13,18 @@ class MaxPriorityQueue<T : Comparable<T>> {
 	fun isEmpty(): Boolean = size == 0
 	
 	fun offer(e: T) {
+		if (size + 1 > maxSize)
+			expansion()
 		pq[++size] = e
 		swim(size)
+	}
+	
+	private fun expansion() {
+		maxSize = maxSize shl 1
+		val oldPq = pq
+		pq = Array<Comparable<T>?>(maxSize) { null }
+		for (i in 0 until oldPq.size)
+			pq[i] = oldPq[i]
 	}
 	
 	private fun swim(i: Int) {
