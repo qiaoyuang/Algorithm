@@ -2,7 +2,9 @@ package offer
 
 import kotlin.math.*
 
-//求n个骰子的和的所有可能值出现的概率
+/*
+ * 求n个骰子的和的所有可能值出现的概率
+ */
 
 fun main(args: Array<String>) {
 	val start1Time = System.currentTimeMillis()

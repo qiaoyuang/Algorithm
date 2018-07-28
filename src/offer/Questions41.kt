@@ -2,7 +2,9 @@ package offer
 
 import java.util.PriorityQueue
 
-//数据流中的中位数
+/*
+ * 数据流中的中位数
+ */
 
 fun main(args: Array<String>) {
 	val str = "数据流中的中位数是："

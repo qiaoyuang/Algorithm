@@ -1,6 +1,8 @@
 package offer
 
-//将数字翻译成字符串
+/*
+ * 将数字翻译成字符串
+ */
 
 fun main(args: Array<String>) {
 	val num = 12258

@@ -1,6 +1,8 @@
 package offer
 
-//把数组排成最小的数
+/*
+ * 把数组排成最小的数
+ */
 
 fun main(args: Array<String>) {
 	val array = intArrayOf(3, 32, 321)
