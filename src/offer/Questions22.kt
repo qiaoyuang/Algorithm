@@ -23,7 +23,6 @@ fun main(args: Array<String>) {
 	
 	println("倒数第3个节点为${node1.findKthToTail(3)}")
 	println("倒数第6个节点为${node1.findKthToTail(6)}")
-	//println("倒数第7个节点为${node1.findKthToTail(7)}")
 	println()
 	println("链表的中间节点为：${node1.findMidNode()}")
 }

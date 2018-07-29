@@ -2,8 +2,9 @@ package offer
 
 import kotlin.math.*
 
-//数组中的逆序对
-
+/*
+ * 数组中的逆序对
+ */
 fun main(args: Array<String>) {
 	val array = intArrayOf(7, 5, 6, 4)
 	println("数组中的逆序对共有：${inversePairs1(array)}对")

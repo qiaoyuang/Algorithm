@@ -42,10 +42,10 @@ class MedianContainer() {
 			return
 		}
 		minQueue.offer(e)
-		reSize()
+		resize()
 	}
 	
-	private fun reSize() {
+	private fun resize() {
 		while (minQueue.size != 0 && minQueue.peek() < maxQueue.peek()) {
 			maxQueue.offer(minQueue.poll())
 		}

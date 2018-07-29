@@ -1,6 +1,8 @@
 package offer
 
-//快速排序Kotlin实现
+/*
+ * 快速排序Kotlin实现
+ */
 
 fun main(args: Array<String>) {
 	val array = intArrayOf(5, 7, 2, 9, 3, 1, 4, 0, 8, 6)
@@ -20,11 +22,6 @@ private fun IntArray.quickSort(low: Int, height: Int) {
 }
 
 fun IntArray.partition(low: Int, height: Int): Int {
-	fun exchange(a: Int, b: Int) {
-		val temp = this[a]
-		this[a] = this[b]
-		this[b] = temp
-	}
 	var i = low
 	var j = height + 1
 	while (true) {
@@ -37,4 +34,10 @@ fun IntArray.partition(low: Int, height: Int): Int {
 	}
 	exchange(low, j)
 	return j
+}
+
+fun IntArray.exchange(a: Int, b: Int) {
+	val temp = this[a]
+	this[a] = this[b]
+	this[b] = temp
 }

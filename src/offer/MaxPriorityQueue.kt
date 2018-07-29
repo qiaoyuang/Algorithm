@@ -56,7 +56,7 @@ class MaxPriorityQueue<T : Comparable<T>> {
 	
 	private fun sink(i: Int) {
 		var k = i
-		while (2*k <= size) {
+		while (2 * k <= size) {
 			var j = 2 * k
 			if (j < size && (pq[j] as T) < pq[j+1] as T) j++
 			if ((pq[k] as T) > pq[j] as T) break
