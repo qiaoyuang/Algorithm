@@ -17,7 +17,7 @@ public class Questions38 {
 		System.out.println(vertex(i));
 		int[] a = {1,1,1,1,1,1,1,1};
 		System.out.println(vertex(a));*/
-		System.out.println("皇后共有" + eightQueen() + "种摆放方法。");
+		System.out.println("皇后共有" + queen(8) + "种摆放方法。");
 	}
 	
 	//字符串的全排列
@@ -126,12 +126,14 @@ public class Questions38 {
 	}
 	
 	//8皇后问题
-	public static int eightQueen() {
-		int[] array = {0, 1, 2, 3, 4, 5, 6, 7};
-		return permutationEightQueen(array, 0);
+	public static int queen(int n) {
+		int[] array = new int[n];
+		for (int i = 0; i < n; i++)
+			array[i] = i;
+		return permutationQueen(array, 0);
 	}
 	
-	private static int permutationEightQueen(int[] a, int i) {
+	private static int permutationQueen(int[] a, int i) {
 		int count = 0;
 		int temp;
 		int[] d;
@@ -152,14 +154,14 @@ public class Questions38 {
 						count++;
 					}
 				}
-				count += permutationEightQueen(d, i + 1);
+				count += permutationQueen(d, i + 1);
 			}
 		}
 		return count;
 	}
 	
 	private static boolean judgmentEightQueen(int[] a) {
-		for (int i = 0; i < a.length- 1; i++) {
+		for (int i = 0; i < a.length - 1; i++) {
 			for (int j = i + 1; j < a.length; j++) {
 				int var = j - i;
 				if (a[i] + var == a[j] || a[i] - var == a[j]) {
