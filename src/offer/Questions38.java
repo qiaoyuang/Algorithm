@@ -144,12 +144,12 @@ public class Questions38 {
 					temp = d[i];
 					d[i] = d[j];
 					d[j] = temp;
-					if (judgmentEightQueen(d)) {
+					if (judgmentQueen(d)) {
 						show(d);
 						count++;
 					}
 				} else if (i == 0) {
-					if (judgmentEightQueen(d)) {
+					if (judgmentQueen(d)) {
 						show(d);
 						count++;
 					}
@@ -160,7 +160,7 @@ public class Questions38 {
 		return count;
 	}
 	
-	private static boolean judgmentEightQueen(int[] a) {
+	private static boolean judgmentQueen(int[] a) {
 		for (int i = 0; i < a.length - 1; i++) {
 			for (int j = i + 1; j < a.length; j++) {
 				int var = j - i;
