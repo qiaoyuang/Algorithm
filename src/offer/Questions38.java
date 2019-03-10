@@ -148,11 +148,6 @@ public class Questions38 {
 						show(d);
 						count++;
 					}
-				} else if (i == 0) {
-					if (judgmentQueen(d)) {
-						show(d);
-						count++;
-					}
 				}
 				count += permutationQueen(d, i + 1);
 			}
@@ -174,7 +169,7 @@ public class Questions38 {
 	
 	private static void show(int[] a) {
 		for (int i = 0; i < a.length; i++) {
-			for (int j = 0; j < a.length; j ++) {
+			for (int j = 0; j < a.length; j++) {
 				if (a[j] == i) {
 					System.out.print(1);
 				} else {
