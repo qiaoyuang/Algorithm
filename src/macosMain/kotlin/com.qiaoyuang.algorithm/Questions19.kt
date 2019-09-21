@@ -1,11 +1,5 @@
 package com.qiaoyuang.algorithm
 
-import java.io.File
-import java.io.BufferedReader
-import java.io.FileReader
-import java.io.InputStreamReader
-import java.security.MessageDigest
-
 /**
  * 正则表达式匹配
  * 这题以后写，现在用来做测试
@@ -14,7 +8,7 @@ fun main() {
 
 }
 
-fun sha256Hash(str: String): String = getHashAlgorithm(SHA_256, str)
+/*fun sha256Hash(str: String): String = getHashAlgorithm(SHA_256, str)
 
 fun sha512Hash(str: String): String = getHashAlgorithm(SHA_512, str)
 
@@ -36,7 +30,7 @@ private fun bytesToHexString(bytes: ByteArray): String {
         sb.append(hex)
     }
     return sb.toString()
-}
+}*/
 
 const val MD5 = "MD5"
 const val SHA_256 = "SHA-256"

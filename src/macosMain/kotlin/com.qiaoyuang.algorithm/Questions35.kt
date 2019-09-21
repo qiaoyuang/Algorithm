@@ -22,7 +22,7 @@ fun main() {
 fun <T> copy(first: ComplexNode<T>): ComplexNode<T> {
 	var pointer: ComplexNode<T>? = first
 	while (pointer != null) {
-		val copy = ComplexNode<T>(pointer.t, pointer.next)
+		val copy = ComplexNode(pointer.t, pointer.next)
 		pointer.next = copy
 		pointer = copy.next
 	}

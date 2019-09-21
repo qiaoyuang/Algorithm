@@ -3,7 +3,7 @@ package com.qiaoyuang.algorithm
 import kotlin.math.*
 
 /**
- * 求n个骰子的和的所有可能值出现的概率
+ * 求 n 个骰子的和的所有可能值出现的概率
  */
 
 fun main() {
@@ -38,7 +38,7 @@ fun printProbability1(number: Int) {
 	printProbability(0)
 	var sum = 0
 	sumArray.forEach { sum += it }
-	for (i in 0 until sumArray.size)
+	for (i in sumArray.indices)
 		println("和为：${i + number}，概率为：${sumArray[i]}/$sum")
 }
 
@@ -46,7 +46,7 @@ fun printProbability1(number: Int) {
 fun printProbability2(number: Int) {
 	if (number < 1) return
 	val length = MAX_VALUE * number + 1
-	val probabilities = Array<IntArray>(2) { IntArray(length) }
+	val probabilities = Array(2) { IntArray(length) }
 	var flag = 0
 	for (i in 1..MAX_VALUE)
 		probabilities[flag][i] = 1

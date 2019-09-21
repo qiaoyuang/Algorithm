@@ -16,7 +16,7 @@ fun inversePairs1(array: IntArray): Int {
 	if (array.isEmpty()) return 0
 	val substitute = IntArray(array.size)
 	val aux = IntArray(array.size)
-	for (i in 0 until array.size) {
+	for (i in array.indices) {
 		substitute[i] = array[i]
 		aux[i] = array[i]
 	}
@@ -34,7 +34,7 @@ private fun sort(a: IntArray, aux: IntArray, lo: Int, hi: Int): Int {
 fun inversePairs2(array: IntArray): Int {
 	val substitute = IntArray(array.size)
 	val aux = IntArray(array.size)
-	for (i in 0 until array.size) {
+	for (i in array.indices) {
 		substitute[i] = array[i]
 		aux[i] = array[i]
 	}

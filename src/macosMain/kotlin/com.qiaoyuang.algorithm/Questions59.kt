@@ -6,18 +6,18 @@ fun main() {
 	result.forEach { print("$it ") }
 	println()
 	val queue = MaxQueue<Int>()
-	queue.push(2)
-	queue.push(5)
-	queue.push(8)
-	queue.push(6)
+	queue.enqueue(2)
+	queue.enqueue(5)
+	queue.enqueue(8)
+	queue.enqueue(6)
 	queue.printlnMax()
-	queue.pop()
-	queue.pop()
-	queue.pop()
-	queue.push(1)
+	queue.dequeue()
+	queue.dequeue()
+	queue.dequeue()
+	queue.enqueue(1)
 	queue.printlnMax()
-	queue.push(3)
-	queue.push(9)
+	queue.enqueue(3)
+	queue.enqueue(9)
 	queue.printlnMax()
 }
 
@@ -30,29 +30,24 @@ fun IntArray.maxInWindow(): IntArray {
 	val queue = LinkedList<Int>()
 	val result = IntArray(size - 2)
 	for (i in 0 until size) {
-		if (queue.size == 0) {
-			queue.addFirst(this[i])
-		} else if (queue.last() > this[i]) {
-			queue.addFirst(this[i])
-		} else {
+		if (!queue.isEmpty && queue.last > this[i])
 			while (queue.size != 0)
-				queue.removeLast()
-			queue.addFirst(this[i])
-		}
+				queue.dequeue()
+		queue.enqueue(this[i])
 		if (queue.size > 3) {
 			while (true) {
 			    if (queue.size > 3) {
-				    queue.removeLast()
+				    queue.dequeue()
 			    } else if (queue.size == 3) {
-				    if (queue.get(2) < queue.get(1)) {
-			            queue.removeLast()
-		            } else if (queue.get(2) < queue.get(0)) {
-					    queue.removeLast()
-					    queue.removeLast()
+				    if (queue[2] < queue[1]) {
+			            queue.dequeue()
+		            } else if (queue[2] < queue[1]) {
+					    queue.dequeue()
+					    queue.dequeue()
 				    } else break
 			    } else if (queue.size == 2) {
-				    if (queue.get(1) < queue.get(0)) {
-			            queue.removeLast()
+				    if (queue[1] < queue[0]) {
+			            queue.dequeue()
 				    } else break
 			    } else if (queue.size == 1) break
 		    }
@@ -67,7 +62,7 @@ fun IntArray.maxInWindow(): IntArray {
  * 题目二：定义一个入队和出队以及查询最大值，时间复杂度都是O(1)的队列
  */
 @Suppress("UNCHECKED_CAST")
-class MaxQueue<T : Comparable<T>>() {
+class MaxQueue<T : Comparable<T>> : AbstractQueue<T> {
 	
 	private var maxSize = 16
 	private var array = Array<Comparable<T>?>(maxSize) { null }
@@ -75,14 +70,21 @@ class MaxQueue<T : Comparable<T>>() {
 	private var head = 0
 	private var tail = 0
 	
-	private var size = 0
-	
-	private val queue by lazy { LinkedList<Int>() }
-	
-	fun isEmpty(): Boolean = size == 0
-	
-	fun push(t: T) {
-		if (isEmpty()) {
+	private val queue = LinkedList<Int>()
+
+	override val isEmpty: Boolean
+		get() = size == 0
+
+	override val first: T
+		get() = array[head] as T
+
+	override val last: T
+		get() = array[tail] as T
+
+	override var size: Int = 0
+
+	override fun enqueue(t: T) {
+		if (isEmpty) {
 			array[size++] = t
 			queue.offer(head)
 			return
@@ -92,9 +94,14 @@ class MaxQueue<T : Comparable<T>>() {
 				expansion()
 			} else resize()
 		array[++tail] = t
-		if (t > array[queue.peek()] as T)
-			while (queue.peek() != null) 
-				queue.poll()
+		if (t > array[queue.first] as T)
+			while (true)
+				try {
+					queue.pop()
+				} catch (e: IllegalStateException) {
+					e.printStackTrace()
+					break
+				}
 		queue.offer(tail)
 		size++
 	}
@@ -112,21 +119,21 @@ class MaxQueue<T : Comparable<T>>() {
 	private fun expansion() {
 		maxSize = maxSize shl 1
 		val oldArray = array
-		array = Array<Comparable<T>?>(maxSize) { null }
-		for (i in 0 until oldArray.size)
+		array = Array(maxSize) { null }
+		for (i in oldArray.indices)
 			array[i] = oldArray[i]
 	}
 	
-	fun pop(): T {
-		if (isEmpty())
+	override fun dequeue(): T {
+		if (isEmpty)
 			throw RuntimeException("队列为空")
-		if (head == queue.peek()) {
-			queue.poll()
+		if (head == queue.first) {
+			queue.pop()
 			queue.forEachIndexed { e, index ->
 				val start = index + 1
 				for (i in start until queue.size)
 					if (array[e] as T <= array[i] as T)
-						queue.poll()
+						queue.pop()
 			}
 		}
 		try {
@@ -137,9 +144,9 @@ class MaxQueue<T : Comparable<T>>() {
 	}
 	
 	fun max(): T {
-		if (isEmpty())
+		if (isEmpty)
 			throw RuntimeException("队列为空")
-		return array[queue.peek()] as T
+		return array[queue.first] as T
 	}
 	
 }

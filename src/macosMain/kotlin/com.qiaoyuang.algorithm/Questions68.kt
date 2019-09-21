@@ -1,7 +1,5 @@
 package com.qiaoyuang.algorithm
 
-import offer.LinkedList.Node
-
 /**
  * 题目：给出两个树的节点，求这两个节点的公共子节点
  * 本题根据给出的具体条件的不同则解法也不同，例如，树是否是二叉树，
@@ -72,15 +70,15 @@ fun <T> BinaryTreeNode<T>.getLastCommonParent(
 		}
 		return NodeAndIsFound(thisNode)
 	}
-	var pNode1 = myPreorder(node1).node
-	var pNode2 = myPreorder(node2).node
+	var pNode1: Node<BinaryTreeNode<T>>? = myPreorder(node1).node
+	var pNode2: Node<BinaryTreeNode<T>>? = myPreorder(node2).node
 	lateinit var result: BinaryTreeNode<T>
 	while (true) {
-		if (pNode1.next.get() === pNode2.next.get()) {
-			pNode1 = pNode1.next
-			pNode2 = pNode2.next
+		if (pNode1?.next?.t === pNode2?.next?.t) {
+			pNode1 = pNode1?.next
+			pNode2 = pNode2?.next
 		} else {
-			result = pNode1.get()
+			result = pNode1?.t!!
 			break
 		}
 	}

@@ -7,7 +7,7 @@ package com.qiaoyuang.algorithm
 fun main() {
 	val stack = MinStack()
 	fun myPrintln() {
-		println("栈顶：${stack.top()}")
+		println("栈顶：${stack.first}")
 	    println("最小值：${stack.min()}")
 	}
 	stack push 3
@@ -28,21 +28,13 @@ fun main() {
 
 class MinStack : Stack<Int>() {
 	
-	val assistStack: Stack<Int>
+	private val assistStack = Stack<Int>()
 	
-	init {
-		assistStack = Stack()
-	}
-	
-	override infix fun push(i: Int) {
-		super.push(i)
-		if (assistStack.size() == 0) {
-			assistStack.push(i)
-			return
-		} else if (i < assistStack.top()) {
-			assistStack.push(i)
-			return
-		} else assistStack.push(assistStack.top())
+	override infix fun push(t: Int) {
+		super.push(t)
+		val e =  if (assistStack.isEmpty || t < assistStack.first) t
+		else assistStack.first
+		assistStack.push(e)
 	}
 	
 	override fun pop(): Int {
@@ -50,6 +42,6 @@ class MinStack : Stack<Int>() {
 		return super.pop()
 	}
 	
-	fun min(): Int = assistStack.top()
+	fun min(): Int = assistStack.first
 	
 }

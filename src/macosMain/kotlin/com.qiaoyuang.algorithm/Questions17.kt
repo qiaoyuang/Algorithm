@@ -1,33 +1,16 @@
 package com.qiaoyuang.algorithm
 
-import kotlin.math.*
-
-//打印n位数(注意大数问题)
+// 打印 n 位数(注意大数问题)
 
 fun main() {
-	printlToMaxOfNDigits1(3)
-	printlToMaxOfNDigits2(3)
-	printlToMaxOfNDigits3(3)
+	printToMaxOfNDigits2(3)
+	printToMaxOfNDigits3(3)
 }
 
-//使用Java大数字类
-fun printlToMaxOfNDigits1(n: Int) {
-	if (n <= 0) throw IllegalArgumentException("输入的数字必须大于0")
-	var max = BigInteger("0")
-	val nine = BigInteger("9")
-	val ten = BigInteger("10")
-	for (i in 0 until n) max += nine * ten.pow(i)
-	var index = BigInteger("0")
-	while (index <= max) {
-		println(index)
-		index++
-	}
-}
-
-//使用数组方式
-fun printlToMaxOfNDigits2(n: Int) {
+// 使用数组方式
+fun printToMaxOfNDigits2(n: Int) {
 	val array = IntArray(n) { 0 }
-	//逆向打印数组
+	// 逆向打印数组
 	fun printArray() {
 		var pos = array.size -1
 		while (pos > 0) {
@@ -39,7 +22,7 @@ fun printlToMaxOfNDigits2(n: Int) {
 			print(array[i])
 		println()
 	}
-	//递归计算
+	// 递归计算
 	fun recursive(index: Int) {
 		for (i in 0..9) {
 			array[index] = i
@@ -51,25 +34,25 @@ fun printlToMaxOfNDigits2(n: Int) {
 	recursive(array.size - 1)
 }
 
-//使用字符串方式（原理和使用数组是一样的）
-fun printlToMaxOfNDigits3(n: Int) {
+// 使用字符串方式（原理和使用数组是一样的）
+fun printToMaxOfNDigits3(n: Int) {
 	val builder = StringBuilder()
 	for (i in 1..n) builder.append("0")
-	//反向打印字符串
+	// 反向打印字符串
 	fun StringBuilder.print() {
 		val newBuilder = StringBuilder("")
 		for (i in this.length - 1 downTo 0)
-			newBuilder.append(this.get(i))
+			newBuilder.append(this[i])
 		var pos = 0
 		val str = newBuilder.toString()
 		while (pos < str.length - 1) {
-			if (str.get(pos) == '0')
+			if (str[pos] == '0')
 				pos++
 			else break
 		}
 		println(str.substring(pos, str.length))
 	}
-	//递归计算
+	// 递归计算
 	fun recursive(index: Int) {
 		for (i in 0..9) {
 			builder.replace(index, index + 1, i.toString())
@@ -79,4 +62,11 @@ fun printlToMaxOfNDigits3(n: Int) {
 		builder.replace(index, index + 1, 0.toString())
 	}
 	recursive(builder.length - 1)
+}
+
+fun StringBuilder.replace(start: Int, end: Int, str: String) {
+	repeat(end - start) {
+		deleteCharAt(start)
+	}
+	insert(start, str)
 }

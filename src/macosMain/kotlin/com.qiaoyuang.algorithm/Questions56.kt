@@ -2,8 +2,6 @@ package com.qiaoyuang.algorithm
 
 import kotlin.math.*
 
-import kotlin.collections.ArrayList
-
 fun main() {
 	val array1 = intArrayOf(2, 4, 3, 6, 3, 2, 5, 5)
 	val array2 = intArrayOf(1, 3, 9, 6, 6, 8, 1, 3, 8, 0)

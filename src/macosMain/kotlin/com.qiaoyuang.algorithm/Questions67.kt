@@ -22,8 +22,8 @@ fun main() {
 fun strToInt(str: String): Int {
 	var result = 0
 	var symbol = false
-	for (i in 0 until str.length) {
-		val a = str.get(i)
+	for (i in str.indices) {
+		val a = str[i]
 		val b = a.toInt()
 		if (b < 48 || b > 57) {
 			if (i == 0) {

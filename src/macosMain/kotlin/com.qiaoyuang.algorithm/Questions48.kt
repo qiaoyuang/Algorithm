@@ -18,8 +18,8 @@ fun longestSubstringWithoutDuplication(str: String): Int {
 	val array = IntArray(26) { 0 }
 	var curLength = 0
 	var maxLength = 0
-	for (i in 0 until str.length) {
-		val c = str.get(i)
+	for (i in str.indices) {
+		val c = str[i]
 		if (!c.isLegal())
 			throw IllegalArgumentException("输入的字符串包含不合法字符")
 		val position = c.getPosition()
@@ -27,7 +27,7 @@ fun longestSubstringWithoutDuplication(str: String): Int {
 			curLength++
 		} else {
 			curLength = 1
-			for (j in 0 until array.size)
+			for (j in array.indices)
 			    array[j] = 0
 		}
 		array[position]++

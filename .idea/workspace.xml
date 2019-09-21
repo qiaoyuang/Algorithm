@@ -2,11 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14142d0a-030f-4c2f-a3cd-bdf4e8b66ffd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/AbstractQueen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/AbstractStack.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Collection.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/LinkedList.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Node.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/PriorityQueue.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Queue.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Stack.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/entry/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Algorithm.macosMain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Algorithm.macosMain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Algorithm.macosTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Algorithm.macosTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/MaxPriorityQueue.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/MergeSort.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/MergeSort.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions01.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions07.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions08.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions14.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions14.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions17.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions17.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions19.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions19.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions22.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions22.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions30.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions30.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions31.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions31.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions32.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions32.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions34.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions34.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions35.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions35.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions37.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions37.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions40.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions40.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions41.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions41.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions48.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions48.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions49.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions49.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions50.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions50.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions51.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions51.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions52.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions52.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions53.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions53.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions54.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions54.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions55.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions55.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions56.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions56.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions57.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions57.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions59.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions59.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions60.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions60.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions61.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions61.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions62.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions62.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions64.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions64.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions67.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions67.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions68.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/Questions68.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/QuickSort.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/QuickSort.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/ShellSort.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/macosMain/kotlin/com.qiaoyuang.algorithm/ShellSort.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +70,46 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Algorithm" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Algorithm" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Algorithm" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="run" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -26,7 +117,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -39,6 +130,32 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Algorithm [runDebugExecutableMacos]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runDebugExecutableMacos" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Algorithm [runDebugExecutableMacos]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -58,7 +175,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

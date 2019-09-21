@@ -21,8 +21,8 @@ fun main() {
  */
 fun findNotRepeatingChar(str: String): Char {
 	val map = LinkedHashMap<Char, Int>()
-	for (i in 0 until str.length) {
-		val c = str.get(i)
+	for (i in str.indices) {
+		val c = str[i]
 		if (map[c] == null) {
 			map[c] = 1
 		} else {
@@ -46,8 +46,8 @@ fun findNotRepeatingChar(str: String): Char {
  */
 fun deleteChar(str1: String, str2: String): String {
 	val list = ArrayList<Char>()
-	for (i in 0 until str2.length) {
-		val c = str2.get(i)
+	for (i in str2.indices) {
+		val c = str2[i]
 		if (c !in list)
 			list.add(c)
 	}
@@ -70,7 +70,7 @@ fun deleteRepeatChar(str: String): String {
 	val builder = StringBuilder(str)
 	var i = 0
 	while (i < builder.length) {
-		val c = builder.get(i)
+		val c = builder[i]
 		if (c in list) {
 			builder.deleteCharAt(i)
 		} else {
@@ -88,8 +88,8 @@ fun isAnagram(str1: String, str2: String): Boolean {
 	if (str1.length != str2.length) return false
 	fun create(str: String): HashMap<Char, Int> {
 		val map = HashMap<Char, Int>()
-	    for (i in 0 until str.length) {
-		    val c = str2.get(i)
+	    for (i in str.indices) {
+		    val c = str2[i]
 			if (map[c] == null) {
 			    map[c] = 1
 		    } else {

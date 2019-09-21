@@ -16,13 +16,13 @@ fun judgment(enter: IntArray, out: IntArray): Boolean {
 	if (enter.size != out.size) return false
 	val stack = Stack<Int>()
 	var j = 0
-	for (i in 0 until out.size) {
+	for (i in out.indices) {
 		while (j < enter.size) {
-			if (stack.size() == 0) {
+			if (stack.size == 0) {
 				stack.push(enter[j])
 				j++
 			}
-			if (stack.top() == out[i]) {
+			if (stack.first == out[i]) {
 				stack.pop()
 				break
 			} else {
@@ -31,8 +31,8 @@ fun judgment(enter: IntArray, out: IntArray): Boolean {
 			}
 		}
 		if (j >= enter.size) {
-			while (stack.size() != 0) {
-				if (stack.top() == out[i]) {
+			while (stack.size != 0) {
+				if (stack.first == out[i]) {
 				    stack.pop()
 				    break
 			    } else {

@@ -6,14 +6,8 @@ package com.qiaoyuang.algorithm
 
 fun main() {
 	val number = 1500
-	val start1Time = System.currentTimeMillis()
 	println("第${number}个丑数是：${getUglyNumber1(number)}")
-	val end1Time = System.currentTimeMillis()
-	println("方法1的执行时间为：${end1Time - start1Time}ms")
-	val start2Time = System.currentTimeMillis()
 	println("第${number}个丑数是：${getUglyNumber2(number)}")
-	val end2Time = System.currentTimeMillis()
-	println("方法2的执行时间为：${end2Time - start2Time}ms")
 }
 
 // 逐个判断法

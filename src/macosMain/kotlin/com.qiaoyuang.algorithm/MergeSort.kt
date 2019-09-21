@@ -16,7 +16,7 @@ fun main() {
 	array2.forEach { print("$it ") }
 }
 
-//自顶向下的归并排序
+// 自顶向下的归并排序
 fun IntArray.mergeSort1() {
 	val aux = IntArray(size)
 	mergeSort(aux, 0, size - 1)
@@ -30,7 +30,7 @@ private fun IntArray.mergeSort(aux:IntArray, lo: Int, hi: Int) {
 	merge(aux, lo, mid, hi)
 }
 
-//自底向上的归并排序
+// 自底向上的归并排序
 fun IntArray.mergeSort2() {
 	val aux = IntArray(size)
 	var sz = 1

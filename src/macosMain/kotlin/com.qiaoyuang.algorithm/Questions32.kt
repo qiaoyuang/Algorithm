@@ -1,7 +1,5 @@
 package com.qiaoyuang.algorithm
 
-import java.util.LinkedList
-
 /**
  * 层序遍历二叉树
  */
@@ -51,31 +49,31 @@ fun main() {
 	a.printFromTopToBottom3()
 }
 
-//从上到下层序遍历二叉树
+// 从上到下层序遍历二叉树
 fun <T> BinaryTreeNode<T>.printFromTopToBottom1() {
 	val list = LinkedList<BinaryTreeNode<T>>()
-	print("${mValue} ")
+	print("$mValue ")
 	mLeft?.let { list.push(it) }
 	mRight?.let { list.push(it) }
 	while (list.size != 0) {
-		val node = list.removeLast()
+		val node = list.dequeue()
 		print("${node.mValue} ")
 		node.mLeft?.let { list.push(it) }
 	    node.mRight?.let { list.push(it) }
 	}
 }
 
-//分行从上到下打印二叉树
+// 分行从上到下打印二叉树
 fun <T> BinaryTreeNode<T>.printFromTopToBottom2() {
 	val list = LinkedList<BinaryTreeNode<T>>()
-	print("${mValue} ")
+	print("$mValue ")
 	println()
 	mLeft?.let { list.push(it) }
 	mRight?.let { list.push(it) }
 	var thisFloorCount = 2
 	var nextFloorCount = 0
 	while (list.size != 0) {
-		val node = list.removeLast()
+		val node = list.dequeue()
 		thisFloorCount--
 		print("${node.mValue} ")
 		node.mLeft?.let {
@@ -96,7 +94,7 @@ fun <T> BinaryTreeNode<T>.printFromTopToBottom2() {
 //“之”字型遍历打印二叉树
 fun <T> BinaryTreeNode<T>.printFromTopToBottom3() {
 	val list = LinkedList<BinaryTreeNode<T>>()
-	print("${mValue} ")
+	print("$mValue ")
 	println()
 	mLeft?.let { list.push(it) }
 	mRight?.let { list.push(it) }
@@ -128,18 +126,18 @@ fun <T> BinaryTreeNode<T>.printFromTopToBottom3() {
 	
 	fun printValue(value: T) {
 		thisFloorCount--
-		print("${value} ")
+		print("$value ")
 	}
 	
 	while (list.size != 0) {
 		val boo = lineCount % 2 == 0
 		if (boo) {
-			val node = list.removeFirst()
+			val node = list.pop()
 			printValue(node.mValue)
 			right(node, boo)
 			left(node, boo)
 		} else {
-			val node = list.removeLast()
+			val node = list.pop()
 			printValue(node.mValue)
 			left(node, boo)
 			right(node, boo)

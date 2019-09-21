@@ -1,7 +1,7 @@
 package com.qiaoyuang.algorithm
 
 /**
- * 快速排序Kotlin实现
+ * 快速排序 Kotlin 实现
  */
 
 fun main() {

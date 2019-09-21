@@ -61,12 +61,10 @@ fun getMissingNumber(array: IntArray): Int = binarySearch(array, 0, array.size -
 
 private fun binarySearch(array: IntArray, first: Int, last: Int): Int {
 	val mod = (first + last) / 2
-	if (mod == array[mod]) {
-		return binarySearch(array, mod, last)
-	} else if (mod == 0 || mod - 1 == array[mod - 1]) {
-		return mod
-	} else {
-		return binarySearch(array, first, mod)
+	return when {
+		mod == array[mod] -> binarySearch(array, mod, last)
+		mod == 0 || mod - 1 == array[mod - 1] -> mod
+		else -> binarySearch(array, first, mod)
 	}
 }
 

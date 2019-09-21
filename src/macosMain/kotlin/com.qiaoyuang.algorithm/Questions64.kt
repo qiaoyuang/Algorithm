@@ -10,7 +10,7 @@ fun main() {
 	println(add3(8))
 }
 
-//解法一：使用构造函数
+// 解法一：使用构造函数
 var sum = 0
 var value = 0
 
@@ -22,23 +22,22 @@ class Add {
 }
 
 fun add1(n: Int): Int {
-	val adds = Array<Add>(n) { Add() }
+	Array(n) { Add() }
 	return sum
 }
 
-// 解法二：使用库函数forEach()
+// 解法二：使用库函数 repeat()
 fun add2(n: Int): Int {
 	var sum = 0
 	var value = 0
-	val adds = IntArray(n)
-	adds.forEach {
+	repeat(n) {
 		value++
 		sum += value
 	}
 	return sum
 }
 
-// 解法三：使用Kotlin数组初始化
+// 解法三：使用 Kotlin 数组初始化
 fun add3(n: Int): Int {
 	var sum = 0
 	var value = 0

@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm
  * 判断任意张扑克牌是不是顺子，A，2与3连接后也是顺子，大小王用0表示
  */
 
-fun main(args: Array<String>) {
+fun main() {
 	val array1 = intArrayOf(5, 6, 3, 2, 1, 8, 0, 0)
 	println(isContinuous(array1))
 	val array2 = intArrayOf(5, 6, 3, 2, 1, 8, 0, 0, 0)

@@ -4,10 +4,10 @@ package com.qiaoyuang.algorithm
  * 给定一颗二叉树及其中一个节点，找出其中序遍历序列的下一个节点
  */
 
-class BinaryTreeNodeWithFather<T>(var mValues: T,
-								  var mFather: BinaryTreeNodeWithFather<T>? = null,
-								  var mLeft: BinaryTreeNodeWithFather<T>? = null,
-								  var mRight: BinaryTreeNodeWithFather<T>? = null)
+data class BinaryTreeNodeWithFather<T>(var mValues: T,
+									   var mFather: BinaryTreeNodeWithFather<T>? = null,
+									   var mLeft: BinaryTreeNodeWithFather<T>? = null,
+									   var mRight: BinaryTreeNodeWithFather<T>? = null)
 
 fun main() {
 	val a = BinaryTreeNodeWithFather('a')

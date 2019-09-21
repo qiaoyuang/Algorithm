@@ -32,12 +32,11 @@ infix fun IntArray.getLeastNumbers1(k: Int): IntArray {
 
 // 解法二，无需修改输入数组，使用标准类库中的红黑树来实现，时间复杂度为 O(nlogk)
 infix fun IntArray.getLeastNumbers2(k: Int): IntArray {
-	val tree = TreeSet<Int>()
-	this.forEach { tree.add(it) }
+	val tree = HashSet<Int>() // Kotlin 标准库里没有红黑树的数据结构，这里为了编译通过暂时用 HashSet 代替 TreeSet
+	forEach { tree.add(it) }
 	val output = IntArray(k)
 	val iterator = tree.iterator()
-	for (i in 0..k-1) {
+	for (i in 0 until k)
 		output[i] = iterator.next()
-	}
 	return output
 }

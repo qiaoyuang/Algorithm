@@ -5,13 +5,13 @@ package com.qiaoyuang.algorithm
  */
 
 fun main() {
-	val a = BinaryTreeNode<Int>(5)
-	val b = BinaryTreeNode<Int>(3)
-	val c = BinaryTreeNode<Int>(7)
-	val d = BinaryTreeNode<Int>(2)
-	val e = BinaryTreeNode<Int>(4)
-	val f = BinaryTreeNode<Int>(6)
-	val g = BinaryTreeNode<Int>(8)
+	val a = BinaryTreeNode(5)
+	val b = BinaryTreeNode(3)
+	val c = BinaryTreeNode(7)
+	val d = BinaryTreeNode(2)
+	val e = BinaryTreeNode(4)
+	val f = BinaryTreeNode(6)
+	val g = BinaryTreeNode(8)
 	a.mLeft = b
 	a.mRight = c
 	b.mLeft = d

@@ -1,26 +1,17 @@
 package com.qiaoyuang.algorithm
 
-import offer.LinkedList.Node
-
 /**
  * 两个链表的第一个公共节点
  */
 
-fun main(args: Array<String>) {
-	val a = Node<Int>()
-	a.set(1)
-	val b = Node<Int>()
-	b.set(2)
-	val c = Node<Int>()
-	c.set(3)
-	val d = Node<Int>()
-	d.set(4)
-	val e = Node<Int>()
-	e.set(5)
-	val f = Node<Int>()
-	f.set(6)
-	val g = Node<Int>()
-	g.set(7)
+fun main() {
+	val a = Node(1)
+	val b = Node(2)
+	val c = Node(3)
+	val d = Node(4)
+	val e = Node(5)
+	val f = Node(6)
+	val g = Node(7)
 	
 	a.next = b
 	b.next = c
@@ -29,17 +20,17 @@ fun main(args: Array<String>) {
 	d.next = e
 	e.next = f
 	
-	println("公共节点为：${findFirstCommonNode(a, d).get()}")
+	println("公共节点为：${findFirstCommonNode(a, d).t}")
 }
 
 fun <T> findFirstCommonNode(listNode1: Node<T>, listNode2: Node<T>): Node<T> {
-	var node1 = listNode1
-	var node2 = listNode2
+	var node1: Node<T>? = listNode1
+	var node2: Node<T>? = listNode2
 	
-	fun length(listNode: Node<T>): Int {
-		var node = listNode
+	fun length(listNode: Node<T>?): Int {
+		var node: Node<T>? = listNode
 		var length = 1
-		while (node.next != null) {
+		while (node?.next != null) {
 		    node = node.next
 		    length++
 	    }
@@ -51,11 +42,11 @@ fun <T> findFirstCommonNode(listNode1: Node<T>, listNode2: Node<T>): Node<T> {
 	
 	if (length1 > length2) {
 		for (i in 1..length1 - length2) {
-			node1 = node1.next
+			node1 = node1?.next
 	    }
 	} else if (length1 < length2) {
 		for (i in 1..length2 - length1) {
-			node2 = node2.next
+			node2 = node2?.next
 	    }
 	}
 	
@@ -64,7 +55,7 @@ fun <T> findFirstCommonNode(listNode1: Node<T>, listNode2: Node<T>): Node<T> {
 			return node1
 		}
 		node1 = node1.next
-		node2 = node2.next
+		node2 = node2?.next
 	}
 	throw IllegalArgumentException("两个链表没有共同节点")
 }
