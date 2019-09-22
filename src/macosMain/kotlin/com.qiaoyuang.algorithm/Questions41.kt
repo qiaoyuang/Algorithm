@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm
  * 数据流中的中位数
  */
 
-fun main() {
+fun test41() {
 	val str = "数据流中的中位数是："
 	val container = MedianContainer()
 	container.offer(0)

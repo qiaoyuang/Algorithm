@@ -36,8 +36,7 @@ class LinkedList<T> : AbstractStack<T>, AbstractQueue<T>, Iterable<T> {
     }
 
     override fun pop(): T {
-        if (isEmpty)
-            throw UnsupportedOperationException("已经没有元素可以弹出")
+        check(isEmpty) { "已经没有元素可以弹出" }
         val t = top!!.t
         top = top!!.next
         top?.front = null
@@ -49,8 +48,7 @@ class LinkedList<T> : AbstractStack<T>, AbstractQueue<T>, Iterable<T> {
     override fun enqueue(t: T) = push(t)
 
     override fun dequeue(): T {
-        if (isEmpty)
-            throw UnsupportedOperationException("已经没有元素可以弹出")
+        check(isEmpty) { "已经没有元素可以弹出" }
         val t = tail!!.t
         tail = tail!!.front
         tail?.next = null

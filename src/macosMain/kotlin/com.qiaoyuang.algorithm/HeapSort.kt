@@ -1,7 +1,7 @@
 package com.qiaoyuang.algorithm
 
 /**
- * 堆排序Kotlin实现
+ * 堆排序 Kotlin 实现
  */
 
 fun main() {

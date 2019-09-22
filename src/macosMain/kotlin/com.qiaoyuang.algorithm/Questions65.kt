@@ -1,6 +1,6 @@
 package com.qiaoyuang.algorithm
 
-fun main() {
+fun test65() {
 	println(6 myAdd 9)
 	val array = IntArray(2)
 	array[0] = 1

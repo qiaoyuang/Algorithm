@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm
  * 根据先序遍历序列和中序遍历序列重建二叉树
  */
 
-fun test2() {
+fun test7() {
 	val preorder = listOf(1, 2, 4, 7, 3, 5, 6, 8)
 	val inorder = listOf(4, 7, 2, 1, 5, 3, 8, 6)
 	val root = binaryTreeConstruct(preorder, inorder)
@@ -16,18 +16,14 @@ fun <T> binaryTreeConstruct(preorder: List<T>, inorder: List<T>): BinaryTreeNode
 		return null
 	}
 	val rootValue = preorder[0]
-	val root = BinaryTreeNode<T>(rootValue)
+	val root = BinaryTreeNode(rootValue)
 	var isRoot = false
 	val sonInorderLeft = ArrayList<T>()
 	val sonInorderRight = ArrayList<T>()
-	for (t in inorder) {
-		if (t == rootValue) {
-			isRoot = true
-		} else if (isRoot) {
-			sonInorderRight.add(t)
-		} else {
-			sonInorderLeft.add(t)
-		}
+	for (t in inorder) when {
+		t == rootValue -> isRoot = true
+		isRoot -> sonInorderRight.add(t)
+		else -> sonInorderLeft.add(t)
 	}
 	val sonPreorderLeft = ArrayList<T>()
 	val sonPreorderRight = ArrayList<T>()

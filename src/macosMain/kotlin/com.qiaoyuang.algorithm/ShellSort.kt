@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm
  * 希尔排序 Kotlin 实现
  */
 
-fun main() {
+fun testShell() {
 	val array = intArrayOf(5, 7, 2, 9, 3, 1, 4, 0, 8, 6)
 	array.shellSort()
 	array.forEach { print("$it ") }
