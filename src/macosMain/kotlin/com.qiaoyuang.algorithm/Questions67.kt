@@ -32,9 +32,7 @@ fun strToInt(str: String): Int {
 					'-' -> true
 					else -> throw IllegalArgumentException("输入的字符串中含有除数字外的其它字符")
 				}
-			} else {
-				throw IllegalArgumentException("输入的字符串中含有除数字外的其它字符")
-			}
+			} else throw IllegalArgumentException("输入的字符串中含有除数字外的其它字符")
 		} else {
 			result += (b - 48) * (10.toFloat().pow((str.length - i - 1).toFloat())).toInt()
 		}

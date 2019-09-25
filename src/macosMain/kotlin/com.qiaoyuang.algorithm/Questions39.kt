@@ -53,9 +53,6 @@ fun IntArray.moreThanHalfNum2(): Int {
 			}
 		}
 	}
-	if (count > 1) {
-		return number
-	} else {
-		throw RuntimeException("数组中没有长度超过一般的数字")
-	}
+	require(count > 1) { "数组中没有长度超过一般的数字" }
+	return number
 }

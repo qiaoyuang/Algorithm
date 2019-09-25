@@ -25,8 +25,7 @@ fun main() {
  * 题目一：在一个长度不定的数组中找出相邻三个数中的最大值
  */
 fun IntArray.maxInWindow(): IntArray {
-	if (size < 3)
-		throw IllegalArgumentException("输出的数组长度必须大于3")
+	require(size >= 3) { "输出的数组长度必须大于等于3" }
 	val queue = LinkedList<Int>()
 	val result = IntArray(size - 2)
 	for (i in 0 until size) {
@@ -125,8 +124,7 @@ class MaxQueue<T : Comparable<T>> : AbstractQueue<T> {
 	}
 	
 	override fun dequeue(): T {
-		if (isEmpty)
-			throw RuntimeException("队列为空")
+		check(!isEmpty) { "队列为空" }
 		if (head == queue.first) {
 			queue.pop()
 			queue.forEachIndexed { e, index ->
@@ -144,8 +142,7 @@ class MaxQueue<T : Comparable<T>> : AbstractQueue<T> {
 	}
 	
 	fun max(): T {
-		if (isEmpty)
-			throw RuntimeException("队列为空")
+		check(!isEmpty) { "队列为空" }
 		return array[queue.first] as T
 	}
 	

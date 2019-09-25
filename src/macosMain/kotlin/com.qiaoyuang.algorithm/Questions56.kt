@@ -18,8 +18,7 @@ fun main() {
  * 题目一：数组中有两个数字只出现了一次，另外每个数字都出现了两次，求这两个数字
  */
 fun findNumAppearOnce(array: IntArray): IntArray {
-	if (array.size % 2 != 0)
-		throw IllegalArgumentException("输入的数组的长度必须是偶数")
+	require(array.size % 2 == 0) { "输入的数组的长度必须是偶数" }
 	var temp = array[0]
 	for (i in 1 until array.size)
 		temp = temp xor array[i]

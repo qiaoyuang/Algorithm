@@ -20,8 +20,7 @@ fun longestSubstringWithoutDuplication(str: String): Int {
 	var maxLength = 0
 	for (i in str.indices) {
 		val c = str[i]
-		if (!c.isLegal())
-			throw IllegalArgumentException("输入的字符串包含不合法字符")
+		require(c.isLegal()) { "输入的字符串包含不合法字符" }
 		val position = c.getPosition()
 		if (array[position] == 0) {
 			curLength++

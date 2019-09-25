@@ -12,8 +12,7 @@ fun main() {
 
 // 逐个判断法
 fun getUglyNumber1(n: Int): Int {
-	if (n <= 0)
-		throw IllegalArgumentException("输入的数字必须是正整数")
+	require(n > 0) { "输入的数字必须是正整数" }
 	var i = 1
 	var number = 1
 	while (i <= n) {
@@ -37,8 +36,7 @@ fun Int.isUgly(): Boolean {
 
 // 累计法
 fun getUglyNumber2(n: Int): Int {
-	if (n <= 0)
-		throw IllegalArgumentException("输入的数字必须是正整数")
+	require(n > 0) { "输入的数字必须是正整数" }
 	
 	// 判断三个数中的最小值
 	fun min(x: Int, y: Int, z: Int): Int {

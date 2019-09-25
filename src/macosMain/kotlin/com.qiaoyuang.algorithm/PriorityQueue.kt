@@ -68,7 +68,7 @@ class PriorityQueue<T : Comparable<T>>(comparator: Comparator<T>? = null) {
 	    get() = if (isEmpty) throw IllegalStateException("队列为空") else pq[1] as T
 	
 	fun dequeue(): T {
-		require(isEmpty) { "队列为空" }
+		require(!isEmpty) { "队列为空" }
 		val min = pq[1]
 		exchange(1, size--)
 		pq[size + 1] = null

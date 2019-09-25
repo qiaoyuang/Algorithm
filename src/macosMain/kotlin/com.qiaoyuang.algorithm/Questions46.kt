@@ -10,7 +10,7 @@ fun main() {
 }
 
 fun getTranslationCount(number: Int): Int {
-	if (number < 0) throw IllegalArgumentException("数字必须是正数")
+	require(number >= 0) { "数字必须是非负数" }
 	return getTranslationCount(number.toString())
 }
 

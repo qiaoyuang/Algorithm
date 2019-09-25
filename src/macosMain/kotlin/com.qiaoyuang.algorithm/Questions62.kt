@@ -46,8 +46,7 @@ fun lastRemaining1(n: Int, m: Int): Int {
 
 // 数学公式法
 fun lastRemaining2(n: Int, m: Int): Int {
-	if (n < 1 || m < 1)
-		throw IllegalArgumentException("n 和 m 必须大于 1")
+	require(n >= 1 && m >= 1) { "n 和 m 必须大于 1" }
 	var last = 0
 	for (i in 2..n)
 		last = (last + m) % i

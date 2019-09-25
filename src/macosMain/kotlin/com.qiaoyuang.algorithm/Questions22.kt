@@ -23,8 +23,7 @@ fun main() {
  * 链表的倒数第K个节点
  */
 fun <T> Node<T>.findKthToTail(k: Int): T {
-	if (k <= 0)
-		throw IllegalArgumentException("输入的数字必须大于0")
+	require(k > 0) { "输入的数字必须大于 0" }
 	var priorCount = 1
 	var laterCount = 1
 	var prior: Node<T>? = this
@@ -37,8 +36,7 @@ fun <T> Node<T>.findKthToTail(k: Int): T {
 			laterCount++
 		}
 	}
-	if (priorCount - laterCount != k - 1)
-		throw IllegalArgumentException("输入的数字k不能大于链表总长")
+	require(priorCount - laterCount != k - 1) { "输入的数字k不能大于链表总长" }
 	return later!!.t!!
 }
 

@@ -16,9 +16,7 @@ fun main() {
 }
 
 fun movingCount(k: Int, row: Int, col: Int): Int {
-	if (k < 0 || row < 0 || col < 0) {
-		throw IllegalArgumentException("输入的数据必须全部大于0")
-	}
+	require(k >= 0 && row >= 0 && col >= 0) { "输入的数据必须全部大于0" }
     var count = 0
 	val booleanMatrix = Array<BooleanArray>(row) {
 		BooleanArray(col) { true }

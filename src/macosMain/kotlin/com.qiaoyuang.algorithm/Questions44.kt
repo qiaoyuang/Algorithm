@@ -12,7 +12,7 @@ fun main() {
 }
 
 fun digitAtIndex(n: Int): Int {
-	if (n < 0) throw IllegalArgumentException("输入必须大于等于0")
+	require(n >= 0) { "输入必须大于等于0" }
 	var index = n
 	var count = 1
 	var bit = 10
