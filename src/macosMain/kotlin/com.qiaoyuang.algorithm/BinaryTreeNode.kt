@@ -8,21 +8,21 @@ data class BinaryTreeNode<T>(var mValue: T,
 							 var mLeft: BinaryTreeNode<T>? = null,
 							 var mRight: BinaryTreeNode<T>? = null) {
 	
-	fun preorder() {
+	fun preOrder() {
 		println(mValue)
-		mLeft?.preorder()
-		mRight?.preorder()
+		mLeft?.preOrder()
+		mRight?.preOrder()
 	}
 	
-	fun inorder() {
-		mLeft?.inorder()
+	fun inOrder() {
+		mLeft?.inOrder()
 		println(mValue)
-		mRight?.inorder()
+		mRight?.inOrder()
 	}
 	
-	fun postorder() {
-		mLeft?.postorder()
-		mRight?.postorder()
+	fun postOrder() {
+		mLeft?.postOrder()
+		mRight?.postOrder()
 		println(mValue)
 	}
 	

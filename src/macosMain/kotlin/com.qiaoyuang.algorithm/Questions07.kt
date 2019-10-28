@@ -5,17 +5,17 @@ package com.qiaoyuang.algorithm
  */
 
 fun test7() {
-	val preorder = listOf(1, 2, 4, 7, 3, 5, 6, 8)
-	val inorder = listOf(4, 7, 2, 1, 5, 3, 8, 6)
-	val root = binaryTreeConstruct(preorder, inorder)
-	root?.postorder()
+	val preOrder = listOf(1, 2, 4, 7, 3, 5, 6, 8)
+	val inOrder = listOf(4, 7, 2, 1, 5, 3, 8, 6)
+	val root = binaryTreeConstruct(preOrder, inOrder)
+	root?.postOrder()
 }
 
-fun <T> binaryTreeConstruct(preorder: List<T>, inorder: List<T>): BinaryTreeNode<T>? {
-	if (preorder.isEmpty() || inorder.isEmpty()) {
+fun <T> binaryTreeConstruct(preOrder: List<T>, inorder: List<T>): BinaryTreeNode<T>? {
+	if (preOrder.isEmpty() || inorder.isEmpty()) {
 		return null
 	}
-	val rootValue = preorder[0]
+	val rootValue = preOrder[0]
 	val root = BinaryTreeNode(rootValue)
 	var isRoot = false
 	val sonInorderLeft = ArrayList<T>()
@@ -25,18 +25,18 @@ fun <T> binaryTreeConstruct(preorder: List<T>, inorder: List<T>): BinaryTreeNode
 		isRoot -> sonInorderRight.add(t)
 		else -> sonInorderLeft.add(t)
 	}
-	val sonPreorderLeft = ArrayList<T>()
-	val sonPreorderRight = ArrayList<T>()
-	for (i in preorder.indices) {
+	val sonPreOrderLeft = ArrayList<T>()
+	val sonPreOrderRight = ArrayList<T>()
+	for (i in preOrder.indices) {
 		if (i != 0) {
 			if (i <= sonInorderLeft.size) {
-				sonPreorderLeft.add(preorder[i])
+				sonPreOrderLeft.add(preOrder[i])
 			} else {
-				sonPreorderRight.add(preorder[i])
+				sonPreOrderRight.add(preOrder[i])
 			}
 		}
 	}
-	root.mLeft = binaryTreeConstruct(sonPreorderLeft, sonInorderLeft)
-	root.mRight = binaryTreeConstruct(sonPreorderRight, sonInorderRight)
+	root.mLeft = binaryTreeConstruct(sonPreOrderLeft, sonInorderLeft)
+	root.mRight = binaryTreeConstruct(sonPreOrderRight, sonInorderRight)
 	return root
 }

@@ -18,10 +18,10 @@ fun main() {
 	b.mRight = e
 	c.mLeft = f
 	c.mRight = g
-	a.inorder()
+	a.inOrder()
 	println("/***************分割线***************/")
 	a.mirrorRecursively()
-	a.inorder()
+	a.inOrder()
 }
 
 fun <T> BinaryTreeNode<T>.mirrorRecursively() {

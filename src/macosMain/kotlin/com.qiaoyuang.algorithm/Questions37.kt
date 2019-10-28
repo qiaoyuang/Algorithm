@@ -20,7 +20,7 @@ fun main() {
 	println(str)
 	println()
 	val node = str.deserialize()
-	node.preorder()
+	node.preOrder()
 }
 
 // 序列化
@@ -47,21 +47,19 @@ fun <T> BinaryTreeNode<T>.serialize(): String {
 fun String.deserialize(): BinaryTreeNode<String> {
 	val str = split(",")
 	var i = 0
-	fun String.preorderDeserialize(): BinaryTreeNode<String>? {
-		if (i+1 < str.size) {
-			if (str[i] != "\$" && str[i+1] != "\$") {
-			    val node = BinaryTreeNode(this)
-			    node.mLeft = str[++i].preorderDeserialize()
-			    return node
-		    } else if (str[i] != "\$" && str[i+1] == "\$") {
-			    val node = BinaryTreeNode(this)
-			    node.mRight = str[++i].preorderDeserialize()
-			    return node
-		    } else {
-			    return str[++i].preorderDeserialize()
-		    }
-		}
-		return null
-	}
-	return str[i].preorderDeserialize()!!
+	fun String.preOrderDeserialize(): BinaryTreeNode<String>? =
+		if (i+1 < str.size) when {
+			str[i] != "\$" && str[i+1] != "\$" -> {
+				val node = BinaryTreeNode(this)
+				node.mLeft = str[++i].preOrderDeserialize()
+				node
+			}
+			str[i] != "\$" && str[i+1] == "\$" -> {
+				val node = BinaryTreeNode(this)
+				node.mRight = str[++i].preOrderDeserialize()
+				node
+			}
+			else -> str[++i].preOrderDeserialize()
+		} else null
+	return str[i].preOrderDeserialize()!!
 }
