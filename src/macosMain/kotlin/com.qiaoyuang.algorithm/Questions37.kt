@@ -26,20 +26,20 @@ fun main() {
 // 序列化
 fun <T> BinaryTreeNode<T>.serialize(): String {
 	var str = ""
-	fun BinaryTreeNode<T>.preorderSerialize() {
+	fun BinaryTreeNode<T>.preOrderSerialize() {
 		str += "$mValue,"
 		if (mLeft != null) {
-			mLeft!!.preorderSerialize()
+			mLeft!!.preOrderSerialize()
 		} else {
 			str += "\$,"
 		}
 		if (mRight != null) {
-			mRight!!.preorderSerialize()
+			mRight!!.preOrderSerialize()
 		} else {
 			str += "\$,"
 		}
 	}
-	preorderSerialize()
+	preOrderSerialize()
 	return str
 }
 

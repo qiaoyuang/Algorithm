@@ -32,35 +32,35 @@ fun main() {
 }
 
 fun <T> BinaryTreeNode<T>.isSymmetrical(): Boolean {
-	if (preorderJudgment()) {
-	    if (preorderBack() == _preorderBack()) {
+	if (preOrderJudgment()) {
+	    if (preOrderBack() == _preOrderBack()) {
 		    return true
 	    }
 	}
 	return false
 }
 
-fun <T> BinaryTreeNode<T>.preorderJudgment(): Boolean {
+fun <T> BinaryTreeNode<T>.preOrderJudgment(): Boolean {
 	var boo = judgment()
 	if (boo) {
-	    mLeft?.let { boo = it.preorderJudgment() }
-		mRight?.let { boo = it.preorderJudgment() }
+	    mLeft?.let { boo = it.preOrderJudgment() }
+		mRight?.let { boo = it.preOrderJudgment() }
 	}
 	return boo
 }
 
 private fun <T> BinaryTreeNode<T>.judgment() = (mLeft == null && mRight == null) || (mLeft != null && mRight != null)
 
-fun <T> BinaryTreeNode<T>.preorderBack(): String {
+fun <T> BinaryTreeNode<T>.preOrderBack(): String {
 	var str = mValue.toString()
-	str += mLeft?.preorderBack()
-	str += mRight?.preorderBack()
+	str += mLeft?.preOrderBack()
+	str += mRight?.preOrderBack()
 	return str
 }
 
-fun <T> BinaryTreeNode<T>._preorderBack(): String {
+fun <T> BinaryTreeNode<T>._preOrderBack(): String {
 	var str = mValue.toString()
-	str += mRight?._preorderBack()
-	str += mLeft?._preorderBack()
+	str += mRight?._preOrderBack()
+	str += mLeft?._preOrderBack()
 	return str
 }

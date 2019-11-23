@@ -38,21 +38,21 @@ fun main() {
 fun <T> BinaryTreeNode<T>.getLastCommonParent(
 		node1: BinaryTreeNode<T>,
 		node2: BinaryTreeNode<T>): BinaryTreeNode<T> {
-	fun BinaryTreeNode<T>.myPreorder(node: BinaryTreeNode<T>): NodeAndIsFound<T> {
+	fun BinaryTreeNode<T>.myPreOrder(node: BinaryTreeNode<T>): NodeAndIsFound<T> {
 		val thisNode = Node<BinaryTreeNode<T>>(this)
 		if (this === node)
 			return NodeAndIsFound(thisNode, true)
 		var left: NodeAndIsFound<T>? = null
 		mLeft?.let {
 			val myNode = Node<BinaryTreeNode<T>>(it)
-			val next = it.myPreorder(node)
+			val next = it.myPreOrder(node)
 			myNode.next = next.node
 			left = NodeAndIsFound(myNode, next.isFound)
 		}
 		var right: NodeAndIsFound<T>? = null
 		mRight?.let {
 			val myNode = Node<BinaryTreeNode<T>>(it)
-			val next = it.myPreorder(node)
+			val next = it.myPreOrder(node)
 			myNode.next = next.node
 			right = NodeAndIsFound(myNode, next.isFound)
 		}
@@ -70,8 +70,8 @@ fun <T> BinaryTreeNode<T>.getLastCommonParent(
 		}
 		return NodeAndIsFound(thisNode)
 	}
-	var pNode1: Node<BinaryTreeNode<T>>? = myPreorder(node1).node
-	var pNode2: Node<BinaryTreeNode<T>>? = myPreorder(node2).node
+	var pNode1: Node<BinaryTreeNode<T>>? = myPreOrder(node1).node
+	var pNode2: Node<BinaryTreeNode<T>>? = myPreOrder(node2).node
 	lateinit var result: BinaryTreeNode<T>
 	while (true) {
 		if (pNode1?.next?.t === pNode2?.next?.t) {
