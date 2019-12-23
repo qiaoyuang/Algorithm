@@ -13,7 +13,9 @@ fun main() {
 	(array getLeastNumbers1 4).forEach { print("$it ") }
 }
 
-// 解法一，需要修改输入数组，时间复杂度为O(n)
+/**
+ * 解法一，需要修改输入数组，时间复杂度为O(n)
+ */
 infix fun IntArray.getLeastNumbers1(k: Int): IntArray {
 	var index = partition(0, this.size - 1)
 	while (index != k - 1) {
@@ -30,7 +32,9 @@ infix fun IntArray.getLeastNumbers1(k: Int): IntArray {
 	return output
 }
 
-// 解法二，无需修改输入数组，使用标准类库中的红黑树来实现，时间复杂度为 O(nlogk)
+/**
+ * 解法二，无需修改输入数组，使用标准类库中的红黑树来实现，时间复杂度为 O(nlogk)
+ */
 infix fun IntArray.getLeastNumbers2(k: Int): IntArray {
 	val tree = HashSet<Int>() // Kotlin 标准库里没有红黑树的数据结构，这里为了编译通过暂时用 HashSet 代替 TreeSet
 	forEach { tree.add(it) }

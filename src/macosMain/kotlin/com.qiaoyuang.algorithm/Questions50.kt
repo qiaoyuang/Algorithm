@@ -23,11 +23,8 @@ fun findNotRepeatingChar(str: String): Char {
 	val map = LinkedHashMap<Char, Int>()
 	for (i in str.indices) {
 		val c = str[i]
-		if (map[c] == null) {
-			map[c] = 1
-		} else {
-			map[c] = map[c]!! + 1
-		}
+		val v = map[c]
+		map[c] = if (v == null) 1 else v + 1
 	}
 	var result: Char? = null
 	var isFound = true
