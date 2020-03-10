@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="3" platform="Native " allPlatforms="Native []" useProjectSettings="false" isTestModule="true" externalProjectId="Algorithm">
-        <dependsOnModuleNames>Algorithm_commonTest</dependsOnModuleNames>
+        <dependsOnModuleNames>Algorithm:commonTest</dependsOnModuleNames>
         <sourceSets>
           <sourceSet>Algorithm.macosMain</sourceSet>
         </sourceSets>
