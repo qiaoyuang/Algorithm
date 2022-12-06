@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.7.10"
+    kotlin("multiplatform") version "1.7.20"
 }
 
 group = "com.qiaoyuang.algorithm"
@@ -25,8 +25,8 @@ kotlin {
         binaries {
             target.compilations["main"].kotlinOptions.freeCompilerArgs += listOf("-Xruntime-logs=gc=info")
             executable {
-                entryPoint = "com.qiaoyuang.algorithm.entry.main"
-                runTask?.args("")
+                entryPoint = "main"
+                // runTask?.args("")
             }
         }
     }
