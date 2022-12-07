@@ -4,16 +4,16 @@ package com.qiaoyuang.algorithm.round0
  * 一个只包含小写字母的字符串的最大非重复子字符串的长度
  */
 
-fun main() {
+fun test48() {
 	val str = "arabcacfr"
 	println("字符串：$str，最大子字符串的长度是：${longestSubstringWithoutDuplication(str)}")
 }
 
 fun longestSubstringWithoutDuplication(str: String): Int {
 	// 检查字符是否合法
-	fun Char.isLegal(): Boolean = toInt() in 97..122
+	fun Char.isLegal(): Boolean = code in 97..122
 	// 获取字符在数组中的位置
-	fun Char.getPosition(): Int = toInt() - 97
+	fun Char.getPosition(): Int = code - 97
 	// 计算逻辑
 	val array = IntArray(26) { 0 }
 	var curLength = 0

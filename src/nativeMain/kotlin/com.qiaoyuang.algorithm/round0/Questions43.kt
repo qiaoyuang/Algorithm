@@ -6,7 +6,7 @@ import platform.posix.pow
  * 从n到一个整数中1出现的次数
  */
 
-fun main() {
+fun test43() {
 	println("1出现的次数为：${numberOf1Between1AndN(101)}")
 }
 

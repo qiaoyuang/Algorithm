@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 输入一个二叉树的根结点，并将它转化为原二叉树的镜像
  */
 
-fun main() {
+fun test27() {
 	val a = BinaryTreeNode(8)
 	val b = BinaryTreeNode(6)
 	val c = BinaryTreeNode(10)

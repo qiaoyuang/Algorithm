@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 堆排序 Kotlin 实现
  */
 
-fun main() {
+fun testHeapSort() {
 	val array = intArrayOf(5, 7, 2, 9, 3, 1, 4, 0, 8, 6)
 	array.heapSort()
 	array.forEach { print("$it ") }

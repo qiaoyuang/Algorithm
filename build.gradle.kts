@@ -25,7 +25,7 @@ kotlin {
         binaries {
             target.compilations["main"].kotlinOptions.freeCompilerArgs += listOf("-Xruntime-logs=gc=info")
             executable {
-                entryPoint = "main"
+                entryPoint = "com.qiaoyuang.algorithm.main"
                 // runTask?.args("")
             }
         }

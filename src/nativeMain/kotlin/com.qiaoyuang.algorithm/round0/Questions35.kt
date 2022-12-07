@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 复制复杂链表
  */
 
-fun main() {
+fun test35() {
 	val node4 = ComplexNode("E")
 	val node3 = ComplexNode("D", node4)
 	val node2 = ComplexNode("C", node3)

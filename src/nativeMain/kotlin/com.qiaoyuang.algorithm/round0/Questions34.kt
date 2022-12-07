@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 寻找二叉树的和为某一值的全部路径
  */
 
-fun main() {
+fun test34() {
 	val a = BinaryTreeNode(10)
 	val b = BinaryTreeNode(5)
 	val c = BinaryTreeNode(6)

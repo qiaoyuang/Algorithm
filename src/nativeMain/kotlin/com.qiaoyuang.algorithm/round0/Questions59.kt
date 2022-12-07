@@ -1,6 +1,6 @@
 package com.qiaoyuang.algorithm.round0
 
-fun main() {
+fun test59() {
 	val array = intArrayOf(2, 3, 4, 2, 6, 2, 5, 1)
 	val result = array.maxInWindow()
 	result.forEach { print("$it ") }

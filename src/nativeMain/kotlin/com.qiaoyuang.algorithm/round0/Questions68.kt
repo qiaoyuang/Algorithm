@@ -8,7 +8,7 @@ package com.qiaoyuang.algorithm.round0
  * 但是不是二叉搜索树，子节点也没有指向父节点的引用。
  */
 
-fun main() {
+fun test68() {
 	val a = BinaryTreeNode('A')
 	val b = BinaryTreeNode('B')
 	val c = BinaryTreeNode('C')

@@ -6,7 +6,7 @@ import kotlin.math.*
  * 将数字按顺序序列化后的第n位数字
  */
 
-fun main() {
+fun test44() {
 	val index = 1001
 	println("位于第${index}位的数字是：${digitAtIndex(index)}")
 }

@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 快速排序 Kotlin 实现
  */
 
-fun main() {
+fun testQuick() {
 	val array = intArrayOf(5, 7, 2, 9, 3, 1, 4, 0, 8, 6)
 	array.quickSort()
 	array.forEach { print("$it ") }

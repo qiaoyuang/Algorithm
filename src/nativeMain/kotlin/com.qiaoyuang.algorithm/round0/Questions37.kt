@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 序列化与反序列化二叉树
  */
 
-fun main() {
+fun test37() {
 	val a = BinaryTreeNode(1)
 	val b = BinaryTreeNode(2)
 	val c = BinaryTreeNode(3)

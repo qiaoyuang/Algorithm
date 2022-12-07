@@ -5,7 +5,7 @@ package com.qiaoyuang.algorithm.round0
  * 小于等于k时机器人可以进入该格子,求问机器人可以进入多少个格子
  */
 
-fun main() {
+fun test13() {
 	println(movingCount(5, 10, 10))
 	println(movingCount(15, 20, 20))
 	println(movingCount(10, 1, 100))

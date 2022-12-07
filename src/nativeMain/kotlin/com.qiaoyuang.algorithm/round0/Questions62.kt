@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 约瑟夫环问题
  */
 
-fun main() {
+fun test62() {
 	println(lastRemaining1(5, 3))
 	println(lastRemaining2(5, 3))
 }

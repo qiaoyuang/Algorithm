@@ -6,7 +6,7 @@ import kotlin.math.*
  * 归并排序
  */
 
-fun main() {
+fun testMergeSort() {
 	val array1 = intArrayOf(5, 7, 2, 9, 3, 1, 4, 0, 8, 6)
 	array1.mergeSort1()
 	array1.forEach { print("$it ") }

@@ -1,6 +1,6 @@
 package com.qiaoyuang.algorithm.round0
 
-fun main() {
+fun test28() {
 	val a = BinaryTreeNode(8)
 	val b = BinaryTreeNode(6)
 	val c = BinaryTreeNode(6)

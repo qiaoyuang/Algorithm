@@ -2,7 +2,7 @@ package com.qiaoyuang.algorithm.round0
 
 import kotlin.math.*
 
-fun main() {
+fun test56() {
 	val array1 = intArrayOf(2, 4, 3, 6, 3, 2, 5, 5)
 	val array2 = intArrayOf(1, 3, 9, 6, 6, 8, 1, 3, 8, 0)
 	print("重复数字：")

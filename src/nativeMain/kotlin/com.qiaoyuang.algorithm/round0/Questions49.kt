@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 求第n个丑数
  */
 
-fun main() {
+fun test49() {
 	val number = 1500
 	println("第${number}个丑数是：${getUglyNumber1(number)}")
 	println("第${number}个丑数是：${getUglyNumber2(number)}")

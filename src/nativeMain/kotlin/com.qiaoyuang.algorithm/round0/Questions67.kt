@@ -6,7 +6,7 @@ import kotlin.math.*
  * 将字符串转化为整数
  */
 
-fun main() {
+fun test67() {
 	val str1 = "123456"
 	println(strToInt(str1))
 	val str2 = "+123456"

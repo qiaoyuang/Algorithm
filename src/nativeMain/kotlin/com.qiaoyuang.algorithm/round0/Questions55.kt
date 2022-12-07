@@ -3,7 +3,7 @@ package com.qiaoyuang.algorithm.round0
 import kotlin.math.abs
 import kotlin.math.max
 
-fun main() {
+fun test55() {
 	val a = BinaryTreeNode(1)
 	val b = BinaryTreeNode(2)
 	val c = BinaryTreeNode(3)

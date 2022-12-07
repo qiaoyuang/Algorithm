@@ -11,7 +11,6 @@ fun test3() {
  * 题目一：寻找数组中重复的数字，数组长度 n，数字都在 0 ～ n-1 的范围内
  */
 fun IntArray.findRepeat1(): Int {
-    shellSort()
     forEachIndexed { index, i ->
         if (index != i)
             if (i == this[i]) return i else exchange(index, i)

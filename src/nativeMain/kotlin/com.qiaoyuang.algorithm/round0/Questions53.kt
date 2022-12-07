@@ -1,6 +1,6 @@
 package com.qiaoyuang.algorithm.round0
 
-fun main() {
+fun test53() {
 	val array1 = intArrayOf(1, 2, 3, 3, 3, 4, 5, 6)
 	val array2 = intArrayOf(1, 2, 3, 4, 5, 6, 6, 6)
 	val array3 = intArrayOf(1, 1, 1, 2, 3, 4, 5, 6)

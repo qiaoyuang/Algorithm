@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 一个包含min方法的栈，永远都可以知道栈内最小的数字是多少
  */
 
-fun main() {
+fun test30() {
 	val stack = MinStack()
 	fun myPrintln() {
 		println("栈顶：${stack.first}")

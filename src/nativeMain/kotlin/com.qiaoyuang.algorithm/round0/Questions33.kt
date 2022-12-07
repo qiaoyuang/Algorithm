@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 判断一个后序遍历序列是否是排序二叉树
  */
 
-fun main() {
+fun test33() {
 	val a = intArrayOf(5, 7, 6, 8, 11, 10, 8)
 	println(verifyOfBST(a))
 }

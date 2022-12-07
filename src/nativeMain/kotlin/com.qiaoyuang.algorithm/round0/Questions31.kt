@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 判断一组数字是否是栈的弹出序列
  */
 
-fun main() {
+fun test31() {
 	val enter = intArrayOf(1,2,3,4,5)
 	val out1 = intArrayOf(4,5,3,2,1)
 	val out2 = intArrayOf(4,3,5,1,2)

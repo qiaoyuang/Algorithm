@@ -6,7 +6,7 @@ import kotlin.math.*
  * 礼物的最大价值
  */
 
-fun main() {
+fun test47() {
 	val matrix = arrayOf(
         intArrayOf(1, 10, 3, 8),
         intArrayOf(12, 2, 9, 6),

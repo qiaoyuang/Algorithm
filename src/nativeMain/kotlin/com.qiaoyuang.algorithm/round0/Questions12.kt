@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 一个含有多个字符的矩阵中是否含有某一个字符串的路径
  */
 
-fun main() {
+fun test12() {
 	val matrix = arrayOf(
         charArrayOf('a', 'b', 't', 'g'),
         charArrayOf('c', 'f', 'c', 's'),

@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 股票的最大利润，即数组中找到最大数和最小数的差
  */
 
-fun main() {
+fun test63() {
 	val array = intArrayOf(9, 11, 8, 5, 7, 12, 16, 14)
 	println(maxDiff(array))
 }

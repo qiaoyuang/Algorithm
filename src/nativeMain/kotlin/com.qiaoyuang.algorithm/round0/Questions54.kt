@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 在二叉搜索树中寻找第k大的节点
  */
 
-fun main() {
+fun test54() {
 	val a = BinaryTreeNode(5)
 	val b = BinaryTreeNode(3)
 	val c = BinaryTreeNode(7)

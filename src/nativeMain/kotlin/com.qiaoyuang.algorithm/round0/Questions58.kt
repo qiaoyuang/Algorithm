@@ -1,6 +1,6 @@
 package com.qiaoyuang.algorithm.round0
 
-fun main() {
+fun test58() {
 	val str1 = "I am a student."
 	println("翻转后得到：${str1.reverseSentence()}")
 	println()

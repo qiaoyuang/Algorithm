@@ -6,7 +6,7 @@ import kotlin.math.*
  * 将长度为n的绳子剪成m段，求每段乘积相乘最大时的最大乘积
  */
 
-fun main() {
+fun test14() {
 	println("绳子长度为8时，最大乘积为：${maxProductAfterCutting1(8)}")
 	println("绳子长度为8时，最大乘积为：${maxProductAfterCutting2(8)}")
 }

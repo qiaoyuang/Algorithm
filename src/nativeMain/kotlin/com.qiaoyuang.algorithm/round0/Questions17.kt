@@ -2,7 +2,7 @@ package com.qiaoyuang.algorithm.round0
 
 // 打印 n 位数(注意大数问题)
 
-fun main() {
+fun test17() {
 	printToMaxOfNDigits2(3)
 	printToMaxOfNDigits3(3)
 }

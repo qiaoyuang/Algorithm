@@ -6,7 +6,7 @@ import kotlin.math.*
  * 求 n 个骰子的和的所有可能值出现的概率
  */
 
-fun main() {
+fun test60() {
 	printProbability1(6)
 	printProbability2(6)
 }

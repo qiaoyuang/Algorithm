@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 找出数组中最小的k个数
  */
 
-fun main() {
+fun test40() {
 	val array = intArrayOf(4, 5, 1, 6, 2, 7, 3, 8)
 	print("最小的4个数为：")
 	(array getLeastNumbers2 4).forEach { print("$it ") }

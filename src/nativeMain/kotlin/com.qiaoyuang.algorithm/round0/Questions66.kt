@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 构建乘积数组，不能用除法
  */
 
-fun main() {
+fun test66() {
 	val a = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
 	multiply(a).forEach { print("$it ") }
 }

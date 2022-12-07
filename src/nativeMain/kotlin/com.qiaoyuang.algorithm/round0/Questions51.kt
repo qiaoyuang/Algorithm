@@ -5,7 +5,7 @@ import kotlin.math.*
 /**
  * 数组中的逆序对
  */
-fun main() {
+fun test51() {
 	val array = intArrayOf(7, 5, 6, 4)
 	println("数组中的逆序对共有：${inversePairs1(array)}对")
 	println("数组中的逆序对共有：${inversePairs2(array)}对")

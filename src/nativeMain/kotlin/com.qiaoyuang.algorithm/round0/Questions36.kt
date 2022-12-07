@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 将一颗二叉排序树转换成一个排序的双向链表,并返回较小一端的端点
  */
 
-fun main() {
+fun test36() {
 	// 构造一个四层的排序二叉树
 	val a = BinaryTreeNode(10)
 	

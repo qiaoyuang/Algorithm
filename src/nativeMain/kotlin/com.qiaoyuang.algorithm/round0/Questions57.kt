@@ -1,6 +1,6 @@
 package com.qiaoyuang.algorithm.round0
 
-fun main() {
+fun test57() {
 	val array = intArrayOf(1, 2, 4, 7, 11, 15)
 	print("和为15的两个数为：")
 	findNumbersWithSum(array, 15).forEach { print("$it ") }

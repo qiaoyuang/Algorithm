@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 求1+2+...+n，不能用乘除法，以及循环和判断语句
  */
 
-fun main() {
+fun test64() {
 	println(add1(8))
 	println(add2(8))
 	println(add3(8))

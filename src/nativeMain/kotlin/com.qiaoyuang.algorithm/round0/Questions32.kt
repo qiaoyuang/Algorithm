@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 层序遍历二叉树
  */
 
-fun main() {
+fun test32() {
 	// 构造二叉树
 	val a = BinaryTreeNode(1)
 	

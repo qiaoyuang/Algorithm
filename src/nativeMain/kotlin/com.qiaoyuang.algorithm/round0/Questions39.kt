@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 找出一个数组中出现次数超过数组长度一般的数字
  */
 
-fun main() {
+fun test39() {
 	try {
 		val arg0 = intArrayOf(1, 2, 3, 2, 2, 2, 5, 4, 2)
 	    val arg1 = intArrayOf(1, 2, 3, 2, 2, 2, 5, 4)

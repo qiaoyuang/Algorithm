@@ -11,7 +11,7 @@ data class BinaryTreeNodeWithFather<T>(
     var mRight: BinaryTreeNodeWithFather<T>? = null,
 )
 
-fun main() {
+fun test8() {
 	val a = BinaryTreeNodeWithFather('a')
 	val b = BinaryTreeNodeWithFather('b', a)
 	val c = BinaryTreeNodeWithFather('c', a)

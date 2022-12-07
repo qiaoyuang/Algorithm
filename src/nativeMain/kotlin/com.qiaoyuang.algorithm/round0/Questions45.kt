@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 把数组排成最小的数
  */
 
-fun main() {
+fun test45() {
 	val array = intArrayOf(3, 32, 321)
 	println("最小的数字为：${printMinNumber(array)}")
 }

@@ -1,6 +1,6 @@
 package com.qiaoyuang.algorithm.round0
 
-fun main() {
+fun test50() {
 	val str1 = "abacdeff"
 	println(findNotRepeatingChar(str1))
 	val str2 = "We are Students."

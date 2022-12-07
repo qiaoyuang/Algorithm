@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 两个链表的第一个公共节点
  */
 
-fun main() {
+fun test52() {
 	val a = Node(1)
 	val b = Node(2)
 	val c = Node(3)

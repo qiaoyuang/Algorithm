@@ -1,5 +1,5 @@
 package com.qiaoyuang.algorithm
 
-import com.qiaoyuang.algorithm.round0.test3
+import com.qiaoyuang.algorithm.round1.test3
 
 fun main() = test3()

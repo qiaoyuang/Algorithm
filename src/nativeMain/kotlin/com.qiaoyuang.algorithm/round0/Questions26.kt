@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 判断一个树是否是另一个树的子树
  */
 
-fun main() {
+fun test26() {
 	// 构造父树
 	val father = BinaryTreeNode(8)
 	val b = BinaryTreeNode(8)

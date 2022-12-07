@@ -4,7 +4,7 @@ package com.qiaoyuang.algorithm.round0
  * 将数字翻译成字符串
  */
 
-fun main() {
+fun test46() {
 	val num = 12258
 	println("${num}有：${getTranslationCount(num)}种翻译方法")
 }

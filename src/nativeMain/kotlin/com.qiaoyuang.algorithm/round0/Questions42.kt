@@ -3,7 +3,7 @@ package com.qiaoyuang.algorithm.round0
 /**
  * 连续子数组的最大和
  */
-fun main() {
+fun test42() {
 	val array = intArrayOf(1, -2, 3, 10, -4, 7, 2, -5)
 	println("连续子数组的最大和为：${findGreatestSumOfSubArray(array)}")
 }

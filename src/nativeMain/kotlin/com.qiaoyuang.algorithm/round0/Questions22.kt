@@ -1,6 +1,6 @@
 package com.qiaoyuang.algorithm.round0
 
-fun main() {
+fun test22() {
 	val node1 = Node("a")
 	val node2 = Node("b")
 	node1.next = node2
