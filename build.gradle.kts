@@ -32,6 +32,12 @@ kotlin {
     }
 
     sourceSets {
+        all {
+            languageSettings {
+                optIn("kotlin.RequiresOptIn")
+                languageVersion = "1.8"
+            }
+        }
         val nativeMain by getting
         val nativeTest by getting
     }

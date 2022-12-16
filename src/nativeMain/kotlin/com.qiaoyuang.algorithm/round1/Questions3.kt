@@ -8,6 +8,7 @@ fun test3() {
     println("The repeat number is: ${findNumber1(numbers0)}")
     println("The repeat number is: ${findNumber1(numbers1)}")
     println("The repeat number is: ${findNumber21(numbers1)}")
+    println("The repeat number is: ${findNumber22(numbers1)}")
 }
 
 /**
@@ -43,8 +44,29 @@ fun findNumber21(numbers: IntArray): Int {
     throw IllegalArgumentException("This IntArray doesn't have repeat number")
 }
 
-fun findNumber22(numbers: IntArray): Int = binarySearch(numbers, 0, numbers.lastIndex)
+fun findNumber22(numbers: IntArray): Int {
+    var start = 1
+    var end = numbers.lastIndex
+    while (end >= start) {
+        val middle = ((end - start) shr 1) + start
+        val count = numbers countRange start..middle
+        if (end == start) {
+            if (count > 1)
+                return start
+            else
+                break
+        }
+        if (count > (middle - start + 1))
+            end = middle
+        else
+            start = middle + 1
+    }
+    throw IllegalArgumentException("The 'numbers' doesn't have repeat numbers")
+}
 
-private fun binarySearch(array: IntArray, start: Int, end: Int): Int {
-
+private infix fun IntArray.countRange(range: IntRange): Int = fold(0) { acc, number ->
+    if (number in range)
+        acc + 1
+    else
+        acc
 }
