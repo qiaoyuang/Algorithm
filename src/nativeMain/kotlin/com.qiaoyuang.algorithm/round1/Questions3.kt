@@ -15,7 +15,7 @@ fun test3() {
  * Question 3-1: Find the repeat number in IntArray, the numbers between 0~n-1
  */
 
-fun findNumber1(numbers: IntArray): Int {
+private fun findNumber1(numbers: IntArray): Int {
     numbers.forEachIndexed { index, i ->
         if (index != i) {
             if (i == numbers[i])
@@ -33,7 +33,7 @@ fun findNumber1(numbers: IntArray): Int {
  * but can't modify the IntArray.
  */
 
-fun findNumber21(numbers: IntArray): Int {
+private fun findNumber21(numbers: IntArray): Int {
     val helpArray = IntArray(numbers.size) { 0 }
     numbers.forEach {
         if (helpArray[it] == it)
@@ -44,7 +44,7 @@ fun findNumber21(numbers: IntArray): Int {
     throw IllegalArgumentException("This IntArray doesn't have repeat number")
 }
 
-fun findNumber22(numbers: IntArray): Int {
+private fun findNumber22(numbers: IntArray): Int {
     var start = 1
     var end = numbers.lastIndex
     while (end >= start) {
