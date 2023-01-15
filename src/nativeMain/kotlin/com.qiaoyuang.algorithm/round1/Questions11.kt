@@ -9,6 +9,7 @@ fun test11() {
     intArrayOf(3, 4, 5, 6, 1, 2).printlnResult()
     intArrayOf(5, 6, 1, 2, 3, 4).printlnResult()
     intArrayOf(8).printlnResult()
+    intArrayOf(8, 6).printlnResult()
     intArrayOf(1, 0, 1, 1, 1).printlnResult()
     intArrayOf(1, 1, 1, 0, 1).printlnResult()
     intArrayOf(1, 1, 0, 1, 1).printlnResult()
