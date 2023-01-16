@@ -12,21 +12,21 @@ fun test54() {
 	val e = BinaryTreeNode(4)
 	val f = BinaryTreeNode(6)
 	val g = BinaryTreeNode(8)
-	a.mLeft = b
-	a.mRight = c
-	b.mLeft = d
-	b.mRight = e
-	c.mLeft = f
-	c.mRight = g
+	a.left = b
+	a.right = c
+	b.left = d
+	b.right = e
+	c.left = f
+	c.right = g
 	println(a.kThNode(3))
 }
 
 fun <T> BinaryTreeNode<T>.kThNode(k: Int): T {
 	val list = ArrayList<T>()
 	fun postorderFind(node: BinaryTreeNode<T>) {
-		node.mLeft?.let { postorderFind(it) }
-		list.add(node.mValue)
-		node.mRight?.let { postorderFind(it) }
+		node.left?.let { postorderFind(it) }
+		list.add(node.value)
+		node.right?.let { postorderFind(it) }
 	}
 	postorderFind(this)
 	return list[list.size - k]

@@ -12,12 +12,12 @@ fun test27() {
 	val e = BinaryTreeNode(7)
 	val f = BinaryTreeNode(9)
 	val g = BinaryTreeNode(11)
-	a.mLeft = b
-	a.mRight = c
-	b.mLeft = d
-	b.mRight = e
-	c.mLeft = f
-	c.mRight = g
+	a.left = b
+	a.right = c
+	b.left = d
+	b.right = e
+	c.left = f
+	c.right = g
 	a.inOrder()
 	println("/***************分割线***************/")
 	a.mirrorRecursively()
@@ -25,9 +25,9 @@ fun test27() {
 }
 
 fun <T> BinaryTreeNode<T>.mirrorRecursively() {
-	val temp = mLeft
-	mLeft = mRight
-	mRight = temp
-	mLeft?.mirrorRecursively()
-	mRight?.mirrorRecursively()
+	val temp = left
+	left = right
+	right = temp
+	left?.mirrorRecursively()
+	right?.mirrorRecursively()
 }

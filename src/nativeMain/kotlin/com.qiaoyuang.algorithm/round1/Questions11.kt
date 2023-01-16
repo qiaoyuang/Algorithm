@@ -3,7 +3,7 @@ package com.qiaoyuang.algorithm.round1
 import kotlin.math.min
 
 fun test11() {
-    fun IntArray.printlnResult() = println("Find the IntArray ${toString()}'s smallest number is ${findMinNumber()}")
+    fun IntArray.printlnResult() = println("Find the IntArray ${toList()}'s smallest number is ${findMinNumber()}")
     intArrayOf(1, 2, 3, 4, 5, 6).printlnResult()
     intArrayOf(4, 5, 6, 1, 2, 3).printlnResult()
     intArrayOf(3, 4, 5, 6, 1, 2).printlnResult()

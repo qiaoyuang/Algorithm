@@ -36,7 +36,7 @@ fun <T> binaryTreeConstruct(preOrder: List<T>, inorder: List<T>): BinaryTreeNode
 			}
 		}
 	}
-	root.mLeft = binaryTreeConstruct(sonPreOrderLeft, sonInorderLeft)
-	root.mRight = binaryTreeConstruct(sonPreOrderRight, sonInorderRight)
+	root.left = binaryTreeConstruct(sonPreOrderLeft, sonInorderLeft)
+	root.right = binaryTreeConstruct(sonPreOrderRight, sonInorderRight)
 	return root
 }

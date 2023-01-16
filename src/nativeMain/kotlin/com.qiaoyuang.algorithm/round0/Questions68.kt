@@ -20,19 +20,19 @@ fun test68() {
 	val i = BinaryTreeNode('I')
 	val j = BinaryTreeNode('J')
 	
-	a.mLeft = b
-	a.mRight = c
-	b.mLeft = d
-	b.mRight = e
-	d.mLeft = f
-	d.mRight = g
-	e.mLeft = h
-	e.mRight = i
-	i.mRight = j
+	a.left = b
+	a.right = c
+	b.left = d
+	b.right = e
+	d.left = f
+	d.right = g
+	e.left = h
+	e.right = i
+	i.right = j
 	
-	println(a.getLastCommonParent(g, j).mValue)
-	println(a.getLastCommonParent(h, j).mValue)
-	println(a.getLastCommonParent(f, c).mValue)
+	println(a.getLastCommonParent(g, j).value)
+	println(a.getLastCommonParent(h, j).value)
+	println(a.getLastCommonParent(f, c).value)
 }
 
 fun <T> BinaryTreeNode<T>.getLastCommonParent(
@@ -44,14 +44,14 @@ fun <T> BinaryTreeNode<T>.getLastCommonParent(
 		if (this === node)
 			return NodeAndIsFound(thisNode, true)
 		var left: NodeAndIsFound<T>? = null
-		mLeft?.let {
+		this.left?.let {
 			val myNode = Node<BinaryTreeNode<T>>(it)
 			val next = it.myPreOrder(node)
 			myNode.next = next.node
 			left = NodeAndIsFound(myNode, next.isFound)
 		}
 		var right: NodeAndIsFound<T>? = null
-		mRight?.let {
+		this.right?.let {
 			val myNode = Node<BinaryTreeNode<T>>(it)
 			val next = it.myPreOrder(node)
 			myNode.next = next.node

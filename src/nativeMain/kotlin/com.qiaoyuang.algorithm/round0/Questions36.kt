@@ -25,84 +25,84 @@ fun test36() {
 	val n = BinaryTreeNode(15)
 	val o = BinaryTreeNode(17)
 	
-	a.mLeft = b
-	a.mRight = c
-	b.mLeft = d
-	b.mRight = e
-	c.mLeft = f
-	c.mRight = g
-	d.mLeft = h
-	d.mRight = i
-	e.mLeft = j
-	e.mRight = k
-	f.mLeft = l
-	f.mRight = m
-	g.mLeft = n
-	g.mRight = o
+	a.left = b
+	a.right = c
+	b.left = d
+	b.right = e
+	c.left = f
+	c.right = g
+	d.left = h
+	d.right = i
+	e.left = j
+	e.right = k
+	f.left = l
+	f.right = m
+	g.left = n
+	g.right = o
 	
 	var x = a.convert()
-	while (x.mRight != null) {
-		print("${x.mValue} ")
-		x = x.mRight!!
+	while (x.right != null) {
+		print("${x.value} ")
+		x = x.right!!
 	}
-	print("${x.mValue} ")
+	print("${x.value} ")
 	println()
-	while (x.mLeft != null) {
-		print("${x.mValue} ")
-		x = x.mLeft!!
+	while (x.left != null) {
+		print("${x.value} ")
+		x = x.left!!
 	}
-	print("${x.mValue} ")
+	print("${x.value} ")
 }
 
 fun <T> BinaryTreeNode<T>.convert(): BinaryTreeNode<T> {
 	fun BinaryTreeNode<T>.traverse(isBig: Boolean, father: BinaryTreeNode<T>? = null): BinaryTreeNode<T> {
-		if (mLeft == null && mRight == null) {
+		if (left == null && right == null) {
 			if (isBig) {
-				mLeft = father
+				left = father
 			} else {
-				mRight = father
+				right = father
 			}
 			return this
 		}
-		mLeft?.let {
-			mLeft = it.traverse(false, this)
-			mLeft!!.mRight = this
+		left?.let {
+			left = it.traverse(false, this)
+			left!!.right = this
 		}
-		mRight?.let {
-			mRight = it.traverse(true, this)
-			mRight!!.mLeft = this
+		right?.let {
+			right = it.traverse(true, this)
+			right!!.left = this
 		}
 		if (isBig) {
-			if (mLeft != null) {
-				var node = mLeft
-				while (node!!.mLeft != null) {
-					node = node.mLeft
+			if (left != null) {
+				var node = left
+				while (node!!.left != null) {
+					node = node.left
 				}
 				return node
 			}
 			return this
 		} else {
-			if (mRight != null) {
-				var node = mRight
-				while (node!!.mRight != null) {
-					node = node.mRight
+			if (right != null) {
+				var node = right
+				while (node!!.right != null) {
+					node = node.right
 				}
 				return node
 			}
 			return this
 		}
 	}
-	mLeft?.let {
-		mLeft = it.traverse(false, this)
-		mLeft!!.mRight = this
+	left?.let {
+		left = it.traverse(false, this)
+		left!!.right = this
 	}
-	mRight?.let {
-		mRight = it.traverse(true, this)
-		mRight!!.mLeft = this
+	right?.let {
+		right = it.traverse(true, this)
+		right!!.left = this
 	}
 	var head = this
-	while (head.mLeft != null) {
-		head = head.mLeft!!
+	while (head.left != null) {
+		head = head.left!!
 	}
 	return head
 }

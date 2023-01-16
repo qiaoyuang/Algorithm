@@ -11,11 +11,11 @@ fun test37() {
 	val d = BinaryTreeNode(4)
 	val e = BinaryTreeNode(5)
 	val f = BinaryTreeNode(6)
-	a.mLeft = b
-	a.mRight = c
-	b.mLeft = d
-	c.mLeft = e
-	c.mRight = f
+	a.left = b
+	a.right = c
+	b.left = d
+	c.left = e
+	c.right = f
 	val str = a.serialize()
 	println(str)
 	println()
@@ -27,14 +27,14 @@ fun test37() {
 fun <T> BinaryTreeNode<T>.serialize(): String {
 	var str = ""
 	fun BinaryTreeNode<T>.preOrderSerialize() {
-		str += "$mValue,"
-		if (mLeft != null) {
-			mLeft!!.preOrderSerialize()
+		str += "$value,"
+		if (left != null) {
+			left!!.preOrderSerialize()
 		} else {
 			str += "\$,"
 		}
-		if (mRight != null) {
-			mRight!!.preOrderSerialize()
+		if (right != null) {
+			right!!.preOrderSerialize()
 		} else {
 			str += "\$,"
 		}
@@ -51,12 +51,12 @@ fun String.deserialize(): BinaryTreeNode<String> {
 		if (i+1 < str.size) when {
 			str[i] != "\$" && str[i+1] != "\$" -> {
 				val node = BinaryTreeNode(this)
-				node.mLeft = str[++i].preOrderDeserialize()
+				node.left = str[++i].preOrderDeserialize()
 				node
 			}
 			str[i] != "\$" && str[i+1] == "\$" -> {
 				val node = BinaryTreeNode(this)
-				node.mRight = str[++i].preOrderDeserialize()
+				node.right = str[++i].preOrderDeserialize()
 				node
 			}
 			else -> str[++i].preOrderDeserialize()

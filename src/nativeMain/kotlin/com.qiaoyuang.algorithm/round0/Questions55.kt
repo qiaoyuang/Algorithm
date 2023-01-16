@@ -11,17 +11,17 @@ fun test55() {
 	val e = BinaryTreeNode(5)
 	val f = BinaryTreeNode(6)
 	val g = BinaryTreeNode(7)
-	a.mLeft = b
-	a.mRight = c
-	b.mLeft = d
-	b.mRight = e
-	c.mRight = f
-	e.mLeft = g
+	a.left = b
+	a.right = c
+	b.left = d
+	b.right = e
+	c.right = f
+	e.left = g
 	println("二叉树的高度为：${a.treeDepth()}")
 	println()
 	println(a.isBalanced1())
 	println(a.isBalanced2())
-	c.mRight = null
+	c.right = null
 	println()
 	println(a.isBalanced1())
 	println(a.isBalanced2())
@@ -30,19 +30,19 @@ fun test55() {
 // 题目一：二叉树的深度
 fun <T> BinaryTreeNode<T>.treeDepth(): Int {
 	var left = 1
-	left += mLeft?.treeDepth() ?: 0
+	left += this.left?.treeDepth() ?: 0
 	var right = 1
-	right += mRight?.treeDepth() ?: 0
+	right += this.right?.treeDepth() ?: 0
 	return max(right, left)
 }
 
 // 题目二：判断一棵二叉树是否是平衡二叉树
 fun <T> BinaryTreeNode<T>.isBalanced1(): Boolean {
-	val left = mLeft?.treeDepth() ?: 0
-	val right = mRight?.treeDepth() ?: 0
+	val left = left?.treeDepth() ?: 0
+	val right = right?.treeDepth() ?: 0
 	if (abs(left - right) > 1)
 		return false
-	return mLeft?.isBalanced1() ?: true && mRight?.isBalanced1() ?: true
+	return this.left?.isBalanced1() ?: true && this.right?.isBalanced1() ?: true
 }
 
 fun <T> BinaryTreeNode<T>.isBalanced2(): Boolean = this.isBalancedCore(intArrayOf(0))
@@ -50,7 +50,7 @@ fun <T> BinaryTreeNode<T>.isBalanced2(): Boolean = this.isBalancedCore(intArrayO
 private fun <T> BinaryTreeNode<T>.isBalancedCore(depth: IntArray): Boolean {
 	val left = intArrayOf(0)
 	val right = intArrayOf(0)
-	if (mLeft?.isBalancedCore(left) != false && mRight?.isBalancedCore(right) != false) {
+	if (this.left?.isBalancedCore(left) != false && this.right?.isBalancedCore(right) != false) {
 		if (abs(left[0] - right[0]) <= 1) {
 			depth[0] = 1 + if (left[0] > right[0])
 				left[0]

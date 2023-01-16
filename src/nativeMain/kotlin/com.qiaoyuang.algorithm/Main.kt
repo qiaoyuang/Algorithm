@@ -7,6 +7,7 @@ fun main() {
     printlnQuestionsTitle(4, ::test4)
     printlnQuestionsTitle(5, ::test5)
     printlnQuestionsTitle(6, ::test6)
+    printlnQuestionsTitle(7, ::test7)
     printlnQuestionsTitle(9, ::test9)
     printlnQuestionsTitle(10, ::test10)
     printlnQuestionsTitle(11, ::test11)

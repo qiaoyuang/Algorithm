@@ -13,13 +13,13 @@ fun test34() {
 	val f = BinaryTreeNode(3)
 	val g = BinaryTreeNode(1)
 	val h = BinaryTreeNode(2)
-	a.mLeft = b
-	a.mRight = c
-	b.mLeft = d
-	b.mRight = e
-	c.mLeft = f
-	c.mRight = g
-	g.mLeft = h
+	a.left = b
+	a.right = c
+	b.left = d
+	b.right = e
+	c.left = f
+	c.right = g
+	g.left = h
 	a.findPath(19)
 }
 
@@ -27,20 +27,20 @@ fun BinaryTreeNode<Int>.findPath(num: Int) {
 	var sum = 0
 	val list = LinkedList<Int>()
 	fun BinaryTreeNode<Int>.traverse() {
-		list.push(mValue)
-		sum += mValue
+		list.push(value)
+		sum += value
 		when {
 			sum < num -> {
-				if (mLeft == null) {
-				    if (mRight == null) {
+				if (left == null) {
+				    if (right == null) {
 				        sum -= list.dequeue()
 		            } else {
-			            mRight!!.traverse()
+			            right!!.traverse()
 		            }
 		        } else {
-			        mLeft!!.traverse()
+			        left!!.traverse()
 		        }  
-			    mRight?.traverse()
+			    right?.traverse()
 				sum -= list.dequeue()
 			}
 			sum > num -> {
