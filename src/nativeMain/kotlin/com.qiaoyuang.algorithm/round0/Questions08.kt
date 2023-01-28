@@ -5,10 +5,10 @@ package com.qiaoyuang.algorithm.round0
  */
 
 data class BinaryTreeNodeWithFather<T>(
-    var mValues: T,
-    var mFather: BinaryTreeNodeWithFather<T>? = null,
-    var mLeft: BinaryTreeNodeWithFather<T>? = null,
-    var mRight: BinaryTreeNodeWithFather<T>? = null,
+    var value: T,
+    var father: BinaryTreeNodeWithFather<T>? = null,
+    var left: BinaryTreeNodeWithFather<T>? = null,
+    var right: BinaryTreeNodeWithFather<T>? = null,
 )
 
 fun test8() {
@@ -21,14 +21,14 @@ fun test8() {
 	val g = BinaryTreeNodeWithFather('g', c)
 	val h = BinaryTreeNodeWithFather('h', e)
 	val i = BinaryTreeNodeWithFather('i', e)
-	a.mLeft = b
-	a.mRight = c
-	b.mLeft = d
-	b.mRight = e
-	c.mLeft = f
-	c.mRight = g
-	e.mLeft = h
-	e.mRight = i
+	a.left = b
+	a.right = c
+	b.left = d
+	b.right = e
+	c.left = f
+	c.right = g
+	e.left = h
+	e.right = i
 	val str = "空"
 	println("a:${getNext(a) ?: str}")
 	println("b:${getNext(b) ?: str}")
@@ -42,17 +42,17 @@ fun test8() {
 }
 
 fun <T> getNext(node: BinaryTreeNodeWithFather<T>): T? {
-	if (node.mRight == null) {
-		if (node.mFather != null) {
-			if (node.mFather!!.mLeft === node) {
-				return node.mFather?.mValues
+	if (node.right == null) {
+		if (node.father != null) {
+			if (node.father!!.left === node) {
+				return node.father?.value
 			} else {
 				var nNode = node
-				while (nNode.mFather!!.mFather != null) {
-					if (nNode.mFather!!.mFather!!.mLeft === nNode.mFather) {
-						return nNode.mFather!!.mFather!!.mValues
+				while (nNode.father!!.father != null) {
+					if (nNode.father!!.father!!.left === nNode.father) {
+						return nNode.father!!.father!!.value
 					}
-					nNode = nNode.mFather!!
+					nNode = nNode.father!!
 				}
 				return null
 			}
@@ -60,10 +60,10 @@ fun <T> getNext(node: BinaryTreeNodeWithFather<T>): T? {
 			return null
 		}
 	} else {
-		var right = node.mRight
-		while (right!!.mLeft != null) {
-			right = right.mLeft
+		var right = node.right
+		while (right!!.left != null) {
+			right = right.left
 		}
-		return right.mValues
+		return right.value
 	}
 }
