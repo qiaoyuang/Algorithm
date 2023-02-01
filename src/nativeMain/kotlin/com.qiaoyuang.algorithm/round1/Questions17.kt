@@ -28,9 +28,8 @@ private fun println1toBiggest(n: UInt) {
             val charI = numberBuilder[i]
             if (charI == '9') {
                 numberBuilder[i] = '0'
-                if (i == 0) {
+                if (i == 0)
                     numberBuilder.insert(0, 1)
-                }
             } else {
                 numberBuilder[i] = (charI.digitToInt() + 1).digitToChar()
                 break
