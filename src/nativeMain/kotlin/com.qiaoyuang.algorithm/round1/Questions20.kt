@@ -13,6 +13,9 @@ fun test20() {
     printlnResult("12e+5.4")
 }
 
+/**
+ * Questions20: Judge a string if it is a number
+ */
 private fun String.isNumber(): Boolean {
     if (isEmpty())
         return false
