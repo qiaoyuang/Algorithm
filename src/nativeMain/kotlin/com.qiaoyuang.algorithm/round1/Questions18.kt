@@ -29,24 +29,9 @@ private infix fun <T : Comparable<T>> SingleDirectionNode<T>.deleteNode(target: 
 
 private fun printlnResult1(num: Int, head: SingleDirectionNode<Int>) {
     print("The linked list is: ")
-    printList(head)
+    printlnLinkedList(head)
     print("After deleted $num: ")
-    printList(head deleteNode num)
-}
-
-private fun printList(node: SingleDirectionNode<Int>?) {
-    if (node == null) {
-        println("empty")
-        return
-    }
-    var _node = node
-    while (_node != null) {
-        print(_node.element)
-        _node = _node.next
-        if (_node != null)
-            print(", ")
-    }
-    println(';')
+    printlnLinkedList(head deleteNode num)
 }
 
 /**
@@ -83,9 +68,9 @@ private fun <T : Comparable<T>> SingleDirectionNode<T>.deleteRepeatedNodes(): Si
 
 private fun printlnResult2(head: SingleDirectionNode<Int>) {
     print("The linked list is: ")
-    printList(head)
+    printlnLinkedList(head)
     print("After deleted repeated nodes: ")
-    printList(head.deleteRepeatedNodes())
+    printlnLinkedList(head.deleteRepeatedNodes())
 }
 
 /**
