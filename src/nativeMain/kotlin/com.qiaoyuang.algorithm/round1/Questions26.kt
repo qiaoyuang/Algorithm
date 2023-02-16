@@ -27,7 +27,7 @@ private fun <T> BinaryTreeNode<T>.judge(subRoot: BinaryTreeNode<T>, currentSubNo
             || left?.judge(subRoot, subRoot) == true
             || right?.judge(subRoot, subRoot) == true
 private fun <T> printlnResult(head: BinaryTreeNode<T>, subHead: BinaryTreeNode<T>) =
-    println("Whether the tree: ${subHead.preOrderList()} is subtree of the tree: ${head.preOrderList()}: ${head judgeSubtree subHead}")
+    println("Whether the tree: ${subHead.preOrderList()}(pre-order) is subtree of the tree: ${head.preOrderList()}(pre-order): ${head judgeSubtree subHead}")
 
 private fun testCase1(): Pair<BinaryTreeNode<Int>, BinaryTreeNode<Int>> {
     val node0 = BinaryTreeNode(8, right = BinaryTreeNode(7))
