@@ -45,6 +45,11 @@ class LinkedList<T> : AbstractStack<T>, AbstractQueue<T>, Iterable<T> {
         return t!!
     }
 
+    override fun top(): T {
+        check(!isEmpty) { "The Stack doesn't have any element" }
+        return top!!.t!!
+    }
+
     override fun enqueue(t: T) = push(t)
 
     override fun dequeue(): T {

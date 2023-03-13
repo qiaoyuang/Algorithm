@@ -6,4 +6,5 @@ interface AbstractStack<T> : Collection<T> {
 
     fun pop(): T
 
+    fun top(): T
 }
