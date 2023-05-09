@@ -23,6 +23,9 @@ private data class SingleComplexNode<T>(
     }
 }
 
+/**
+ * Question 35: Coping the complicated linked list
+ */
 private fun <T> copyComplexLinkedList(root: SingleComplexNode<T>): SingleComplexNode<T> {
     var pointer = root
     val newHead = SingleComplexNode(root.element)

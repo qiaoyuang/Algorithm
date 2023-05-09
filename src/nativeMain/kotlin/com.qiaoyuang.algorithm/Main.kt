@@ -34,6 +34,7 @@ fun main() {
     printlnQuestionsTitle(33, ::test33)
     printlnQuestionsTitle(34, ::test34)
     printlnQuestionsTitle(35, ::test35)
+    printlnQuestionsTitle(36, ::test36)
 }
 
 private inline fun printlnQuestionsTitle(index: Int, test: () -> Unit) {

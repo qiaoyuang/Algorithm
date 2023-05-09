@@ -11,6 +11,9 @@ fun test34() {
     printlnResults(root, 19)
 }
 
+/**
+ * Find all the paths that sum equals a number in a binary tree
+ */
 private infix fun BinaryTreeNode<Int>.findAllPathsInBinaryTree(target: Int): List<IntArray> = buildList {
     findAllPathsInBinaryTree(target, 0, Stack(), this)
 }
