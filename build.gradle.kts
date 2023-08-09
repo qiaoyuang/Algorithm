@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.8.20"
+    kotlin("multiplatform") version "1.9.0"
 }
 
 group = "com.qiaoyuang.algorithm"
@@ -23,7 +23,6 @@ kotlin {
 
     nativeTarget.apply {
         binaries {
-            target.compilations["main"].kotlinOptions.freeCompilerArgs += listOf("-Xruntime-logs=gc=info")
             executable {
                 entryPoint = "com.qiaoyuang.algorithm.main"
                 // runTask?.args("")
@@ -35,7 +34,6 @@ kotlin {
         all {
             languageSettings {
                 optIn("kotlin.RequiresOptIn")
-                languageVersion = "1.8"
             }
         }
         val nativeMain by getting

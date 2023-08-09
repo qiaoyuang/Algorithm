@@ -1,5 +1,7 @@
 package com.qiaoyuang.algorithm.round1
 
+import kotlin.math.abs
+
 fun test38() {
     printResult1("abc")
     printResult1("abcd")
@@ -7,6 +9,10 @@ fun test38() {
     printlnResult2(intArrayOf(0, 0, 0, 0, 0, 0, 0, 0))
     printlnResult2(intArrayOf(1, 2, 3, 4, 5, 6, 7, 8))
     printlnResult2(intArrayOf(0, 9, 9, 9, 9, 9, 9, 9))
+
+    printlnResult3(7)
+    printlnResult3(8)
+    printlnResult3(9)
 }
 
 /**
@@ -18,7 +24,6 @@ private fun String.printAllArrangements() {
     println()
 }
 
-@OptIn(ExperimentalStdlibApi::class)
 private fun CharArray.printAllArrangements(begin: Int) {
     if (begin == size) {
         print("${concatToString()} ")
@@ -44,14 +49,13 @@ private fun printResult1(str: String) {
 }
 
 /**
- * Questions 38-2: Put 8 numbers onto
+ * Questions 38-2: Put 8 numbers onto a cube, make any 4 numbers' sum of surface equals.
  */
 private fun IntArray.isEqualsOnCube(): Boolean {
     require(size == 8) { "The size of IntArray must equals to 8" }
     return isEqualsOnCube(0)
 }
 
-@OptIn(ExperimentalStdlibApi::class)
 private fun IntArray.isEqualsOnCube(begin: Int): Boolean {
     if (begin == size)
         return isEquals()
@@ -88,9 +92,31 @@ fun IntArray.toStringWithSpace() = buildString {
 }
 
 /**
- * Questions 38-3: N Queens Questions:
+ * Questions 38-3: N Queens Questions
  */
 
-fun nQueens(n: Int): Int {
+private fun nQueens(n: Int): Int = IntArray(n) { it }.nQueens(0)
 
+private fun IntArray.nQueens(i: Int): Int {
+    var count = 0
+    if (i < lastIndex) for (j in i ..< size) {
+        if (i != j) {
+            replaceTwoInt(i, j)
+            if (judgeNQueens())
+                count++
+        }
+        count += nQueens(i + 1)
+        replaceTwoInt(i, j)
+    }
+    return count
 }
+
+private fun IntArray.judgeNQueens(): Boolean {
+    for (i in 0 ..< lastIndex)
+        for (j in i + 1 .. lastIndex)
+            if (abs(i - j) == abs(this[i] - this[j]))
+                return false
+    return true
+}
+
+private fun printlnResult3(n: Int) = println("The result of $n Queens is ${nQueens(n)}")
