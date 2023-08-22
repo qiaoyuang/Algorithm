@@ -28,6 +28,11 @@ kotlin {
                 // runTask?.args("")
             }
         }
+        compilations.configureEach {
+            compilerOptions.configure {
+                freeCompilerArgs.add("-Xallocator=custom")
+            }
+        }
     }
 
     sourceSets {
