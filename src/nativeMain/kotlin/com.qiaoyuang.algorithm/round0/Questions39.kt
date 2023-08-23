@@ -9,10 +9,10 @@ fun test39() {
 		val arg0 = intArrayOf(1, 2, 3, 2, 2, 2, 5, 4, 2)
 	    val arg1 = intArrayOf(1, 2, 3, 2, 2, 2, 5, 4)
 	    val message = "超过数组长度一半的数为："
-	    println("$message${arg0.moreThanHalfNum2()}")
-	    println("$message${arg1.moreThanHalfNum2()}")
+		println("$message${arg0.moreThanHalfNum2()}")
+		println("$message${arg1.moreThanHalfNum2()}")
 		println("$message${arg0.moreThanHalfNum1()}")
-	    println("$message${arg1.moreThanHalfNum1()}")
+		println("$message${arg1.moreThanHalfNum1()}")
 	} catch (e: RuntimeException) {
 		e.printStackTrace()
 	}
@@ -25,14 +25,16 @@ fun test39() {
  * 因此总体来说，解法二更为优秀。
  */
 fun IntArray.moreThanHalfNum1(): Int {
-	val mid = this.size / 2
-	var index = partition(0, this.size - 1)
+	val mid = size shr 1
+	var start = 0
+	var end = lastIndex
+	var index = partition(start, end)
 	while (index != mid) {
-		if (index > mid) {
-			index = partition(0, index - 1)
-		} else {
-			index = partition(index + 1, this.size - 1)
-		}
+		if (index > mid)
+			end = index - 1
+		else
+			start = index + 1
+		index = partition(start, end)
 	}
 	return this[mid]
 }

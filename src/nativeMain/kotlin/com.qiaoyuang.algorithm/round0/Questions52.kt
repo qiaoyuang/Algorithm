@@ -19,7 +19,7 @@ fun test52() {
 	f.next = g
 	d.next = e
 	e.next = f
-	
+
 	println("公共节点为：${findFirstCommonNode(a, d).t}")
 }
 

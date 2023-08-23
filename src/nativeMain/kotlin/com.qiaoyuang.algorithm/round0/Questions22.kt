@@ -12,7 +12,7 @@ fun test22() {
 	node4.next = node5
 	val node6 = Node("f")
 	node5.next = node6
-	
+
 	println("倒数第3个节点为${node1.findKthToTail(3)}")
 	println("倒数第6个节点为${node1.findKthToTail(6)}")
 	println()

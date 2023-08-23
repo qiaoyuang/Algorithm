@@ -29,7 +29,7 @@ fun test68() {
 	e.left = h
 	e.right = i
 	i.right = j
-	
+
 	println(a.getLastCommonParent(g, j).value)
 	println(a.getLastCommonParent(h, j).value)
 	println(a.getLastCommonParent(f, c).value)

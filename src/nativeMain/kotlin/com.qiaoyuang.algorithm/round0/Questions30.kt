@@ -8,7 +8,7 @@ fun test30() {
 	val stack = MinStack()
 	fun myPrintln() {
 		println("栈顶：${stack.first}")
-	    println("最小值：${stack.min()}")
+		println("最小值：${stack.min()}")
 	}
 	stack push 3
 	myPrintln()

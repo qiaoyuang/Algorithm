@@ -24,10 +24,14 @@ class PriorityQueue<T : Comparable<T>>(comparator: Comparator<T>? = null) {
 		val (m, l) = if (comparator == null)
 			arrayOf<T.(T) -> Boolean>(
 				{ compareTo(it) > 0 },
-				{ compareTo(it) < 0 })
-		else arrayOf<T.(T) -> Boolean>(
+				{ compareTo(it) < 0 },
+			)
+		else
+			arrayOf<T.(T) -> Boolean>(
 				{ comparator.compare(this, it) > 0 },
-				{ comparator.compare(this, it) < 0 })
+				{ comparator.compare(this, it) < 0 },
+			)
+
 		moreVal = m
 		lessVal = l
 	}
@@ -36,9 +40,9 @@ class PriorityQueue<T : Comparable<T>>(comparator: Comparator<T>? = null) {
 	private infix fun T.less(t: T): Boolean = lessVal(t)
 
 	fun enqueue(t: T) {
-		if (size + 1 > maxSize)
+		if (++size > maxSize)
 			expansion()
-		pq[++size] = t
+		pq[size] = t
 		swim(size)
 	}
 	
@@ -64,16 +68,16 @@ class PriorityQueue<T : Comparable<T>>(comparator: Comparator<T>? = null) {
 		pq[j] = t
 	}
 
-	val peek: T
+	val peak: T
 	    get() = if (isEmpty) throw IllegalStateException("队列为空") else pq[1] as T
 	
 	fun dequeue(): T {
 		require(!isEmpty) { "队列为空" }
-		val min = pq[1]
+		val max = pq[1]
 		exchange(1, size--)
 		pq[size + 1] = null
 		sink(1)
-		return min as T
+		return max as T
 	}
 	
 	private fun sink(i: Int) {
@@ -87,10 +91,18 @@ class PriorityQueue<T : Comparable<T>>(comparator: Comparator<T>? = null) {
 		}
 	}
 	
-	fun print() {
-		for (i in 1 until pq.size)
-			if (i != pq.size - 1) print("${pq[i]},")
-		    else print("${pq[i]}\n")
+	fun println() = println(toString())
+
+	override fun toString(): String = buildString {
+		for (i in 1 .. size) {
+			val text = pq[i]?.let {
+				if (i != size)
+					"$it,"
+				else
+					"$it"
+			} ?: break
+			append(text)
+		}
 	}
 	
 }

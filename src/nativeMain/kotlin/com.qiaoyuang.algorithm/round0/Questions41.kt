@@ -44,7 +44,7 @@ class MedianContainer {
 	}
 	
 	private fun resize() {
-		while (minQueue.size != 0 && minQueue.peek < maxQueue.peek) {
+		while (minQueue.size != 0 && minQueue.peak < maxQueue.peak) {
 			maxQueue.enqueue(minQueue.dequeue())
 		}
 		while (minQueue.size - maxQueue.size > 0)
@@ -55,7 +55,7 @@ class MedianContainer {
 	
 	fun getMedian(): Int =
 			if (maxQueue.size == minQueue.size)
-				maxQueue.peek + minQueue.peek shr 1
-			else maxQueue.peek
+				maxQueue.peak + minQueue.peak shr 1
+			else maxQueue.peak
 	
 }

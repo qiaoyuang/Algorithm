@@ -11,21 +11,21 @@ data class BinaryTreeNode<T>(
 ) {
 	
 	fun preOrder() {
-		println(value)
+        println(value)
 		left?.preOrder()
 		right?.preOrder()
 	}
 	
 	fun inOrder() {
 		left?.inOrder()
-		println(value)
+        println(value)
 		right?.inOrder()
 	}
 	
 	fun postOrder() {
 		left?.postOrder()
 		right?.postOrder()
-		println(value)
+        println(value)
 	}
 
     fun preOrderList(): List<T> {

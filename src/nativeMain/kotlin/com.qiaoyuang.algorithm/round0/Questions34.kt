@@ -48,7 +48,7 @@ fun BinaryTreeNode<Int>.findPath(num: Int) {
 			}
 			else -> {
 				list.forEach { print("$it ") }
-			    println()
+				println()
 			    sum -= list.dequeue()
 			}
 				
