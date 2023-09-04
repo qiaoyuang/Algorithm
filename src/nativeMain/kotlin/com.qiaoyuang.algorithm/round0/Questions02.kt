@@ -1,5 +1,6 @@
 package com.qiaoyuang.algorithm.round0
 
+import kotlin.experimental.ExperimentalNativeApi
 import kotlin.native.ref.WeakReference
 
 /**
@@ -30,6 +31,7 @@ class Instance1 private constructor() {
  */
 class Instance2 private constructor() {
 
+    @OptIn(ExperimentalNativeApi::class)
     companion object {
         private var mRef = WeakReference(Instance2())
         val instance: Instance2

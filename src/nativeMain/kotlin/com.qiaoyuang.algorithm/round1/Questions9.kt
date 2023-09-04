@@ -61,7 +61,7 @@ private class TwoQueuesStack<T> {
 }
 
 /**
- * Questions9-1: Use two stacks to implement a queue.
+ * Questions9-2: Use two stacks to implement a queue.
  */
 
 private class TwoStacksQueue<T> {

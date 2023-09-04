@@ -10,7 +10,7 @@ fun test10() {
 }
 
 /**
- * Questions10: Find the Nth term of the Fibonacci sequence
+ * Questions 10-1 & 10-2: Find the Nth term of the Fibonacci sequence
  */
 
 fun fibonacci(n: UInt): ULong = when (n) {
