@@ -94,15 +94,17 @@ class PriorityQueue<T : Comparable<T>>(comparator: Comparator<T>? = null) {
 	fun println() = println(toString())
 
 	override fun toString(): String = buildString {
+		append('[')
 		for (i in 1 .. size) {
 			val text = pq[i]?.let {
 				if (i != size)
-					"$it,"
+					"$it, "
 				else
 					"$it"
 			} ?: break
 			append(text)
 		}
+		append(']')
 	}
 	
 }
