@@ -41,7 +41,7 @@ fun test5() {
 }
 
 /**
- * Question5-1: replace char in CharArray with another string. For example, replace the ' ' to "%20"
+ * Questions 5-1: replace char in CharArray with another string. For example, replace the ' ' to "%20"
  */
 
 private fun CharArray.replaceChar(char: Char, str: String, length: Int) {
@@ -72,7 +72,7 @@ private fun CharArray.replaceChar(char: Char, str: String, length: Int) {
 }
 
 /**
- * Question5-2: We have two sorted IntArray a1 and a2, the a1 have enough space to insert a2, please insert a2 to a1 and sorted.
+ * Questions 5-2: We have two sorted IntArray a1 and a2, the a1 have enough space to insert a2, please insert a2 to a1 and sorted.
  */
 
 private fun insetArray(a1: IntArray, a1RealSize: Int, a2: IntArray) {

@@ -12,7 +12,7 @@ fun test3() {
 }
 
 /**
- * Question 3-1: Find the repeat number in IntArray, the numbers between 0~n-1
+ * Questions 3-1: Find the repeat number in IntArray, the numbers between 0~n-1
  */
 
 private fun findNumber1(numbers: IntArray): Int {
@@ -28,7 +28,7 @@ private fun findNumber1(numbers: IntArray): Int {
 }
 
 /**
- * Question 3-2: Find the repeat number in IntArray,
+ * Questions 3-2: Find the repeat number in IntArray,
  * the IntArray.length == n + 1, the numbers between 1~n-1,
  * but can't modify the IntArray.
  */

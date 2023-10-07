@@ -18,7 +18,7 @@ fun test17() {
 }
 
 /**
- * Question 17-1: Give a number n, print the 1 to the biggest number(n digits).
+ * Questions 17-1: Give a number n, print the 1 to the biggest number(n digits).
  */
 private fun println1toBiggest(n: UInt) {
     if (n == 0u)

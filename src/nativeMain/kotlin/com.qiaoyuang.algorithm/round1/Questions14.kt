@@ -18,7 +18,7 @@ fun test14() {
 }
 
 /**
- * Questions14: We have a rope that length is n, cut the rope into m pieces (m > 0, n > 0).
+ * Questions 14: We have a rope that length is n, cut the rope into m pieces (m > 0, n > 0).
  * Every pieces named such as: k[0], k[1]...k[m], please find the biggest value of the k[0] * k[1] *... * k[m].
  */
 

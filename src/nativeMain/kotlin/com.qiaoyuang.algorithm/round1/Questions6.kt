@@ -26,7 +26,7 @@ fun test6() {
 }
 
 /**
- * Question6: Print linked list in reverse.
+ * Questions 6: Print linked list in reverse.
  */
 
 private fun SingleDirectionNode<Char>.printLinkedListReverse1() {

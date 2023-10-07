@@ -16,7 +16,7 @@ fun test16() {
 }
 
 /**
- * Question16: Raise a number to an integer power(Don't need to consider big number problem)
+ * Questions 16: Raise a number to an integer power(Don't need to consider big number problem)
  */
 private infix fun Double.myPow(exponent: Int): Double {
     val result = recPow(exponent)

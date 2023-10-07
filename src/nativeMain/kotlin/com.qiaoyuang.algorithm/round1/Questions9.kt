@@ -29,7 +29,7 @@ fun test9() {
 }
 
 /**
- * Questions9-1: Use two queues to implement a stack.
+ * Questions 9-1: Use two queues to implement a stack.
  */
 
 private class TwoQueuesStack<T> {
@@ -61,7 +61,7 @@ private class TwoQueuesStack<T> {
 }
 
 /**
- * Questions9-2: Use two stacks to implement a queue.
+ * Questions 9-2: Use two stacks to implement a queue.
  */
 
 private class TwoStacksQueue<T> {

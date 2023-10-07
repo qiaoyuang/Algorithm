@@ -34,7 +34,7 @@ fun test8() {
 }
 
 /**
- * Question8: Give you a binary node, find the node's next node in binary's in-order.
+ * Questions 8: Give you a binary node, find the node's next node in binary's in-order.
  * The binary node has 3 points, left(point to left sub-node), right(point to right sub-node), father(point to father node)
  */
 private fun BinaryTreeNodeWithFather<Char>.findInOrderNextElement(): Char? = father?.let {

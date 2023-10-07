@@ -23,7 +23,7 @@ fun test7() {
 }
 
 /**
- * Questions7: Input a Binary Tree's pre-order and in-order results, please rebuild this Binary Tree.
+ * Questions 7: Input a Binary Tree's pre-order and in-order results, please rebuild this Binary Tree.
  */
 
 fun rebuildBinaryTree(preOrder: IntArray, inOrder: IntArray): BinaryTreeNode<Int> {

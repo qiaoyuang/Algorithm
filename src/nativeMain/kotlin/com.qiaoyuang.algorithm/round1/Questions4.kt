@@ -23,7 +23,7 @@ fun test4() {
 }
 
 /**
- * Question4: Give a two-dimensional array and an integer, the two-dimensional array's row and column are increment.
+ * Questions 4: Give a two-dimensional array and an integer, the two-dimensional array's row and column are increment.
  * If the integer in the two-dimensional array?
  */
 

@@ -14,7 +14,7 @@ fun test18() {
 }
 
 /**
- * Question18-1: Delete a linked list's node and time complexity must be O(1)(That not include the time about search the node)
+ * Questions 18-1: Delete a linked list's node and time complexity must be O(1)(That not include the time about search the node)
  */
 private infix fun <T : Comparable<T>> SingleDirectionNode<T>.deleteNode(target: T): SingleDirectionNode<T>? {
     var current: SingleDirectionNode<T>? = this
@@ -35,7 +35,7 @@ private fun printlnResult1(num: Int, head: SingleDirectionNode<Int>) {
 }
 
 /**
- * Question18-2: Delete all repeated nodes in a linked list
+ * Questions 18-2: Delete all repeated nodes in a linked list
  */
 private fun <T : Comparable<T>> SingleDirectionNode<T>.deleteRepeatedNodes(): SingleDirectionNode<T>? {
     var head: SingleDirectionNode<T>? = this
