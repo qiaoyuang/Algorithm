@@ -8,7 +8,7 @@ fun test42() {
 }
 
 /**
- * Questions42: Find the biggest sum of sub-array in a IntArray
+ * Questions 42: Find the biggest sum of sub-array in a IntArray
  */
 private fun IntArray.getBiggestSubArraySum(): Int {
     var biggest = 0
