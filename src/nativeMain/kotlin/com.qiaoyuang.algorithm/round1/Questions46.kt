@@ -26,7 +26,7 @@ private fun String.findCountOfTranslation(index: Int): Int {
 
 private fun Int.findCountOfTranslationForLoop(): Int {
     val str = abs(this).toString()
-    val counts = IntArray(str.length) { 0 }
+    val counts = IntArray(str.length)
     for (i in str.lastIndex downTo 0) {
         var count = if (i < str.lastIndex)
             counts[i + 1]

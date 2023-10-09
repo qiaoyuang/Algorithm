@@ -9,7 +9,7 @@ fun test17() {
 
 // 使用数组方式
 fun printToMaxOfNDigits2(n: Int) {
-	val array = IntArray(n) { 0 }
+	val array = IntArray(n)
 	// 逆向打印数组
 	fun printArray() {
 		var pos = array.size -1

@@ -15,7 +15,7 @@ fun longestSubstringWithoutDuplication(str: String): Int {
 	// 获取字符在数组中的位置
 	fun Char.getPosition(): Int = code - 97
 	// 计算逻辑
-	val array = IntArray(26) { 0 }
+	val array = IntArray(26)
 	var curLength = 0
 	var maxLength = 0
 	for (i in str.indices) {

@@ -34,7 +34,7 @@ private fun findNumber1(numbers: IntArray): Int {
  */
 
 private fun findNumber21(numbers: IntArray): Int {
-    val helpArray = IntArray(numbers.size) { 0 }
+    val helpArray = IntArray(numbers.size)
     numbers.forEach {
         if (helpArray[it] == it)
             return it
