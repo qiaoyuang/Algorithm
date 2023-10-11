@@ -22,7 +22,7 @@ fun IntArray.mergeSort1() {
 	mergeSort(aux, 0, size - 1)
 }
 
-private fun IntArray.mergeSort(aux:IntArray, lo: Int, hi: Int) {
+private fun IntArray.mergeSort(aux: IntArray, lo: Int, hi: Int) {
 	if (hi <= lo) return
 	val mid = lo + ((hi - lo) shr 1)
 	mergeSort(aux, lo, mid)
@@ -44,7 +44,7 @@ fun IntArray.mergeSort2() {
 	}
 }
 
-fun IntArray.merge(aux:IntArray, lo: Int, mid: Int, hi: Int) {
+fun IntArray.merge(aux: IntArray, lo: Int, mid: Int, hi: Int) {
 	var i = lo
 	var j = mid + 1
 	for (k in lo..hi)
