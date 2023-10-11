@@ -34,10 +34,7 @@ private fun IntArray.getCountOfReverseOrderPair2(): Int {
 }
 
 private fun IntArray.mergeSort(aux: IntArray, start: Int, end: Int): Int {
-    if (start == end) {
-        aux[start] = this[start]
-        return 0
-    }
+    if (start == end) return 0
     val mid = start + (end - start) / 2
     return mergeSort(aux, start, mid) + mergeSort(aux, mid + 1, end) + merge(aux, start, mid, end)
 }

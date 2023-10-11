@@ -26,8 +26,7 @@ private fun IntArray.findTheNumber1(): Int {
             }
         }
     }
-    if (count <= 0)
-        throw IllegalArgumentException("The IntArray must contain a number that more than a half")
+    require(count > 0) { "The IntArray must contain a number that more than a half" }
     return num
 }
 
