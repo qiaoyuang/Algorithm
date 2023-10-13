@@ -4,6 +4,8 @@
 
 - Questions 46 ~ 48: Dynamic Programming, Convert recursion to loop
 
-- Questions 49 ~ : Use auxiliary space to save time
+- Questions 49 ~ 53: Use auxiliary space to save time
 
 - Questions 51: Merge Sort
+
+- Questions 53: Binary Search

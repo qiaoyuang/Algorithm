@@ -10,10 +10,15 @@ fun test53() {
     printlnResult2(intArrayOf(0, 1, 2, 3, 4, 6 ,7, 8, 9))
     printlnResult2(intArrayOf(1, 2, 3, 4, 5, 6 ,7, 8, 9))
     printlnResult2(intArrayOf(1))
+
+    printlnResult3(intArrayOf(-3, -1, 1, 3, 5))
+    printlnResult3(intArrayOf(0))
+    printlnResult3(intArrayOf(0, 1, 2, 3, 4))
+    printlnResult3(intArrayOf(-3, -1, 1, 3, 5, 9))
 }
 
 /**
- * Questions 53-1: Find the count of a number appears in a sorted IntArray
+ * Questions 53-1: Find the count of a number appears in a sorted IntArray.
  */
 private infix fun IntArray.findCount(num: Int): Int {
     require(isNotEmpty()) { "The array can't be empty" }
@@ -106,3 +111,30 @@ private fun IntArray.findLeakedNumber(): Int {
 }
 
 private fun printlnResult2(array: IntArray) = println("The array: ${array.toList()} leaks number ${array.findLeakedNumber()}")
+
+/**
+ * Questions 53-3: An IntArray monotonically increasing, each number is only one. Found the number that equals its index in the IntArray.
+ */
+private fun IntArray.findNumberThatEqualsIndex(): Int {
+    require(isNotEmpty()) { "The IntArray can't be empty" }
+    var start = 0
+    var mid = size / 2
+    var end = lastIndex
+    while (mid in 0..lastIndex) {
+        when {
+            this[mid] == mid -> return mid
+            mid == 0 || mid == lastIndex -> throw IllegalArgumentException("The IntArray doesn't contain the number that equals its index")
+            this[mid] > mid -> {
+                end = mid
+                mid = (end - start) / 2 + start
+            }
+            this[mid] < mid -> {
+                start = mid + 1
+                mid = (end - start) / 2 + start
+            }
+        }
+    }
+    throw IllegalArgumentException("The IntArray doesn't contain the number that equals its index")
+}
+
+private fun printlnResult3(array: IntArray) = println("The number that equals its index in IntArray: ${array.toList()} is ${array.findNumberThatEqualsIndex()}")

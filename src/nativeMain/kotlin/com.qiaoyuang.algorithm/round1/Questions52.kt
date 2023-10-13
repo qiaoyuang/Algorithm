@@ -7,6 +7,9 @@ fun test52() {
     printlnResult(header1, header2)
 }
 
+/**
+ * Questions 52: Find the first public node on two linked lists
+ */
 private fun <T> findFirstPublicNode(header1: SingleDirectionNode<T>, header2: SingleDirectionNode<T>): SingleDirectionNode<T> {
     val findNode1 = FindNode(header1)
     findNode1.enterStack()
