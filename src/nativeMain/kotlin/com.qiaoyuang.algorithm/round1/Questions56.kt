@@ -7,6 +7,7 @@ fun test56() {
 
     printlnResult2(intArrayOf(1, 2, 1, 1))
     printlnResult2(intArrayOf(2, 3, 2, 1, 2, 3, 3))
+    printlnResult2(intArrayOf(1))
 }
 
 /**
