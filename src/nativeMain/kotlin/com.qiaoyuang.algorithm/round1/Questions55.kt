@@ -82,7 +82,7 @@ private fun testCase3(): BinaryTreeNode<Int> = BinaryTreeNode(
         value = 3,
         right = BinaryTreeNode(
             value = 6,
-            right = BinaryTreeNode(value = 8)
+            right = BinaryTreeNode(value = 8),
             ),
     )
 )
