@@ -12,4 +12,6 @@
 
 - Questions 54 ~ 55: Iterate a binary tree
 
-- Questions 56: Bit Operation
+- Questions 56: Bits Operation
+
+- Questions 57: Double pointers, when we meet the questions about find something in a sorted array, we should think of this way
