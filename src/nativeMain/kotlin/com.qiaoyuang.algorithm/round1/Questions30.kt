@@ -21,7 +21,7 @@ fun test30() {
 }
 
 /**
- * Questions30: The stack with the `min` function
+ * Questions 30: The stack with the `min` function
  */
 private class StackMinElement<T : Comparable<T>> {
 
