@@ -29,9 +29,9 @@ private fun getProbabilityOfDicesRecursion(n: Int): HashMap<Int, Int> {
             preResult.forEach {
                 val sum = i + it.key
                 result[sum] = if (result.containsKey(sum))
-                    result[sum]!! +  1
+                    result[sum]!! + it.value
                 else
-                    1
+                    it.value
             }
     }
     return result
@@ -48,9 +48,9 @@ private fun getProbabilitiesOfDicesLoop(n: Int): Map<Int, Double> {
             map.forEach {
                 val sum = j + it.key
                 newMap[sum] = if (newMap.containsKey(sum))
-                    newMap[sum]!! + 1
+                    newMap[sum]!! + it.value
                 else
-                    1
+                    it.value
             }
         }
         map = newMap
@@ -62,9 +62,6 @@ private fun getProbabilitiesOfDicesLoop(n: Int): Map<Int, Double> {
 }
 
 private fun printlnResult(n: Int) {
-    getProbabilitiesOfDicesLoop(n).forEach {
-        println("${it.key}, ${it.value}")
-    }
     val result = getProbabilityOfDices(n) == getProbabilitiesOfDicesLoop(n)
     println("When we have n dices, we find the probabilities of sun of all dices is $result")
 }
