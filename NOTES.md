@@ -15,3 +15,9 @@
 - Questions 56: Bits Operation
 
 - Questions 57: Double pointers, when we meet the questions about find something in a sorted array, we should think of this way
+
+- Questions 58: String Operation
+
+- Questions 59: Queue, Stack
+
+- Questions 60: Dynamic Programming, Convert recursion to loop
