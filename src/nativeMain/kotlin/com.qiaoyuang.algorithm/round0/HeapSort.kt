@@ -12,16 +12,16 @@ fun testHeapSort() {
 
 fun IntArray.heapSort() {
 	var n = size
-	val aux = IntArray(size + 1)
-	for (i in 0 until size)
-		aux[i+1] = this[i]
+	val aux = IntArray(size + 1) {
+		if (it == 0) 0 else this[it - 1]
+	}
 	for (k in n shr 1 downTo 1)
 		aux.sink(k, n)	
 	while (n > 1) {
 		aux.exchange(1, n--)
 		aux.sink(1, n)
 	}
-	for (i in 0 until size)
+	for (i in indices)
 		this[i] = aux[i+1]
 }
 
@@ -29,8 +29,10 @@ fun IntArray.sink(K: Int, N: Int) {
 	var k = K
 	while (2 * k <= N) {
 		var j = 2 * k
-		if (j < N && this[j] < this[j+1]) j++
-		if (this[k] > this[j]) break
+		if (j < N && this[j] < this[j + 1])
+			j++
+		if (this[k] > this[j])
+			break
         exchange(k, j)
 	    k = j
 	}

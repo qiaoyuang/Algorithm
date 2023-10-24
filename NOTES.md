@@ -2,6 +2,8 @@
 
 - Questions 39 ～ 40: The `partition` function in Quick Sort
 
+- Questions 41: Heap
+
 - Questions 46 ~ 48: Dynamic Programming, Convert recursion to loop
 
 - Questions 49 ~ 53: Use auxiliary space to save time
