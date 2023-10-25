@@ -20,7 +20,7 @@
 
 - Questions 58: String Operation
 
-- Questions 59: Queue, Stack
+- Questions 59: Queue, Stack, Sliding Window
 
 - Questions 60: Dynamic Programming, Convert recursion to loop
 

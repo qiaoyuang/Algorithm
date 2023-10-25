@@ -1,10 +1,13 @@
 package com.qiaoyuang.algorithm.round1
 
+import com.qiaoyuang.algorithm.round0.Queue
 import com.qiaoyuang.algorithm.round0.Stack
 
 fun test59() {
     printlnResult1(intArrayOf(2, 3, 4, 2, 6, 2, 5, 1), 3)
     printlnResult1(intArrayOf(1, 3, 4, 7, 9, 1, 9, 8), 2)
+    printlnResult1(intArrayOf(2, 2, 2, 2, 3, 6, 2, 5, 1), 3)
+    printlnResult2(intArrayOf(2, 3, 4, 2, 6, 2, 5, 1))
 }
 
 /**
@@ -13,20 +16,38 @@ fun test59() {
  */
 private fun IntArray.findAllLargestNumbers(n: Int): IntArray {
     require(n in 1..size) { "Illegal parameters" }
+    if (n == 1)
+        return this
     val result = IntArray(size - n + 1)
-    val queue = Window<Int>()
-    for (i in 0..< n)
-        queue.enqueue(this[i])
-    for (i in 0.. result.lastIndex) {
-        result[i] = queue.max()
-        if (i + n >= size)
-            break
-        queue.dequeue()
-        queue.enqueue(this[i + n])
+    val queue = Queue<Int>()
+    for (i in 0..< n) this[i].let {
+        queue.enqueue(it)
+        if (it > queue.last)
+            queue.dequeue()
+    }
+
+    result[0] = queue.last
+    for (i in 1..result.lastIndex) {
+        while (n == queue.size || queue.first > queue.last)
+            queue.dequeue()
+
+        val newElement = this[i + n - 1]
+        queue.enqueue(newElement)
+
+        while (newElement > queue.last)
+            queue.dequeue()
+
+        result[i] = queue.last
     }
     return result
 }
 
+private fun printlnResult1(array: IntArray, n: Int) =
+    println("The IntArray is ${array.toList()}, the size of window is $n, the all max values are: ${array.findAllLargestNumbers(n).toList()}")
+
+/**
+ * Questions 59-2: Implementing a queue that contain a max() function could find the max value, and the time complexities of function max, pop, push are O(1)
+ */
 private class MaxStack<T : Comparable<T>> {
 
     private val maxStack = Stack<T>()
@@ -36,7 +57,6 @@ private class MaxStack<T : Comparable<T>> {
         elementStack.push(t)
         if (maxStack.isEmpty || maxStack.top() <= t)
             maxStack.push(t)
-
     }
 
     fun max(): T = maxStack.top()
@@ -53,38 +73,20 @@ private class MaxStack<T : Comparable<T>> {
 
     val size
         get() = elementStack.size
+
+    val top: T
+        get() = elementStack.top()
 }
 
-private class Window<T : Comparable<T>> {
-
-    private val stack1 = MaxStack<T>()
-    private val stack2 = MaxStack<T>()
-
-    fun enqueue(t: T) {
-        stack1.push(t)
+private fun printlnResult2(numbers: IntArray) {
+    println("Pushing the numbers: ${numbers.toList()} to our Stack")
+    val stack = MaxStack<Int>()
+    numbers.forEach {
+        stack.push(it)
+        println("Push $it, top: ${stack.top}, max: ${stack.max()}")
     }
-
-    fun dequeue(): T {
-        if (!stack2.isEmpty)
-            return stack2.pop()
-        while (stack1.size > 1) {
-            stack2.push(stack1.pop())
-        }
-        return stack1.pop()
-    }
-
-    fun max(): T = when {
-        stack1.isEmpty && stack2.isEmpty -> throw IllegalStateException("This windows doesn't contain any element")
-        !stack1.isEmpty && stack2.isEmpty -> stack1.max()
-        stack1.isEmpty && !stack2.isEmpty -> stack2.max()
-        else -> if (stack1.max() > stack2.max()) stack1.max() else stack2.max()
+    while (stack.size > 1) {
+        val pop = stack.pop()
+        println("Pop $pop, top: ${stack.top}, max: ${stack.max()}")
     }
 }
-
-private fun printlnResult1(array: IntArray, n: Int) =
-    println("The IntArray is ${array.toList()}, the size of window is $n, the all max values are: ${array.findAllLargestNumbers(n).toList()}")
-
-/**
- * Questions 59-2: Implementing a queue that contain a max() function could find the max value, and the time complexities of function max, pop, push are O(1)
- * Answer: Refer to implementation of Questions 59-1
- */
