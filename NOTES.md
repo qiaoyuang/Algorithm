@@ -29,3 +29,7 @@
 - Questions 62: Josephuse Ring
 
 - Questions 63: Array Iteration
+
+- Questions 67: Board conditions
+
+- Questions 68: Binary tree
