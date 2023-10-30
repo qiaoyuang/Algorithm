@@ -27,38 +27,38 @@ private infix fun String.addBinary(str: String): String {
 
             when {
                 biggerDigital == '1' && smallerDigital == '0' && carry == '0' -> {
-                    append('1')
+                    insert(0, '1')
                     carry = '0'
                 }
                 biggerDigital == '0' && smallerDigital == '1' && carry == '0' -> {
-                    append('1')
+                    insert(0, '1')
                     carry = '0'
                 }
                 biggerDigital == '0' && smallerDigital == '0' && carry == '1' -> {
-                    append('1')
+                    insert(0, '1')
                     carry = '0'
                 }
 
                 biggerDigital == '0' && smallerDigital == '1' && carry == '1' -> {
-                    append('0')
+                    insert(0, '0')
                     carry = '1'
                 }
                 biggerDigital == '1' && smallerDigital == '0' && carry == '1' -> {
-                    append('0')
+                    insert(0, '0')
                     carry = '1'
                 }
                 biggerDigital == '1' && smallerDigital == '1' && carry == '0' -> {
-                    append('0')
+                    insert(0, '0')
                     carry = '1'
                 }
 
                 biggerDigital == '0' && smallerDigital == '0' && carry == '0' -> {
-                    append('0')
+                    insert(0, '0')
                     carry = '0'
                 }
 
                 biggerDigital == '1' && smallerDigital == '1' && carry == '1' -> {
-                    append('1')
+                    insert(0, '1')
                     carry = '1'
                 }
             }
@@ -68,28 +68,26 @@ private infix fun String.addBinary(str: String): String {
             val biggerDigital = bigger[biggerIndex--]
             when {
                 biggerDigital == '1' && carry == '0' -> {
-                    append('1')
+                    insert(0, '1')
                     carry = '0'
                 }
                 biggerDigital == '0' && carry == '1' -> {
-                    append('1')
+                    insert(0, '1')
                     carry = '0'
                 }
                 biggerDigital == '1' && carry == '1' -> {
-                    append('0')
+                    insert(0, '0')
                     carry = '1'
                 }
                 biggerDigital == '0' && carry == '0' -> {
-                    append('0')
+                    insert(0, '0')
                     carry = '0'
                 }
             }
         }
 
         if (carry == '1')
-            append('1')
-
-        reverse()
+            insert(0, '1')
     }
 }
 

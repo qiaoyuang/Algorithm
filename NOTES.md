@@ -1,5 +1,7 @@
 # Notes
 
+## Round
+
 - Questions 39 ～ 40: The `partition` function in Quick Sort
 
 - Questions 41: Heap
@@ -33,3 +35,7 @@
 - Questions 67: Board conditions
 
 - Questions 68: Binary tree
+
+## Special
+
+- Questions 1 ~ 3: Integer
