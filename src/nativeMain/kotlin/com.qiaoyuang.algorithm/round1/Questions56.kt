@@ -56,7 +56,7 @@ private fun IntArray.findNumberAppearOnce(): Int {
         for (j in 31 downTo 0) {
             val bit = num and bitMusk
             if (bit != 0)
-                bitsSum[j] += 1
+                bitsSum[j]++
             bitMusk = bitMusk shl 1
         }
     }
@@ -70,4 +70,4 @@ private fun IntArray.findNumberAppearOnce(): Int {
 }
 
 private fun printlnResult2(array: IntArray) =
-    println("The two numbers just appear once are ${array.findNumberAppearOnce()}, in array: ${array.toList()}")
+    println("The number just appear once is ${array.findNumberAppearOnce()} in array: ${array.toList()}")
