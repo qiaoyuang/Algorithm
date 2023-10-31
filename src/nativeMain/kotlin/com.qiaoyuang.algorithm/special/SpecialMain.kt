@@ -8,4 +8,5 @@ fun specialMain() {
     printlnQuestionsTitle(2, ::test2)
     printlnQuestionsTitle(3, ::test3)
     printlnQuestionsTitle(4, ::test4)
+    printlnQuestionsTitle(5, ::test5)
 }
