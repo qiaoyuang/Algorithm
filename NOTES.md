@@ -38,4 +38,5 @@
 
 ## Special
 
-- Questions 1 ~ 3: Integer
+- Questions 1 ~ 5: Integer
+- Questions 6 ~ 7: Double/Triple pointers
