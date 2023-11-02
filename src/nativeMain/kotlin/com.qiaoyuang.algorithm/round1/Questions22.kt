@@ -25,7 +25,7 @@ fun test22() {
 }
 
 /**
- * Questions22-1: Find the reciprocal k node in a Linked List, the reciprocal starts from 1
+ * Questions 22-1: Find the reciprocal k node in a Linked List, the reciprocal starts from 1
  */
 private infix fun <T : Comparable<T>> SingleDirectionNode<T>.findReciprocalNodeInLinkedList(k: UInt): SingleDirectionNode<T> {
     if (k == 0u)
@@ -56,7 +56,7 @@ private fun printlnResult1(k: UInt, head: SingleDirectionNode<UInt>) {
 }
 
 /**
- * Questions22-2: Return the Linked List's middle node,
+ * Questions 22-2: Return the Linked List's middle node,
  * if the count of the Linked List is odd number, return the middle, else return the anyone of the two middle nodes
  */
 private fun <T> SingleDirectionNode<T>.findTheMiddleNode(): SingleDirectionNode<T> {

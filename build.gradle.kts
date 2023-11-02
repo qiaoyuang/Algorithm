@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.9.10"
+    kotlin("multiplatform") version "1.9.20"
 }
 
 group = "com.qiaoyuang.algorithm"
@@ -42,7 +42,5 @@ kotlin {
                 optIn("kotlin.RequiresOptIn")
             }
         }
-        val nativeMain by getting
-        val nativeTest by getting
     }
 }
