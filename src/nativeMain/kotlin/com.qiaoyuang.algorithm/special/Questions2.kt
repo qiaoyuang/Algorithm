@@ -93,5 +93,5 @@ private infix fun String.addBinary(str: String): String {
 
 private fun printlnResult(num1: String, num2: String) {
     val result = num1 addBinary num2
-    println("The $num1 adds $num2, we got the result $result, the result is ${(num1.toInt(2) + num2.toInt(2)).toString(2) == result}")
+    println("The $num1 adds $num2, we got the result $result, the result is (${(num1.toInt(2) + num2.toInt(2)).toString(2) == result})")
 }

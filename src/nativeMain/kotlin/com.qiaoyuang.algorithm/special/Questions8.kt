@@ -33,4 +33,4 @@ private fun IntArray.subSum(i: Int, j: Int): Int {
 }
 
 private fun printlnResult(array: IntArray, k: Int) =
-    println("The shortest size is ${array findShortestSizeOfSubArray k} of sub-array in IntArray: ${array.toList()} that sum equals or greater than $k")
+    println("The shortest size is (${array findShortestSizeOfSubArray k}) of sub-array in IntArray: ${array.toList()} that sum equals or greater than $k")

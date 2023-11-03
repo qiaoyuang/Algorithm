@@ -52,6 +52,6 @@ private fun IntArray.findThreeNumbers(): List<Triple<Int, Int, Int>> {
 
 private fun printlnResult(array: IntArray) {
     println("The all of the three numbers in IntArray: ${array.toList()} are:")
-    println("${array.findThreeNumbers()}")
+    println("(${array.findThreeNumbers()})")
     println("That theirs sum is 0.")
 }

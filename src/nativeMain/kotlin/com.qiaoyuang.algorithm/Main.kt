@@ -4,7 +4,7 @@ import com.qiaoyuang.algorithm.round1.round1Main
 import com.qiaoyuang.algorithm.special.specialMain
 
 fun main() {
-    // round1Main()
+    round1Main()
     specialMain()
 }
 

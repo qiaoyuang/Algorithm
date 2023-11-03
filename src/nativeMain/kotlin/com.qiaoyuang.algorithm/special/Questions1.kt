@@ -47,4 +47,4 @@ private fun divideCore(dividend: Int, divisor: Int): Int {
 }
 
 private fun printlnResult(dividend: Int, divisor: Int) =
-    println("The $dividend divide the $divisor equals ${dividend divide divisor}")
+    println("The $dividend divide the $divisor equals (${dividend divide divisor})")

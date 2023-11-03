@@ -15,4 +15,4 @@ private fun getCountsOf1(n: Int): IntArray {
 }
 
 private fun printlnResult(n: Int) =
-    println("Given the number $n, the counts of 1 in 0...n is ${getCountsOf1(n).toList()}")
+    println("Given the number $n, the counts of 1 in 0...n is (${getCountsOf1(n).toList()})")

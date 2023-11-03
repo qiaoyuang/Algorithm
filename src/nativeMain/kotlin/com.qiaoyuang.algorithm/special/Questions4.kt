@@ -31,4 +31,4 @@ private fun IntArray.findNumberAppearOnce(): Int {
 }
 
 private fun printlnResult(array: IntArray) =
-    println("The number just appear once is ${array.findNumberAppearOnce()} in array: ${array.toList()}")
+    println("The number just appear once is (${array.findNumberAppearOnce()}) in array: ${array.toList()}")

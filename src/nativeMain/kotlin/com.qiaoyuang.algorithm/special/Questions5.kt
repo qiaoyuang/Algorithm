@@ -29,5 +29,5 @@ private fun Array<String>.findMaxProduct(): Int {
 
 private fun printlnResult(array: Array<String>) {
     println("The string array is: ${array.toList()}")
-    println("The maximum product of two strings that don't have same alphabets is: ${array.findMaxProduct()}")
+    println("The maximum product of two strings that don't have same alphabets is: (${array.findMaxProduct()})")
 }

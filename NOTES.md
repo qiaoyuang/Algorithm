@@ -39,4 +39,4 @@
 ## Special
 
 - Questions 1 ~ 5: Integer
-- Questions 6 ~ 9: Double/Triple pointers
+- Questions 6 ~ 11: Double/Triple pointers

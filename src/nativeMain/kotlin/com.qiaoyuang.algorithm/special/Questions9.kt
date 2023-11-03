@@ -32,4 +32,4 @@ private fun IntArray.subProduct(i: Int, j: Int): Int {
 }
 
 private fun printlnResult(array: IntArray, k: Int) =
-    println("The count of all continues sub-array that product less than $k is ${array findCount k} in array: ${array.toList()}")
+    println("The count of all continues sub-array that product less than $k is (${array findCount k}) in array: ${array.toList()}")

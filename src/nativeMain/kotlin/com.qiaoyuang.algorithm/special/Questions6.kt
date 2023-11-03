@@ -25,4 +25,4 @@ private infix fun IntArray.findTwoIndexes(k: Int): Pair<Int, Int> {
 }
 
 private fun printlnResult(array: IntArray, k: Int) =
-    println("The indexes of two integers is: ${array findTwoIndexes k} that sum is $k in an increasing IntArray: ${array.toList()}")
+    println("The indexes of two integers is: (${array findTwoIndexes k}) that sum is $k in an increasing IntArray: ${array.toList()}")

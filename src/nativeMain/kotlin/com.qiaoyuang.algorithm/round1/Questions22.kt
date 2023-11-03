@@ -51,7 +51,7 @@ private fun printlnResult1(k: UInt, head: SingleDirectionNode<UInt>) {
     try {
         println("The reciprocal No.$k node is: ${(head findReciprocalNodeInLinkedList k).element}")
     } catch (e: Exception) {
-        e.printStackTrace()
+        println("Caught an exception")
     }
 }
 
