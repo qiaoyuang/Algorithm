@@ -31,7 +31,7 @@ kotlin {
         }
         compilations.configureEach {
             compilerOptions.configure {
-                freeCompilerArgs.add("-Xbinary=gc=pmc")
+                // freeCompilerArgs.add("-Xbinary=gc=pmc")
             }
         }
     }
