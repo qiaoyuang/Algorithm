@@ -24,4 +24,6 @@ fun specialMain() {
     printlnQuestionsTitle(18, ::test18)
     printlnQuestionsTitle(19, ::test19)
     printlnQuestionsTitle(20, ::test20)
+    printlnQuestionsTitle(21, ::test21)
+    printlnQuestionsTitle(22, ::test22)
 }
