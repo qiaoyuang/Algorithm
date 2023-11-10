@@ -4,7 +4,7 @@ import com.qiaoyuang.algorithm.round1.SingleDirectionNode
 import com.qiaoyuang.algorithm.round1.printlnLinkedList
 
 fun test24() {
-    printlnResult(linkedList())
+    printlnResult(publicLinkedList())
     printlnResult(SingleDirectionNode(element = 1, next = SingleDirectionNode(element = 2)))
 }
 
@@ -25,16 +25,6 @@ fun <T> SingleDirectionNode<T>.reverse(): SingleDirectionNode<T> {
     }
     pointer2.next = pointer1
     return pointer2
-}
-
-private fun linkedList(): SingleDirectionNode<Int> {
-    val root = SingleDirectionNode(1)
-    var pointer: SingleDirectionNode<Int>? = root
-    repeat(9) {
-        pointer?.next = SingleDirectionNode(it + 2)
-        pointer = pointer?.next
-    }
-    return root
 }
 
 private fun printlnResult(head: SingleDirectionNode<Int>) {

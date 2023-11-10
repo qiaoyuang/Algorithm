@@ -4,17 +4,17 @@ import com.qiaoyuang.algorithm.round1.SingleDirectionNode
 import com.qiaoyuang.algorithm.round1.printlnLinkedList
 
 fun test21() {
-    printlnResult(linkedList(), 1)
-    printlnResult2(linkedList(), 1)
+    printlnResult(publicLinkedList(), 1)
+    printlnResult2(publicLinkedList(), 1)
     println("-----------------------------------")
-    printlnResult(linkedList(), 3)
-    printlnResult2(linkedList(), 3)
+    printlnResult(publicLinkedList(), 3)
+    printlnResult2(publicLinkedList(), 3)
     println("-----------------------------------")
-    printlnResult(linkedList(), 5)
-    printlnResult2(linkedList(), 5)
+    printlnResult(publicLinkedList(), 5)
+    printlnResult2(publicLinkedList(), 5)
     println("-----------------------------------")
-    printlnResult(linkedList(), 10)
-    printlnResult2(linkedList(), 9)
+    printlnResult(publicLinkedList(), 10)
+    printlnResult2(publicLinkedList(), 9)
 }
 
 /**
@@ -68,7 +68,7 @@ private fun <T> printlnResult2(node: SingleDirectionNode<T>, k: Int) {
     printlnLinkedList(node deleteFromLast2 k)
 }
 
-private fun linkedList(): SingleDirectionNode<Int> {
+fun publicLinkedList(): SingleDirectionNode<Int> {
     val root = SingleDirectionNode(1)
     var pointer: SingleDirectionNode<Int>? = root
     repeat(9) {
