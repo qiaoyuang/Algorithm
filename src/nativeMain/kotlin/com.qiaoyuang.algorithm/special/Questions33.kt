@@ -15,7 +15,6 @@ private fun Array<String>.groupAsAnagram(): List<List<String>> {
     forEach {
         require(it.isNotEmpty()) { "The string can't be empty" }
         val hash = it.hash()
-        println(hash)
         if (result.isEmpty()) {
             hashArray[realSize++] = hash
             result.add(mutableListOf(it))
