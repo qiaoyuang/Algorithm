@@ -26,7 +26,7 @@ private infix fun IntArray.findSmallestKNumbers1(k: Int): PriorityQueue<Int> {
 }
 
 private infix fun IntArray.findSmallestKNumbers2(k: Int): IntArray {
-    require(isNotEmpty() && k in 1 ..< size) { "The k must be less than size of the IntArray and greater than 0" }
+    require(isNotEmpty() && k in 1 ..< size) { "The k must less than size of the IntArray and greater than 0" }
     var start = 0
     var end = lastIndex
     var index = partition(start, end)
