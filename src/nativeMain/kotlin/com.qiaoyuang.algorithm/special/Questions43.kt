@@ -5,17 +5,17 @@ import com.qiaoyuang.algorithm.round0.Queue
 
 fun test43() {
     printlnResult(testCase1(), 7)
-    printlnResult(testCase2(), 9)
+    printlnResult(binaryTreeTestCase2(), 9)
     printlnResult(testCase3(), 8)
 }
 
 /**
  * Questions 43: Inset value to a complete binary tree
  */
-private class CBTInserter(val root: BinaryTreeNode<Int>) {
+private class CBTInserter<T :Comparable<T>>(val root: BinaryTreeNode<T>) {
 
-    infix fun insert(v: Int): BinaryTreeNode<Int> {
-        val line = Queue<BinaryTreeNode<Int>>()
+    infix fun insert(v: T): BinaryTreeNode<T> {
+        val line = Queue<BinaryTreeNode<T>>()
         line.enqueue(root)
         while (!line.isEmpty) {
             val node = line.dequeue()
@@ -59,7 +59,7 @@ private fun testCase1(): BinaryTreeNode<Int> {
     return root
 }
 
-private fun testCase2(): BinaryTreeNode<Int> {
+fun binaryTreeTestCase2(): BinaryTreeNode<Int> {
     val root = BinaryTreeNode(1)
     root.left = BinaryTreeNode(
         value = 2,
