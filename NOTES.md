@@ -38,5 +38,4 @@
 
 ## Special
 
-- Questions 1 ~ 5: Integer
-- Questions 6 ~ 11: Double/Triple pointers
+- Special Hard Questions: 39, 40, 48

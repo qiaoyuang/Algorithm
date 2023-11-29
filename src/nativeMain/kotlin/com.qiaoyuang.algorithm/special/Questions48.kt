@@ -43,7 +43,7 @@ private fun dfs(strings: List<String>, i: IntArray): BinaryTreeNode<Int>? {
 }
 
 private fun printlnResult(root: BinaryTreeNode<Int>) {
-    println("Input a binary tree ${root.preOrderList()}(pre order)")
+    println("Input a binary tree ${root.preOrderList()}(preorder)")
     val string = root.serialize()
     println("We serialize it to ${root.serialize()}")
     val deserialization = string.deserialize()
