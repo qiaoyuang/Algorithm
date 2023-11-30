@@ -38,4 +38,4 @@
 
 ## Special
 
-- Special Hard Questions: 39, 40, 48
+- Special Hard Questions: 39, 40, 48, 50, 51
