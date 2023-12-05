@@ -57,4 +57,6 @@ fun specialMain() {
     printlnQuestionsTitle(51, ::test51)
     printlnQuestionsTitle(52, ::test52)
     printlnQuestionsTitle(53, ::test53)
+    printlnQuestionsTitle(54, ::test54)
+    printlnQuestionsTitle(55, ::test55)
 }
