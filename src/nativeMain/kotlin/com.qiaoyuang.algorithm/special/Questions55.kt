@@ -10,7 +10,7 @@ fun test55() {
 /**
  * Questions 55: BST iterator
  */
-private class BSTIterator<T : Comparable<T>>(root: BinaryTreeNode<T>) {
+class BSTIterator<T : Comparable<T>>(root: BinaryTreeNode<T>) {
 
     private var pointer: BinaryTreeNode<T>? = root
     private val stack = Stack<BinaryTreeNode<T>>()
@@ -23,6 +23,25 @@ private class BSTIterator<T : Comparable<T>>(root: BinaryTreeNode<T>) {
         pointer = stack.pop()
         val value = pointer!!.value
         pointer = pointer?.right
+        return value
+    }
+
+    fun hasNext(): Boolean = pointer != null || stack.isNotEmpty
+}
+
+class BSTIteratorBigger<T : Comparable<T>>(root: BinaryTreeNode<T>) {
+
+    private var pointer: BinaryTreeNode<T>? = root
+    private val stack = Stack<BinaryTreeNode<T>>()
+
+    fun next(): T {
+        while (pointer != null) {
+            stack.push(pointer!!)
+            pointer = pointer?.right
+        }
+        pointer = stack.pop()
+        val value = pointer!!.value
+        pointer = pointer?.left
         return value
     }
 

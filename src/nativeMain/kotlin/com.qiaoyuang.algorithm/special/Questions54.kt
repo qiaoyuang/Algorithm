@@ -18,24 +18,12 @@ private fun BinaryTreeNode<Int>.replaceValues(): BinaryTreeNode<Int> {
     while (pointer != null || stack.isNotEmpty) {
         while (pointer != null) {
             stack.push(pointer)
-            pointer = pointer.left
+            pointer = pointer.right
         }
         pointer = stack.pop()
         sum += pointer.value
-        pointer = pointer.right
-    }
-
-    pointer = this
-    while (pointer != null || stack.isNotEmpty) {
-        while (pointer != null) {
-            stack.push(pointer)
-            pointer = pointer.left
-        }
-        pointer = stack.pop()
-        val oldValue = pointer.value
         pointer.value = sum
-        sum -= oldValue
-        pointer = pointer.right
+        pointer = pointer.left
     }
     return this
 }
