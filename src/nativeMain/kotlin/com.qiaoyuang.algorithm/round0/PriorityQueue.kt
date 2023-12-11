@@ -1,7 +1,7 @@
 package com.qiaoyuang.algorithm.round0
 
 /**
- * 优先队列
+ * 最大优先队列（JDK 中的为最小优先队列）
  */
 
 @Suppress("UNCHECKED_CAST")
