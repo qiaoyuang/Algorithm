@@ -20,7 +20,7 @@ fun test62() {
 /**
  * Questions 62: Design a trie tree
  */
-private class TrieTree(word: String) {
+class TrieTree(word: String) {
 
     private val head = TrieNode(' ')
 
@@ -75,6 +75,21 @@ private class TrieTree(word: String) {
                 pointer = nextPointer
         }
         return true
+    }
+
+    fun findTrie(str: String): String? {
+        var pointer = head
+        str.forEachIndexed { i, c ->
+            val nextPointer = pointer.next.find { it?.character == c }
+            if (nextPointer == null) {
+                return if (pointer.next.all { it == null })
+                    str.substring(0, i)
+                else
+                    null
+            } else
+                pointer = nextPointer
+        }
+        return null
     }
 }
 
