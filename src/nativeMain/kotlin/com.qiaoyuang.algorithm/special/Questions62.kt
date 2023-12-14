@@ -65,6 +65,37 @@ class TrieTree(word: String) {
         return pointer.next.all { it == null }
     }
 
+    fun searchWith1Char(word: String): Boolean {
+        var pointer = head
+        var index = 0
+        var isFinish = true
+        while (index < word.length) {
+            val c = word[index++]
+            val nextPointer = pointer.next.find { it?.character == c }
+            if (nextPointer == null) {
+                isFinish = false
+                break
+            } else
+                pointer = nextPointer
+        }
+
+        if (isFinish) return false
+
+        return pointer.next.filterNotNull().any { newHead ->
+            var newPointer = newHead
+            var newIndex = index
+            while (newIndex < word.length) {
+                val c = word[newIndex++]
+                val nextPointer = newPointer.next.find { node -> node?.character == c }
+                if (nextPointer == null)
+                    return@any false
+                else
+                    newPointer = nextPointer
+            }
+            newPointer.next.all { node -> node == null }
+        }
+    }
+
     fun startWith(prefix: String): Boolean {
         var pointer = head
         prefix.forEach { c ->
