@@ -13,7 +13,7 @@ fun test63() {
  */
 private fun String.replaceToTrie(dictionary: List<String>): String {
     require(isNotEmpty() && dictionary.isNotEmpty()) { "The parameters can't be empty" }
-    val tireTree = TrieTree(dictionary.first())
+    val tireTree = TrieTree()
     dictionary.forEach {
         tireTree.insert(it)
     }

@@ -1,8 +1,9 @@
 package com.qiaoyuang.algorithm.special
 
 fun test62() {
+    val trieTree = TrieTree()
     val boy = "boy"
-    val trieTree = TrieTree(boy)
+    trieTree.insert(boy)
     val boss = "boss"
     val cowboy = "cowboy"
     trieTree.insert(boss)
@@ -20,19 +21,9 @@ fun test62() {
 /**
  * Questions 62: Design a trie tree
  */
-class TrieTree(word: String) {
+class TrieTree {
 
-    private val head = TrieNode(' ')
-
-    init {
-        require(word.isNotEmpty()) { "The word can't be empty" }
-        var pre = head
-        word.forEach {
-            val node = TrieNode(it)
-            pre.next[0] = node
-            pre = node
-        }
-    }
+    val head = TrieNode(' ')
 
     fun insert(word: String) {
         var pointer = head
@@ -62,7 +53,7 @@ class TrieTree(word: String) {
             else
                 pointer = nextPointer
         }
-        return pointer.next.all { it == null }
+        return true
     }
 
     fun searchWith1Char(word: String): Boolean {
@@ -92,21 +83,11 @@ class TrieTree(word: String) {
                 else
                     newPointer = nextPointer
             }
-            newPointer.next.all { node -> node == null }
+            true
         }
     }
 
-    fun startWith(prefix: String): Boolean {
-        var pointer = head
-        prefix.forEach { c ->
-            val nextPointer = pointer.next.find { it?.character == c }
-            if (nextPointer == null)
-                return false
-            else
-                pointer = nextPointer
-        }
-        return true
-    }
+    fun startWith(prefix: String): Boolean = search(prefix)
 
     fun findTrie(str: String): String? {
         var pointer = head
@@ -122,9 +103,24 @@ class TrieTree(word: String) {
         }
         return null
     }
+
+    fun lengthOfAllWords(): Int = lengthOfAllWords(head)
+
+    private fun lengthOfAllWords(start: TrieNode): Int {
+        var count = 0
+        start.next.forEach {
+            it?.let { node ->
+                count++
+                count += lengthOfAllWords(node)
+            }
+        }
+        if (start.next.all { it == null })
+            count++
+        return count
+    }
 }
 
-private class TrieNode(val character: Char) {
+class TrieNode(val character: Char) {
 
     var next = Array<TrieNode?>(8) { null }
         private set
