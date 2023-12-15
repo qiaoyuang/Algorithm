@@ -6,7 +6,8 @@ fun test66() {
 }
 
 /**
- * Questions 66:
+ * Questions 66: Design a data structure that could insert a string and a value. And, it contains
+ * a function that can calculate the sum of all values.
  */
 
 private class MapSum {
