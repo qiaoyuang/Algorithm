@@ -70,4 +70,5 @@ fun specialMain() {
     printlnQuestionsTitle(64, ::test64)
     printlnQuestionsTitle(65, ::test65)
     printlnQuestionsTitle(66, ::test66)
+    printlnQuestionsTitle(67, ::test67)
 }
