@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.9.21"
+    kotlin("multiplatform") version "1.9.22"
 }
 
 group = "com.qiaoyuang.algorithm"
@@ -40,6 +40,11 @@ kotlin {
         all {
             languageSettings {
                 optIn("kotlin.RequiresOptIn")
+            }
+        }
+        val nativeMain by getting {
+            dependencies {
+                implementation("androidx.collection:collection:1.4.0-beta02")
             }
         }
     }
