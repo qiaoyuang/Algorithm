@@ -35,9 +35,9 @@ private fun SingleDirectionNode<Int>.split(): SingleDirectionNode<Int> {
     return result
 }
 
-private fun merge(head1: SingleDirectionNode<Int>, head2: SingleDirectionNode<Int>): SingleDirectionNode<Int> {
-    var pointer1: SingleDirectionNode<Int>? = head1
-    var pointer2: SingleDirectionNode<Int>? = head2
+fun <T : Comparable<T>> merge(head1: SingleDirectionNode<T>, head2: SingleDirectionNode<T>): SingleDirectionNode<T> {
+    var pointer1: SingleDirectionNode<T>? = head1
+    var pointer2: SingleDirectionNode<T>? = head2
     val head = if (head1.element < head2.element) {
         pointer1 = pointer1!!.next
         head1
