@@ -8,7 +8,7 @@ fun test18() {
 /**
  * Questions 18: Judge whether a string is a palindrome
  */
-private fun String.isPalindrome(): Boolean {
+fun String.isPalindrome(): Boolean {
     require(isNotEmpty()) { "The string can't be empty" }
     var pointer1 = 0
     var pointer2 = lastIndex

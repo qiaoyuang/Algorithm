@@ -44,7 +44,7 @@ kotlin {
         }
         val nativeMain by getting {
             dependencies {
-                implementation("androidx.collection:collection:1.4.0-beta02")
+                implementation("androidx.collection:collection:1.4.0")
             }
         }
     }
