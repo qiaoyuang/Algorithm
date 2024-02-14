@@ -38,4 +38,4 @@
 
 ## Special
 
-- Special Hard Questions: 39, 40, 48, 50, 51, 57, 61(✅), 93, 94
+- Special Hard Questions: 39, 40, 48, 50, 51, 57, 61(✅), 93, 94, 95, 96

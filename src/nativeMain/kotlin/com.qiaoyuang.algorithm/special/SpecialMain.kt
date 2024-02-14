@@ -98,4 +98,7 @@ fun specialMain() {
     printlnQuestionsTitle(92, ::test92)
     printlnQuestionsTitle(93, ::test93)
     printlnQuestionsTitle(94, ::test94)
+    printlnQuestionsTitle(95, ::test95)
+    printlnQuestionsTitle(96, ::test96)
+    printlnQuestionsTitle(97, ::test97)
 }
