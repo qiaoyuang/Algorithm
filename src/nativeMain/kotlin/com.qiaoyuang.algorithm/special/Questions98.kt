@@ -31,10 +31,9 @@ private fun countOfPaths2(m: Int, n: Int): Int {
         return countOfPaths2(n, m)
     val db = IntArray(n)
     db[0] = 1
-    for (i in 0 ..< m) {
+    for (i in 0 ..< m)
         for (j in 1 ..< n)
             db[j] += db[j - 1]
-    }
     return db.last()
 }
 
