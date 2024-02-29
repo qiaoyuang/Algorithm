@@ -13,39 +13,39 @@ fun test7() {
 private fun IntArray.findThreeNumbers(): List<Triple<Int, Int, Int>> {
     require(size > 2) { "The size of the IntArray must greater than 2" }
     quickSort()
-    val array = this
+    val nums = this
     return buildList {
-        var pointer0 = 0
-        while (pointer0 <= array.lastIndex - 2) {
-            var pointer1 = pointer0 + 1
-            var pointer2 = array.lastIndex
-            while (pointer1 < pointer2) {
-                val sum = array[pointer0] + array[pointer1] + array[pointer2]
+        var i = 0
+        while (i < nums.size - 2) {
+            var j = i + 1
+            var k = nums.lastIndex
+            while (j < k) {
+                val sum = nums[i] + nums[j] + nums[k]
                 when {
-                    sum > 0 -> {
-                        val current = array[pointer2--]
-                        while (current == array[pointer2])
-                            pointer2--
-                    }
                     sum < 0 -> {
-                        val current = array[pointer1++]
-                        while (current == array[pointer1])
-                            pointer1++
+                        val currentJ = nums[j++]
+                        while (j < k && currentJ == nums[j])
+                            j++
+                    }
+                    sum > 0 -> {
+                        val currentK = nums[k--]
+                        while (j < k && currentK == nums[k])
+                            k--
                     }
                     else -> {
-                        add(Triple(array[pointer0], array[pointer1], array[pointer2]))
-                        val current2 = array[pointer2--]
-                        while (current2 == array[pointer2])
-                            pointer2--
-                        val current1 = array[pointer1++]
-                        while (current1 == array[pointer1])
-                            pointer1++
+                        add(Triple(nums[i], nums[j], nums[k]))
+                        val currentJ = nums[j++]
+                        while (j < k && currentJ == nums[j])
+                            j++
+                        val currentK = nums[k--]
+                        while (j < k && currentK == nums[k])
+                            k--
                     }
                 }
             }
-            val current = array[pointer0++]
-            while (current == array[pointer0])
-                pointer0++
+            val currentI = nums[i++]
+            while (i < nums.size - 2 && currentI == nums[i])
+                i++
         }
     }
 }
