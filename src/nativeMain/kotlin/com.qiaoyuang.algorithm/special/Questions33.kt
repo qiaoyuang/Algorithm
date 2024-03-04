@@ -40,7 +40,7 @@ private fun Array<String>.groupAsAnagram(): List<List<String>> {
 
 private val primeNumber = intArrayOf(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101)
 
-private fun String.hash(): Int = fold(initial = 1) { acc, c -> acc * primeNumber[c.code - 97] }
+private fun String.hash(): Int = fold(initial = 1) { acc, c -> acc * primeNumber[c.code - 'a'.code] }
 
 private fun printlnResult(strings: Array<String>) =
     println("Group ${strings.toList()}, we got: ${strings.groupAsAnagram()}")

@@ -21,8 +21,8 @@ private infix fun String.isAnagrams(t: String): Boolean {
         if (sc != tc) {
             if (isSequenceSame)
                 isSequenceSame = false
-            array[sc.code - 97]++
-            array[tc.code - 97]--
+            array[sc.code - 'a'.code]++
+            array[tc.code - 'a'.code]--
         }
     }
     return !isSequenceSame && array.all { it == 0 }

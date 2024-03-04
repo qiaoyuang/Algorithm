@@ -11,9 +11,9 @@ fun test48() {
 
 fun longestSubstringWithoutDuplication(str: String): Int {
 	// 检查字符是否合法
-	fun Char.isLegal(): Boolean = code in 97..122
+	fun Char.isLegal(): Boolean = this in 'a'..'z'
 	// 获取字符在数组中的位置
-	fun Char.getPosition(): Int = code - 97
+	fun Char.getPosition(): Int = code - 'a'.code
 	// 计算逻辑
 	val array = IntArray(26)
 	var curLength = 0

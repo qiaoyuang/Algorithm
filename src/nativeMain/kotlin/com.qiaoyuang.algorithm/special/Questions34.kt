@@ -16,7 +16,7 @@ private infix fun Array<String>.isSorted(alphabet: String): Boolean {
         return true
     val alphabetMap = IntArray(26)
     alphabet.forEachIndexed { i, c ->
-        alphabetMap[c.code - 97] = i
+        alphabetMap[c.code - 'a'.code] = i
     }
     var index = 1
     while (index < size) {
@@ -37,8 +37,8 @@ private fun isBefore(a: String, b: String, alphabetMap: IntArray): Boolean {
         val ca = a[index]
         val cb = b[index]
         when {
-            alphabetMap[ca.code - 97] < alphabetMap[cb.code - 97] -> return true
-            alphabetMap[ca.code - 97] > alphabetMap[cb.code - 97] -> return false
+            alphabetMap[ca.code - 'a'.code] < alphabetMap[cb.code - 'a'.code] -> return true
+            alphabetMap[ca.code - 'a'.code] > alphabetMap[cb.code - 'a'.code] -> return false
             else -> index++
         }
     }
