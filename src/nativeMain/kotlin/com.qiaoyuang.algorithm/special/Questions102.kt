@@ -22,7 +22,9 @@ private fun findMethods(array: IntArray, s: Int): Int {
 }
 
 private fun findMethods2(array: IntArray, s: Int): Int {
-    val p = (s + array.sum()) shr 1
+    val sum = array.sum()
+    if ((sum + s) % 2 == 1 || sum < s)
+        return 0
     val db = IntArray(s + 1)
     db[0] = 1
     array.forEach { num ->
