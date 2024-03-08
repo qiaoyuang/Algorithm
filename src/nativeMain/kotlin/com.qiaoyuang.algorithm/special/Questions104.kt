@@ -11,11 +11,10 @@ fun test104() {
  */
 private fun countOfPermutation(nums: IntArray, t: Int): Int {
     val db = IntArray(t + 1)
+    db[0] = 1 // An empty permutation could make the sum equals 0
     for (i in 1..t)
         nums.forEach { num ->
-            if (i == num)
-                db[i] += 1
-            else if (i > num)
+            if (i >= num)
                 db[i] += db[i - num]
         }
     return db.last()

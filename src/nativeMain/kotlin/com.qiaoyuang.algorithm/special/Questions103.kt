@@ -55,4 +55,4 @@ private fun countOfCoins3(coins: IntArray, amount: Int): Int {
 }
 
 private fun printlnResult(coins: IntArray, amount: Int) =
-    println("We need at least (${countOfCoins(coins, amount)}, ${countOfCoins2(coins, amount)}, ${countOfCoins3(coins, amount)}) coins could make enough $amount")
+    println("We need at least (${countOfCoins(coins, amount)}, ${countOfCoins2(coins, amount)}, ${countOfCoins3(coins, amount)}) coins could make enough $amount by coins: ${coins.toList()}")
