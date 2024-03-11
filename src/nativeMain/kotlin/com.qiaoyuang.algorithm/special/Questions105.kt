@@ -13,7 +13,7 @@ fun test105() {
  * Question105: Use an two-dimensional array to represent an ocean.
  * Please find the maximum islands (the area that equals 1 and connected) area in it
  */
-private fun findMaximumIsland(ocean: Array<IntArray>): Int {
+private inline fun findMaximumIsland(ocean: Array<IntArray>, search: (Array<IntArray>, Array<BooleanArray>, Int, Int) -> Int): Int {
     val rows = ocean.size
     val cols = ocean.first().size
     val visited = Array(rows) { BooleanArray(cols) }
@@ -21,7 +21,7 @@ private fun findMaximumIsland(ocean: Array<IntArray>): Int {
     for (i in ocean.indices)
         for (j in ocean.first().indices)
             if (ocean[i][j] == 1 && !visited[i][j]) {
-                val area = bfs(ocean, visited, i, j)
+                val area = search(ocean, visited, i, j)
                 if (area > maxArea)
                     maxArea = area
             }
@@ -55,5 +55,37 @@ private fun bfs(ocean: Array<IntArray>, visited: Array<BooleanArray>, i: Int, j:
     return area
 }
 
+private fun dfs1(ocean: Array<IntArray>, visited: Array<BooleanArray>, i: Int, j: Int): Int {
+    val stack = ArrayDeque<IntArray>()
+    stack.add(intArrayOf(i, j))
+    visited[i][j] = true
+    var area = 0
+    while (stack.isNotEmpty()) {
+        val (row, col) = stack.removeLast()
+        area++
+        dirs.forEach { (dirR, dirC) ->
+            val r = row + dirR
+            val c = col + dirC
+            if (r in ocean.indices && c in ocean.first().indices && ocean[r][c] == 1 && !visited[r][c]) {
+                stack.add(intArrayOf(r, c))
+                visited[r][c] = true
+            }
+        }
+    }
+    return area
+}
+
+private fun dfs2(ocean: Array<IntArray>, visited: Array<BooleanArray>, i: Int, j: Int): Int {
+    visited[i][j] = true
+    var area = 1
+    dirs.forEach { (dirR, dirC) ->
+        val r = i + dirR
+        val c = j + dirC
+        if (r in ocean.indices && c in ocean.first().indices && ocean[r][c] == 1 && !visited[r][c])
+            area += dfs2(ocean, visited, r, c)
+    }
+    return area
+}
+
 private fun printlnResult(ocean: Array<IntArray>) =
-    println("The maximum area is ${findMaximumIsland(ocean)}")
+    println("The maximum area is (${findMaximumIsland(ocean, ::bfs)}, ${findMaximumIsland(ocean, ::dfs1)}, ${findMaximumIsland(ocean, ::dfs2)})")
