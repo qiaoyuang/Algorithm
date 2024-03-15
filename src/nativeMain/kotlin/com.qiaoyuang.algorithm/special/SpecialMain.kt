@@ -116,4 +116,6 @@ fun specialMain() {
     printlnQuestionsTitle(114, ::test114)
     printlnQuestionsTitle(115, ::test115)
     printlnQuestionsTitle(116, ::test116)
+    printlnQuestionsTitle(117, ::test117)
+    printlnQuestionsTitle(118, ::test118)
 }
