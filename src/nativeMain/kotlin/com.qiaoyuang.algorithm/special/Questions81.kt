@@ -9,20 +9,19 @@ fun test81() {
  * Questions 81: Given an IntArray that doesn't contain the same integers. And, given a value,
  * please find all subsets that the sum of subset equals this value, integers could appear any times in one subset
  */
-private infix fun IntArray.findSubsets(sum: Int): List<List<Int>> = buildList {
-    backTrack(this, mutableListOf(), sum, 0)
+private infix fun IntArray.findSubsets(target: Int): List<List<Int>> = buildList {
+    backTrack(this, mutableListOf(), target, 0, 0)
 }
 
-private fun IntArray.backTrack(results: MutableList<List<Int>>, subset: MutableList<Int>, sum: Int, index: Int) {
-    if (sum == 0) {
+private fun IntArray.backTrack(results: MutableList<List<Int>>, subset: MutableList<Int>, target: Int, sum: Int, index: Int) {
+    if (target == 0) {
         results.add(listOf())
         return
     }
-    if (sum < 0) return
-    val sumOfSubset = subset.sum()
+    if (target < 0) return
     when {
-        sumOfSubset > sum -> return
-        sumOfSubset == sum -> {
+        sum > target -> return
+        sum == target -> {
             results.add(ArrayList(subset))
             return
         }
@@ -30,10 +29,10 @@ private fun IntArray.backTrack(results: MutableList<List<Int>>, subset: MutableL
 
     if (index >= size) return
 
-    backTrack(results, subset, sum, index + 1)
+    backTrack(results, subset, target, sum,index + 1)
 
     subset.add(this[index])
-    backTrack(results, subset, sum, index)
+    backTrack(results, subset, target, sum + this[index], index)
     subset.removeLast()
 }
 
