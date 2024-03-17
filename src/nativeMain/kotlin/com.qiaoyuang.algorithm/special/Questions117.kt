@@ -26,13 +26,6 @@ private infix fun String.isSimilarWord(word: String): Boolean {
     return diff == 2
 }
 
-private fun CharArray.exchange(i: Int, j: Int): CharArray {
-    val temp = this[i]
-    this[i] = this[j]
-    this[j] = temp
-    return this
-}
-
 private fun findFathers(fathers: IntArray, i: Int): Int {
     if (fathers[i] != i)
         fathers[i] = findFathers(fathers, fathers[i])
