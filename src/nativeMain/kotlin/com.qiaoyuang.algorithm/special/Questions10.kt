@@ -8,24 +8,19 @@ fun test10() {
 /**
  * Questions 10: Give an IntArray and an integer k, find the count of consistent sub-arrays in the IntArray that sum equals k
  */
-private infix fun IntArray.findCount(k: Int): Int {
-    require(isNotEmpty()) { "The IntArray can't be empty" }
+private fun findCount(array: IntArray, k: Int): Int {
+    require(array.isNotEmpty()) { "The IntArray can't be empty" }
+    val sumToCount = HashMap<Int, Int>()
+    sumToCount[0] = 1
+    var sum = 0
     var count = 0
-    repeat(size) { i ->
-        var j = i
-        while (j < size)
-            if (subSum(i, j++) == k)
-                count++
+    array.forEach {
+        sum += it
+        count += sumToCount[sum - k] ?: 0
+        sumToCount[sum] = (sumToCount[sum] ?: 0) + 1
     }
     return count
 }
 
-private fun IntArray.subSum(i: Int, j: Int): Int {
-    var sum = 0
-    for (index in i..j)
-        sum += this[index]
-    return sum
-}
-
 private fun printlnResult(array: IntArray, k: Int) =
-    println("The count of consistent sub-arrays that sum equals $k is (${array findCount k}) in array: ${array.toList()}")
+    println("The count of consistent sub-arrays that sum equals $k is (${findCount(array, k)}) in array: ${array.toList()}")
