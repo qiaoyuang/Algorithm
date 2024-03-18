@@ -9,61 +9,43 @@ fun test17() {
 /**
  * Given two strings s and t, find the shortest substring in s that contains all alphabets in t
  */
-private fun findShortestSubstring(s: String, t: String): String {
-    if (s.isEmpty() || t.isEmpty())
-        return ""
-
-    val charHashSet = HashSet<Char>(t.length)
+private fun minWindow(s: String, t: String): String {
+    val map = HashMap<Char, Int>()
     t.forEach {
-        charHashSet.add(it)
+        map[it] = (map[it] ?: 0) + 1
     }
-    val copySet = HashSet<Char>(t.length)
-    var start = 0
-    var end: Int
-
-    var shortest = ""
-
-    while (start < s.length) {
-        charHashSet.forEach {
-            copySet.add(it)
-        }
-
-        while (start < s.length) {
-            if (copySet.contains(s[start]))
-                break
-            else
-                start++
-        }
-
-        end = start
-        val currentHashMap = HashMap<Char, Int>(t.length)
-        while (end < s.length && copySet.isNotEmpty()) {
-            val c = s[end++]
-            if (charHashSet.contains(c)) {
-                copySet.remove(c)
-                currentHashMap[c] = if (currentHashMap[c] == null) 1 else currentHashMap[c]!! + 1
+    var count = map.size
+    var i = 0
+    var j = 0
+    var minI = 0
+    var minJ = 0
+    var minLength = Int.MAX_VALUE
+    while (j < s.length || (count == 0 && j == s.length)) {
+        if (count > 0) {
+            val jCH = s[j]
+            if (map.containsKey(jCH)) {
+                map[jCH] = map[jCH]!! - 1
+                if (map[jCH] == 0)
+                    count--
             }
-        }
-
-        if (copySet.isNotEmpty())
-            return shortest
-
-        while (start < end) {
-            val c = s[start++]
-            if (currentHashMap.contains(c)) {
-                if (currentHashMap[c]!! > 1)
-                    currentHashMap[c] = currentHashMap[c]!! - 1
-                else
-                    break
+            j++
+        } else {
+            if (j - i < minLength) {
+                minLength = j - i
+                minI = i
+                minJ = j
             }
+            val iCH = s[i]
+            if (map.containsKey(iCH)) {
+                map[iCH] = map[iCH]!! + 1
+                if (map[iCH] == 1)
+                    count++
+            }
+            i++
         }
-
-        if (shortest.isEmpty() || end - start - 1 < shortest.length)
-            shortest = s.substring(start - 1, end)
     }
-
-    return shortest
+    return if (minLength < Int.MAX_VALUE) s.substring(minI, minJ) else ""
 }
 
 private fun printlnResult(s: String, t: String) =
-    println("The shortest substring in $s that contains all alphabets in $t is ${findShortestSubstring(s, t)}")
+    println("The shortest substring in $s that contains all alphabets in $t is ${minWindow(s, t)}")

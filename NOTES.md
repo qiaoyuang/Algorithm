@@ -40,4 +40,4 @@
 
 - Special Hard Questions: 1, 2, 3, 5, 39 (✅), 40 (✅), 48 (✅), 50, 51, 57, 61 (✅), 93, 94, 95, 96, 103
 
-- Need to be rewritten: 11, 14, 15, 17
+- Need to be rewritten: 10(✅), 11, 14, 15, 16, 17(✅)
