@@ -8,34 +8,41 @@ fun test15() {
  * Questions 15: Find all anagrams of s1 in s2, return the indexes
  */
 private fun findAnagrams(s1: String, s2: String): List<Int> {
-    require(s2.length >= s1.length) { "The input is illegal" }
-    val s1CharMap = HashMap<Char, Int>(s1.length)
+    if (s1.length > s2.length)
+        return listOf()
+    val map = HashMap<Char, Int>() // Using map is faster than using IntArray that's length is 26, because we save the time to judge all elements equal 0 in the IntArray
     s1.forEach {
-        s1CharMap[it] = if (s1CharMap.contains(it)) s1CharMap[it]!! + 1 else 1
+        map[it] = (map[it] ?: 0) + 1
     }
-
-    val results = ArrayList<Int>()
-    val copyMap = HashMap<Char, Int>(s1.length)
-    for (i in 0 .. s2.length - s1.length) {
-        s1CharMap.forEach { (key, value) ->
-            copyMap[key] = value
+    var length = map.size
+    repeat(s1.length) {
+        val c = s2[it]
+        if (map.containsKey(c)) {
+            map[c] = map[c]!! - 1
+            if (map[c] == 0)
+                length--
         }
-
-        for (j in i ..< i + s1.length) {
-            val c = s2[j]
-
-            if (copyMap.contains(c)) {
-                copyMap[c] = copyMap[c]!! - 1
-                if (copyMap[c] == 0)
-                    copyMap.remove(c)
-            } else
-                continue
-        }
-
-        if (copyMap.isEmpty())
-            results.add(i)
     }
-    return results
+    var i = 0
+    var j = s1.length
+    val result = ArrayList<Int>()
+    while (j < s2.length) {
+        if (length == 0)
+            result.add(i)
+        val cj = s2[j++]
+        if (map.containsKey(cj)) {
+            map[cj] = map[cj]!! - 1
+            if (map[cj] == 0)
+                length--
+        }
+        val ci = s2[i++]
+        if (map.containsKey(ci)) {
+            if (map[ci] == 0)
+                length++
+            map[ci] = map[ci]!! + 1
+        }
+    }
+    return result
 }
 
 private fun printlnResult(s1: String, s2: String) =

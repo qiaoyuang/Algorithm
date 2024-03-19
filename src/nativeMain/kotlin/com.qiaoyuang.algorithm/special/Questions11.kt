@@ -11,39 +11,22 @@ fun test11() {
  * 1 and 0 equal in an IntArray that just contain 0 and 1, and the sub-arrays
  * contain 2 elements at least.
  */
-
-private fun IntArray.findCountOf0and1(): Int {
-    require(size > 2) { "The size of IntArray must greater than 2" }
-    var count = 0
-    val aux = IntArray(size)
-    for (subSize in 2 ..< size) {
-        var i = 0
-        var j = i + subSize - 1
-        while (j < size)
-            aux[subSum(i++ ,j++)]++
-        count += aux.foldIndexed(0) { index, acc, singleCount ->
-            when (singleCount) {
-                0 -> acc
-                1 -> {
-                    aux[index] = 0
-                    acc
-                }
-                else -> {
-                    aux[index] = 0
-                    acc + singleCount
-                }
-            }
-        }
-    }
-    return count
-}
-
-private fun IntArray.subSum(i: Int, j: Int): Int {
+private fun findCountOf0and1(nums: IntArray): Int {
+    require(nums.size > 2) { "The size of IntArray must greater than 2" }
+    val map = HashMap<Int, Int>(nums.size)
     var sum = 0
-    for (index in i..j)
-        sum += this[index]
-    return sum
+    var maxLength = 0
+    nums.forEachIndexed { i, num ->
+        sum += if (num == 0) -1 else 1
+        if (map.containsKey(sum)) {
+            val length = i - map[sum]!!
+            if (length > maxLength)
+                maxLength = length
+        } else
+            map[sum] = i
+    }
+    return maxLength
 }
 
 private fun printlnResult(array: IntArray) =
-    println("The count of consistent sub-arrays that counts of 0 and 1 equal is (${array.findCountOf0and1()}) in array: ${array.toList()}")
+    println("The count of consistent sub-arrays that counts of 0 and 1 equal is (${findCountOf0and1(array)}) in array: ${array.toList()}")

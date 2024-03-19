@@ -13,31 +13,42 @@ fun test14() {
  * Questions 14: Judge whether a string s2 contain any of an anagram of string s1
  */
 private fun isAnagram(s1: String, s2: String): Boolean {
-    require(s2.length >= s1.length) { "The input is illegal" }
-    val s1CharMap = HashMap<Char, Int>(s1.length)
+    if (s1.length > s2.length)
+        return false
+    val map = HashMap<Char, Int>() // Using map is faster than using IntArray that's length is 26, because we save the time to judge all elements equal 0 in the IntArray
     s1.forEach {
-        s1CharMap[it] = if (s1CharMap.contains(it)) s1CharMap[it]!! + 1 else 1
+        map[it] = (map[it] ?: 0) + 1
     }
-
-    val copyMap = HashMap<Char, Int>(s1.length)
-    for (i in 0 .. s2.length - s1.length) {
-        s1CharMap.forEach { (key, value) ->
-            copyMap[key] = value
+    var length = map.size
+    repeat(s1.length) { j ->
+        val c = s2[j]
+        if (map.containsKey(c)) {
+            map[c] = map[c]!! - 1
+            if (map[c] == 0)
+                length--
         }
-
-        for (j in i ..< i + s1.length) {
-            val c = s2[j]
-
-            if (copyMap.contains(c)) {
-                copyMap[c] = copyMap[c]!! - 1
-                if (copyMap[c] == 0)
-                    copyMap.remove(c)
-            } else
-                continue
+    }
+    if (length == 0)
+        return true
+    var i = 0
+    var j = s1.length
+    while (j < s2.length) {
+        val cj = s2[j]
+        if (map.containsKey(cj)) {
+            map[cj] = map[cj]!! - 1
+            if (map[cj] == 0)
+                length--
         }
-
-        if (copyMap.isEmpty())
+        val ci = s2[i]
+        if (map.containsKey(ci)) {
+            if (map[ci] == 0)
+                length++
+            map[ci] = map[ci]!! + 1
+        }
+        if (length == 0)
             return true
+        i++
+        j++
     }
     return false
 }
