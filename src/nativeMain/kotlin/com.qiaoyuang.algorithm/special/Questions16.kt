@@ -8,27 +8,27 @@ fun test16() {
 /**
  * Questions 16: Find the longest substring that doesn't contain the repeated alphabets in a String
  */
-private fun String.findLongestSubString(): String {
-    if (isEmpty() || length == 1)
-        return this
-    val hashSet = HashSet<Char>()
+private fun findLongestSubStringLength(str: String): Int {
+    if (str.isEmpty() || str.length == 1)
+        return str.length
+    val hashSet = HashSet<Char>() // Also could use the CharArray that's length is 256 (Ascii) to replace the HashSet
     var start = 0
-    var end = 1
-    var substring = first().toString()
-    hashSet.add(first())
-    while (end < length) {
-        val c = this[end]
+    var end = 0
+    var length = 1
+    while (end < str.length) {
+        val c = str[end]
         if (hashSet.contains(c)) {
-            if (end - start + 1 > substring.length)
-                substring = substring(start, end)
-            hashSet.remove(this[start++])
+            val newLength = end - start
+            if (newLength > length)
+                length = newLength
+            hashSet.remove(str[start++])
         } else {
             hashSet.add(c)
             end++
         }
     }
-    return substring
+    return length
 }
 
 private fun printlnResult(str: String) =
-    println("The longest substring in $str is ${str.findLongestSubString()}")
+    println("The longest length of substring in $str is ${findLongestSubStringLength(str)}")
