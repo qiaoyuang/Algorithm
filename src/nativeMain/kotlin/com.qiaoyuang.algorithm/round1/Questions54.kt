@@ -12,20 +12,17 @@ fun test54() {
 /**
  * Questions 54: Find the Kth smallest node in a Binary-search tree
  */
-private infix fun <T : Comparable<T>> BinaryTreeNode<T>.findKNode(k: Int): BinaryTreeNode<T> =
-    findKNode(k, 0).first ?: throw IllegalArgumentException("This binary-tree's size smaller than k")
+private fun kthSmallest(root: BinaryTreeNode<Int>, k: Int): Int = kth(root, k, 0).first!!.value
 
-private fun <T : Comparable<T>> BinaryTreeNode<T>.findKNode(k: Int, count: Int): Pair<BinaryTreeNode<T>?, Int> {
-   val pair = left?.findKNode(k, count)?.also { pair ->
-        val (node, _) = pair
-        node?.let {
-            return pair
-        }
-    }
-    val newCount = (pair?.second ?: count) + 1
-    if (k == newCount)
-        return this to newCount
-    return right?.findKNode(k, newCount) ?: (null to newCount)
+private fun kth(node: BinaryTreeNode<Int>, k: Int, c: Int): Pair<BinaryTreeNode<Int>?, Int> {
+    val (ln, lc) = node.left?.let { kth(it, k, c) } ?: (null to c)
+    if (ln != null)
+        return ln to lc
+    val count = lc + 1
+    if (count == k)
+        return node to k
+    val (rn, rc) = node.right?.let { kth(it, k, count) } ?: (null to count)
+    return rn to rc
 }
 
 private fun testCase1(): BinaryTreeNode<Int> = BinaryTreeNode(
@@ -43,4 +40,4 @@ private fun testCase1(): BinaryTreeNode<Int> = BinaryTreeNode(
 )
 
 private fun printlnResult(node: BinaryTreeNode<Int>, k: Int) =
-    println("The ${k}th smallest node is: ${node.findKNode(k).value} in binary-search tree: ${node.inOrderList()}")
+    println("The ${k}th smallest node is: ${kthSmallest(node, k)} in binary-search tree: ${node.inOrderList()}")
