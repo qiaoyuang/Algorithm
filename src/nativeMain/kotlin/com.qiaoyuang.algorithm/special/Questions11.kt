@@ -8,7 +8,7 @@ fun test11() {
 
 /**
  * Questions 11: Find the counts of consistent sub-arrays that their counts of
- * 1 and 0 equal in an IntArray that just contain 0 and 1, and the sub-arrays
+ * 1 and 0 are equaled in an IntArray that just contain 0 and 1, and the sub-arrays
  * contain 2 elements at least.
  */
 private fun findCountOf0and1(nums: IntArray): Int {
