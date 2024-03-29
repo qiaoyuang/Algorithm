@@ -26,14 +26,14 @@ private fun findKthLargest(nums: IntArray, k: Int): Int {
 private fun partition(nums: IntArray, low: Int, height: Int): Int {
     if (low >= height)
         return low
-    var i = low + 1
-    var j = height
+    var i = low
+    var j = height + 1
     while (true) {
-        while (nums[i++] < nums[low])
-            if (i == height)
+        while (nums[++i] < nums[low])
+            if (i >= height)
                 break
-        while (nums[low] < nums[j--])
-            if (j == low)
+        while (nums[low] < nums[--j])
+            if (j <= low)
                 break
         if (i >= j)
             break

@@ -22,6 +22,10 @@ private fun IntArray.quickSort(low: Int, height: Int) {
 }
 
 fun IntArray.partition(low: Int, height: Int): Int {
+	val a = ArrayDeque<Int>()
+	arrayOf(intArrayOf(1)).sortBy {
+
+	}
 	var i = low
 	var j = height + 1
 	while (true) {
