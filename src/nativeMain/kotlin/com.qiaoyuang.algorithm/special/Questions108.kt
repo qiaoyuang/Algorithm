@@ -81,10 +81,6 @@ private fun evolutionDoubleBFS(beginWord: String, endWord: String, words: List<S
         set1 = set3
         length++
     }
-
-    arrayOf(intArrayOf(1)).sortBy {
-        it.first()
-    }
     return 0
 }
 
