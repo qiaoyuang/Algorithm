@@ -62,7 +62,7 @@ private fun evolutionDoubleBFS(beginWord: String, endWord: String, words: List<S
     set2.add(endWord)
     var length = 2
     while (set1.isNotEmpty() && set2.isNotEmpty()) {
-        if (set1.isEmpty()) {
+        if (set1.size > set2.size) {
             val temp = set2
             set2 = set1
             set1 = temp
@@ -80,6 +80,10 @@ private fun evolutionDoubleBFS(beginWord: String, endWord: String, words: List<S
         }
         set1 = set3
         length++
+    }
+
+    arrayOf(intArrayOf(1)).sortBy {
+        it.first()
     }
     return 0
 }
