@@ -9,37 +9,29 @@ fun test50() {
 /**
  * Questions 50: Given a binary tree and a sum number, find the count of paths that equals the sum
  */
-private infix fun BinaryTreeNode<Int>.findPathCount(sum: Int): Int {
-    val count = intArrayOf(0)
-    findPathCount(sum, listOf(), count)
-    return count.first()
+private fun findPathCount(root: BinaryTreeNode<Int>, sum: Int): Int {
+    val map = hashMapOf(0 to 1)
+    return dfs(root, sum, map, 0)
 }
 
-private fun BinaryTreeNode<Int>.findPathCount(sum: Int, preValues: List<Int>, count: IntArray) {
-    when {
-        value == sum -> {
-            count[0]++
-            return
-        }
-        value > sum -> return
-    }
-    val nextPreValues = mutableListOf<Int>()
+private fun dfs(node: BinaryTreeNode<Int>, sum: Int, map: HashMap<Int, Int>, path: Int): Int {
+    val newPath = path + node.value
+    var count = map[newPath - sum] ?: 0
+    map[newPath] = (map[newPath] ?: 0) + 1
 
-    preValues.forEach {
-        val newValue = it + value
-        when {
-            newValue == sum -> count[0]++
-            newValue < sum -> nextPreValues.add(newValue)
-        }
+    node.left?.let {
+        count += dfs(it, sum, map, newPath)
     }
-    nextPreValues.add(value)
+    node.right?.let {
+        count += dfs(it, sum, map, newPath)
+    }
 
-    left?.run { findPathCount(sum, nextPreValues, count) }
-    right?.run { findPathCount(sum, nextPreValues, count) }
+    map[newPath] = map[newPath]!! - 1
+    return count
 }
 
 private fun printlnResult(root: BinaryTreeNode<Int>, sum: Int) =
-    println("The count of paths that sum equals $sum is ${root findPathCount sum} in binary tree ${root.preOrderList()}(preorder)")
+    println("The count of paths that sum equals $sum is ${findPathCount(root, sum)} in binary tree ${root.preOrderList()}(preorder)")
 
 private fun testCase(): BinaryTreeNode<Int> =
     BinaryTreeNode(
