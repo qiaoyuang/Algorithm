@@ -25,6 +25,7 @@ private class LRUCache(private val capacity: Int) {
         node.right?.left = node.left
         node.left = firstNode
         node.right = firstNode.right
+        firstNode.right?.left = node
         firstNode.right = node
         return node.value
     }
