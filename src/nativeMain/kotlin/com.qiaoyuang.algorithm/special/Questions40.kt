@@ -22,7 +22,7 @@ private fun Array<BooleanArray>.biggestArea(): Int {
                 heights[i]++
             else
                 heights[i] = 0
-        val area = heights.maxVolume()
+        val area = maxVolume(heights)
         if (area > maxArea)
             maxArea = area
     }

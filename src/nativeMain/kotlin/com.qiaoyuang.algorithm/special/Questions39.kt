@@ -1,7 +1,5 @@
 package com.qiaoyuang.algorithm.special
 
-import com.qiaoyuang.algorithm.round0.Stack
-
 fun test39() {
     printlnResult(3, 2, 5, 4, 6, 1, 4, 2)
 }
@@ -9,31 +7,30 @@ fun test39() {
 /**
  * Questions 39: The maximum volume in a pool
  */
-fun IntArray.maxVolume(): Int {
-    val stack = Stack<Int>()
-    stack.push(-1)
-
+fun maxVolume(heights: IntArray): Int {
+    val stack = ArrayDeque<Int>()
     var maxArea = 0
-    forEachIndexed { i, num ->
-        while (stack.top() != -1 && this[stack.top()] >= num) {
-            val height = this[stack.pop()]
-            val width = i - stack.top() - 1
-            val volume = height * width
-            if (volume > maxArea)
-                maxArea = volume
+    heights.forEachIndexed { i, h ->
+        while (stack.isNotEmpty() && h <= heights[stack.last()]) {
+            val index = stack.removeLast()
+            val height = heights[index]
+            val width = if (stack.isEmpty()) i - 1 else i - stack.last() - 1
+            val area = height * width
+            if (area > maxArea)
+                maxArea = area
         }
-        stack.push(i)
+        stack.add(i)
     }
-
-    while (stack.top() != -1) {
-        val height = this[stack.pop()]
-        val width = size - stack.top() - 1
-        val volume = height * width
-        if (volume > maxArea)
-            maxArea = volume
+    while (stack.isNotEmpty()) {
+        val index = stack.removeLast()
+        val height = heights[index]
+        val width = if (stack.isEmpty()) heights.size - 1 else heights.size - stack.last() - 1
+        val area = height * width
+        if (area > maxArea)
+            maxArea = area
     }
     return maxArea
 }
 
 private fun printlnResult(vararg heights: Int) =
-    println("The maximum volume of pool ${heights.toList()} is ${heights.maxVolume()}")
+    println("The maximum volume of pool ${heights.toList()} is ${maxVolume(heights)}")
