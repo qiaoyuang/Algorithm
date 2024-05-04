@@ -2,26 +2,26 @@ package com.qiaoyuang.algorithm.special
 
 fun test40() {
     printlnResult(arrayOf(
-        booleanArrayOf(true, false, true, false, false),
-        booleanArrayOf(false, false, true, true, true),
-        booleanArrayOf(true, true, true, true, true),
-        booleanArrayOf(true, false, false, true, false)
+        charArrayOf('1', '0', '1', '0', '0'),
+        charArrayOf('0', '0', '1', '1', '1'),
+        charArrayOf('1', '1', '1', '1', '1'),
+        charArrayOf('1', '0', '0', '1', '0'),
     ))
 }
 
 /**
  * Questions 40: Find the biggest rectangle only contains 1 in a rectangle contains 0 and 1
  */
-private fun Array<BooleanArray>.biggestArea(): Int {
-    require(isNotEmpty() && first().isNotEmpty()) { "The inputted rectangle can't be empty" }
-    val heights = IntArray(first().size)
+private fun biggestArea(rectangle: Array<CharArray>): Int {
+    val heights = IntArray(rectangle.first().size)
     var maxArea = 0
-    forEach {
-        for (i in it.indices)
-            if (it[i])
-                heights[i]++
-            else
-                heights[i] = 0
+    rectangle.forEach {
+        it.forEachIndexed { i, c ->
+            when (c) {
+                '0' -> heights[i] = 0
+                '1' -> heights[i]++
+            }
+        }
         val area = maxVolume(heights)
         if (area > maxArea)
             maxArea = area
@@ -29,5 +29,5 @@ private fun Array<BooleanArray>.biggestArea(): Int {
     return maxArea
 }
 
-private fun printlnResult(rectangle:  Array<BooleanArray>) =
-    println("The maximum area is ${rectangle.biggestArea()}")
+private fun printlnResult(rectangle: Array<CharArray>) =
+    println("The maximum area is ${biggestArea(rectangle)}")
