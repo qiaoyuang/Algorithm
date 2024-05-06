@@ -13,7 +13,7 @@ fun maxVolume(heights: IntArray): Int {
     heights.forEachIndexed { i, h ->
         while (stack.isNotEmpty() && h <= heights[stack.last()]) {
             val height = heights[stack.removeLast()]
-            val width = if (stack.isEmpty()) i - 1 else i - stack.last() - 1
+            val width = if (stack.isEmpty()) i else i - stack.last() - 1
             val area = height * width
             if (area > maxArea)
                 maxArea = area
@@ -22,7 +22,7 @@ fun maxVolume(heights: IntArray): Int {
     }
     while (stack.isNotEmpty()) {
         val height = heights[stack.removeLast()]
-        val width = if (stack.isEmpty()) heights.size - 1 else heights.size - stack.last() - 1
+        val width = if (stack.isEmpty()) heights.size else heights.size - stack.last() - 1
         val area = height * width
         if (area > maxArea)
             maxArea = area
