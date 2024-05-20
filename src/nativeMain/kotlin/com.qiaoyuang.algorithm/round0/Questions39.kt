@@ -1,7 +1,7 @@
 package com.qiaoyuang.algorithm.round0
 
 /**
- * 找出一个数组中出现次数超过数组长度一般的数字
+ * 找出一个数组中出现次数超过数组长度一半的数字
  */
 
 fun test39() {
@@ -9,8 +9,8 @@ fun test39() {
 		val arg0 = intArrayOf(1, 2, 3, 2, 2, 2, 5, 4, 2)
 	    val arg1 = intArrayOf(1, 2, 3, 2, 2, 2, 5, 4)
 	    val message = "超过数组长度一半的数为："
-		println("$message${arg0.moreThanHalfNum2()}")
-		println("$message${arg1.moreThanHalfNum2()}")
+		println("$message${majorityElement(arg0)}")
+		println("$message${majorityElement(arg1)}")
 		println("$message${arg0.moreThanHalfNum1()}")
 		println("$message${arg1.moreThanHalfNum1()}")
 	} catch (e: RuntimeException) {
@@ -40,21 +40,16 @@ fun IntArray.moreThanHalfNum1(): Int {
 }
 
 //解法二，无需修改输入数组，时间复杂度为O(n)
-fun IntArray.moreThanHalfNum2(): Int {
-	var index = 0
-	var number = this[index]
+fun majorityElement(nums: IntArray): Int {
 	var count = 0
-	this.forEach {
-		if (it == number) {
+	var num = nums.first()
+	nums.forEach {
+		if (it == num)
 			count++
-		} else {
-			--count
-			if (count == 0) {
-				number = this[++index]
-				count = 1
-			}
+		else if (--count == 0) {
+			num = it
+			count = 1
 		}
 	}
-	require(count > 1) { "数组中没有长度超过一般的数字" }
-	return number
+	return num
 }
