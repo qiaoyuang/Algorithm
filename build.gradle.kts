@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.9.22"
+    kotlin("multiplatform") version "2.0.0"
 }
 
 group = "com.qiaoyuang.algorithm"
@@ -27,11 +27,6 @@ kotlin {
             executable {
                 entryPoint = "com.qiaoyuang.algorithm.main"
                 // runTask?.args("")
-            }
-        }
-        compilations.configureEach {
-            compilerOptions.configure {
-                // freeCompilerArgs.add("-Xbinary=gc=pmc")
             }
         }
     }
