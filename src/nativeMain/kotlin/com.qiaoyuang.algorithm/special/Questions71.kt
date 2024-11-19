@@ -1,8 +1,5 @@
 package com.qiaoyuang.algorithm.special
 
-import platform.Foundation.NSDate
-import platform.Foundation.now
-import platform.Foundation.timeIntervalSince1970
 import kotlin.random.Random
 
 fun test71() {
@@ -31,8 +28,7 @@ private fun IntArray.pickIndex(): Int {
         sum += this[it]
         sum
     }
-    val random = Random((NSDate.now.timeIntervalSince1970 * 1000000).toLong())
-    val p = random.nextInt(sum)
+    val p = Random.nextInt(sum)
     var start = 0
     var end = lastIndex
     while (start < end) {

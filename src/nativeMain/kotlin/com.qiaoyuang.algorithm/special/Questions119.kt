@@ -1,5 +1,7 @@
 package com.qiaoyuang.algorithm.special
 
+import kotlin.math.max
+
 fun test119() {
     printlnResult(10, 5, 9, 2, 4, 3)
 }
@@ -69,5 +71,22 @@ private fun longestSubLengthByDFS(array: IntArray): Int {
     return result
 }
 
+private fun topologicalSort(array: IntArray): Int {
+    val set = array.toHashSet()
+    val queue = ArrayDeque<Int>()
+    array.forEach {
+        if (!set.contains(it - 1))
+            queue.add(it)
+    }
+    var max = 0
+    queue.forEach {
+        var node = it
+        while (set.contains(node + 1))
+            node++
+        max = max(max, node - it + 1)
+    }
+    return max
+}
+
 private fun printlnResult(vararg array: Int) =
-    println("The longest length of consequent sub-sequence in ${array.toList()} is (${longestSubLengthByDisjointSets(array)}, ${longestSubLengthByDFS(array)})")
+    println("The longest length of consequent sub-sequence in ${array.toList()} is (${longestSubLengthByDisjointSets(array)}, ${longestSubLengthByDFS(array)}, ${topologicalSort(array)})")

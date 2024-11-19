@@ -1,8 +1,5 @@
 package com.qiaoyuang.algorithm.special
 
-import platform.Foundation.NSDate
-import platform.Foundation.now
-import platform.Foundation.timeIntervalSince1970
 import kotlin.random.Random
 
 fun test30() {
@@ -28,7 +25,7 @@ private class MyHashMap<T, R> {
     }
 
     fun getRandom(): R {
-        val random = Random((NSDate.now.timeIntervalSince1970 * 1000000).toLong()).nextInt(container.size)
+        val random = Random.nextInt(container.size)
         return container.values.toList()[random]
     }
 
@@ -43,5 +40,5 @@ private fun printlnResult(vararg  pairs: Pair<Int, String>) {
         map[key] = value
     }
     println("Get results: ${pairs.asSequence().map { it.second == map[it.first] }.all { it }}")
-    println("Ret randoms: ${map.getRandom()}, ${map.getRandom()}, ${map.getRandom()}")
+    println("Get randoms: ${map.getRandom()}, ${map.getRandom()}, ${map.getRandom()}")
 }

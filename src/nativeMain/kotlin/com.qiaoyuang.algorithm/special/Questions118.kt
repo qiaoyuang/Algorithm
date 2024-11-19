@@ -15,10 +15,14 @@ fun test118() {
  * if there are multiple edges in condition, find the edge that lastly appeared in the array
  */
 private fun findExtraEdge(edges: Array<out IntArray>): IntArray {
-    val fathers = IntArray(edges.size + 1) { it }
+    var maxVertex = 0
+    edges.forEach { (u, v) ->
+        maxVertex = maxOf(maxVertex, u, v)
+    }
+    val fathers = IntArray(maxVertex) { it }
     edges.forEach { array ->
-        val (i, j) = array
-        if (!union(fathers, i, j))
+        val (u, v) = array
+        if (!union(fathers, u, v))
             return array
     }
     return intArrayOf()
@@ -33,10 +37,10 @@ private fun findFathers(fathers: IntArray, i: Int): Int {
 private fun union(fathers: IntArray, i: Int, j: Int): Boolean {
     val fatherOfI = findFathers(fathers, i)
     val fatherOfJ = findFathers(fathers, j)
-    val result = fatherOfI != fatherOfJ
-    if (result)
-        fathers[fatherOfI] = fatherOfJ
-    return result
+    if (fatherOfI == fatherOfJ)
+        return false
+    fathers[fatherOfJ] = fatherOfI
+    return true
 }
 
 private fun printlnResult(vararg edges: IntArray) =
