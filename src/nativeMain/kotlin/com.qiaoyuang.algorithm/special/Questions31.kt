@@ -5,7 +5,7 @@ fun test31() {
 }
 
 /**
- * Questions 31: LRU cache
+ * Questions 31: LRU cache, LeetCode 146
  */
 private class LRUCache(private val capacity: Int) {
 

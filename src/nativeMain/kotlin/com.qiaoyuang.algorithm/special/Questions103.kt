@@ -54,5 +54,19 @@ private fun countOfCoins3(coins: IntArray, amount: Int): Int {
     return if (db.last() == max) -1 else db.last()
 }
 
+private fun countOfCoins4(coins: IntArray, amount: Int): Int {
+    val max = amount + 1
+    val dp = IntArray(max) { max }
+    dp[0] = 0
+    coins.forEach { coin ->
+        for (j in amount downTo 1) {
+            var k = 1
+            while (j >= k * coin)
+                dp[j] = min(dp[j], dp[j - k * coin] + k++)
+        }
+    }
+    return dp.last().takeIf { it <= amount } ?: -1
+}
+
 private fun printlnResult(coins: IntArray, amount: Int) =
-    println("We need at least (${countOfCoins(coins, amount)}, ${countOfCoins2(coins, amount)}, ${countOfCoins3(coins, amount)}) coins could make enough $amount by coins: ${coins.toList()}")
+    println("We need at least (${countOfCoins(coins, amount)}, ${countOfCoins2(coins, amount)}, ${countOfCoins3(coins, amount)}, ${countOfCoins4(coins, amount)}) coins could make enough $amount by coins: ${coins.toList()}")

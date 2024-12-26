@@ -5,7 +5,7 @@ fun test73() {
 }
 
 /**
- * Questions 73: Koko eaten bananas
+ * Questions 73: Koko eaten bananas, LeetCode 875
  */
 private fun eatBananas(piles: IntArray, h: Int): Int {
     var start = 1

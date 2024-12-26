@@ -8,7 +8,7 @@ fun test51() {
 }
 
 /**
- * Questions 51: Find the maximum sum of paths
+ * Questions 51: Binary Tree Maximum Path Sum, LeetCode 124
  */
 private fun BinaryTreeNode<Int>.maxSum(): Int {
     val max = intArrayOf(Int.MIN_VALUE)
