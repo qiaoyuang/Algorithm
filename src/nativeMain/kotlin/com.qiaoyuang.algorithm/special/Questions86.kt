@@ -5,7 +5,7 @@ fun test86() {
 }
 
 /**
- * Questions 86: Split a string to a string list, and make all strings are palindrome
+ * Questions 86: Palindrome Partitioning, LeetCode 131
  */
 private fun String.splitToPalindromeStrings(): List<List<String>> {
     require(isNotEmpty()) { "The string can't be empty" }

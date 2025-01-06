@@ -8,7 +8,7 @@ fun test101() {
 }
 
 /**
- * Questions 101: Judge can we divide an IntArray to 2 parts and their sums are equal
+ * Questions 101: Partition Equal Subset Sum, LeetCode 416
  */
 private fun IntArray.is2PartsEqual(): Boolean {
     val sum = sum()
@@ -60,7 +60,7 @@ private fun is2PartsEqual2(nums: IntArray): Boolean {
     dp[0] = true
     nums.forEach {
         for (j in target downTo 1)
-            dp[j] = dp[j] || (target >= it && dp[target - it])
+            dp[j] = dp[j] || (j >= it && dp[j - it])
     }
     return dp.last()
 }
