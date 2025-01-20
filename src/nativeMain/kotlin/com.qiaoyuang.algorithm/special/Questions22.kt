@@ -7,7 +7,7 @@ fun test22() {
 }
 
 /**
- * Questions 22: Find a node in a linked list that is the first node of a circle
+ * Questions 22: Linked List Cycle II, LeetCode 22
  */
 private fun <T> SingleDirectionNode<T>.firstOfCircle(): SingleDirectionNode<T> {
     var pointer1 = next!!

@@ -11,8 +11,7 @@ fun test113() {
 }
 
 /**
- * Questions 113: Given an array prerequisites that represent the sequence of different courses,
- * find an order of studying that comply the sequence of prerequisites
+ * Questions 113: Course Schedule II, LeetCode 113
  */
 private fun findOrder(num: Int, prerequisites: Array<IntArray>): IntArray {
     val inDegrees = IntArray(num)

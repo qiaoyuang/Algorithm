@@ -7,7 +7,7 @@ fun test70() {
 }
 
 /**
- * Questions 70: In a sorted IntArray, all numbers appear twice, except one, find this one
+ * Questions 70: Single Element in a sorted array, LeetCode 540
  */
 private fun IntArray.findNumberAppearOnce(): Int {
     var start = 0

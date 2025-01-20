@@ -7,8 +7,7 @@ fun test103() {
 }
 
 /**
- * Questions 103: Given an IntArray as the coins and a value as amount,
- * please find how many coins at least we need, that equals the amount.
+ * Questions 103: Coin Change, LeetCode 322
  */
 private fun countOfCoins(coins: IntArray, amount: Int): Int {
     val max = amount + 1

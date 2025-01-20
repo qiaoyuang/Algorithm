@@ -11,7 +11,7 @@ fun test99() {
 }
 
 /**
- * Questions 99: The shortest path in a rectangle
+ * Questions 99: Minimum Path Sum, LeetCode 64
  */
 private fun shortestPath(rectangle: Array<out IntArray>): Int {
     require(rectangle.isNotEmpty()) { "The rectangle can't be empty" }

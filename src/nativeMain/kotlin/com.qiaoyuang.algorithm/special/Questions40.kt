@@ -10,7 +10,7 @@ fun test40() {
 }
 
 /**
- * Questions 40: Find the biggest rectangle only contains 1 in a rectangle contains 0 and 1
+ * Questions 40: Maximal Rectangle, LeetCode 85
  */
 private fun biggestArea(rectangle: Array<CharArray>): Int {
     val heights = IntArray(rectangle.first().size)

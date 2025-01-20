@@ -7,7 +7,7 @@ fun test90() {
 }
 
 /**
- * Questions 90: Similar with Questions 89, but the houses on a circle street
+ * Questions 90: House Robber II LeetCode 213
  */
 private fun maxProperties(properties: IntArray): Int {
     require(properties.isNotEmpty()) { "The properties can't be empty" }

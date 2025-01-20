@@ -6,8 +6,7 @@ fun test81() {
 }
 
 /**
- * Questions 81: Given an IntArray that doesn't contain the same integers. And, given a value,
- * please find all subsets that the sum of subset equals this value, integers could appear any times in one subset
+ * Questions 81: Combination Sum, LeetCode 39
  */
 private infix fun IntArray.findSubsets(target: Int): List<List<Int>> = buildList {
     backTrack(this, mutableListOf(), target, 0, 0)

@@ -14,7 +14,7 @@ fun test68() {
 }
 
 /**
- * Questions 68: FInd the lowest public patent node of two nodes in a binary tree
+ * Questions 68: LeetCode: 235, 236, 1644 1650
  */
 private fun <T> findLowestParent(root: BinaryTreeNode<T>, node1: T, node2: T): BinaryTreeNode<T>? =
     root.findLowestParent(node1, node2).second

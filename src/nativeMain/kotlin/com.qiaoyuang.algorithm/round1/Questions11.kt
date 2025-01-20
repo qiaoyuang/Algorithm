@@ -16,10 +16,8 @@ fun test11() {
 }
 
 /**
- * Questions 11: We have a whirling IntArray. For example, the [3, 4, 5, 1, 2] is sorted IntArray [1, 2, 3, 4, 5]'s whirling,
- * find the smallest number in whirling IntArray.
+ * Questions 11: LeetCode 153
  */
-
 private fun IntArray.findMinNumber(): Int {
     if (isEmpty()) throw IllegalArgumentException("The IntArray is empty")
     return findMinNumber(0, lastIndex)

@@ -7,9 +7,7 @@ fun test89() {
 }
 
 /**
- * Questions 89: A thief stole a line of house, an IntArray represent the properties of the houses,
- * if the thief stole the closed two houses, that will trigger warning, what is the maximum many properties
- * that he can stole and don't trigger warning.
+ * Questions 89: House Robber, LeetCode 198
  */
 private fun maxProperties(vararg properties: Int): Int {
     require(properties.isNotEmpty()) { "The properties can't be empty" }
