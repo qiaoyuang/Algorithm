@@ -6,7 +6,7 @@ fun test10() {
 }
 
 /**
- * Questions 10: Give an IntArray and an integer k, find the count of consistent sub-arrays in the IntArray that sum equals k
+ * Subarray Sum Equals K, LeetCode 560
  */
 private fun findCount(array: IntArray, k: Int): Int {
     require(array.isNotEmpty()) { "The IntArray can't be empty" }

@@ -8,7 +8,7 @@ fun test4() {
 }
 
 /**
- * Questions 4: Find a number in an IntArray that only appear once, all other numbers appear thirds
+ * Questions 4: Single Number II, LeetCode 137
  */
 private fun IntArray.findNumberAppearOnce(): Int {
     require(size % 3 == 1) { "The input IntArray is illegal" }

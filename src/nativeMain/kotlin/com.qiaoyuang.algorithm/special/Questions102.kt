@@ -5,8 +5,7 @@ fun test102() {
 }
 
 /**
- * Questions 102: Given an IntArray that the numbers are greater than 0 and a target integer S,
- * use addition or subtraction to each number, hom many methods that could make the result to equal S
+ * Questions 102: Target Sum, LeetCode 494
  */
 private fun findMethods(array: IntArray, s: Int): Int {
     val p = (s + array.sum()) shr 1

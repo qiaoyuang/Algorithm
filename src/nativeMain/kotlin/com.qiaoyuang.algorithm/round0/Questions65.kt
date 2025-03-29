@@ -13,7 +13,7 @@ fun test65() {
 }
 
 /**
- * 不用加减乘除做加法
+ * Sum of Two Integers, LeetCode 371
  */
 infix fun Int.myAdd(n: Int): Int {
 	var num1 = this

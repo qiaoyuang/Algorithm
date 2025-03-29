@@ -13,7 +13,7 @@ fun test26() {
 }
 
 /**
- * Questions 26: Rearrange linked list
+ * Questions 26: Reorder List, LeetCode 143
  */
 private fun <T> SingleDirectionNode<T>.rearrange(): SingleDirectionNode<T> {
     var pointer = this

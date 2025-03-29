@@ -9,8 +9,7 @@ fun test38() {
 }
 
 /**
- * Questions 38: Given an IntArray to represent the temperatures of every day.
- * Calculate how many days that everyday need to wait for higher temperature.
+ * Questions 38: Daily Temperatures, LeetCode 739
  */
 private fun IntArray.higherTemperatures(): IntArray {
     val result = IntArray(size)

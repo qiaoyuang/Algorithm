@@ -11,8 +11,7 @@ fun test118() {
 }
 
 /**
- * Questions 118: Find the extra edge in a graph, if we remove this edge，we can transfer this graph to a tree,
- * if there are multiple edges in condition, find the edge that lastly appeared in the array
+ * Questions 118: Redundant Connection, LeetCode 684
  */
 private fun findExtraEdge(edges: Array<out IntArray>): IntArray {
     var maxVertex = 0

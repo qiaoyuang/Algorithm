@@ -9,7 +9,7 @@ fun test111() {
 }
 
 /**
- * Questions 111: Calculate the divisions
+ * Questions 111: Evaluate Division, LeetCode 399
  */
 private fun calculateDivisions(equations: Array<Array<String>>, values: DoubleArray, queries: Array<Array<String>>): DoubleArray {
     val graph = HashMap<String, HashMap<String, Double>>()

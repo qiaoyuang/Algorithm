@@ -8,8 +8,7 @@ fun test12() {
 }
 
 /**
- * Find the index in an IntArray that the sum of numbers to the left of this index equal the sum of numbers to the right of this index,
- * if the index doesn't exit, return -1, if exit multiple, return the left one.
+ * Find Pivot Index, LeetCode 724
  */
 private fun IntArray.findIndex(): Int {
     if (size < 3)

@@ -6,8 +6,7 @@ fun test104() {
 }
 
 /**
- * Questions 104: Given an IntArray, all the numbers are different,
- * find the count of permutations, that their sums equal integer t
+ * Questions 104: Combination Sum IV, LeetCode 377
  */
 private fun countOfPermutation(nums: IntArray, t: Int): Int {
     val db = IntArray(t + 1)
