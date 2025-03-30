@@ -12,7 +12,7 @@ fun test78() {
 }
 
 /**
- * Questions 78: Merge multiple sorted linked lists
+ * Questions 78: Merge k Sorted Lists, LeetCode 23
  */
 private fun <T : Comparable<T>> List<SingleDirectionNode<T>>.merge(): SingleDirectionNode<T> =
     merge(0, lastIndex)

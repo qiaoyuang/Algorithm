@@ -18,8 +18,7 @@ fun test21() {
 }
 
 /**
- * Questions 21: Delete kth node from the last in a linked list, the length of the linked list is n,
- * 1 <= k <= n, only allow to iterate the linked list once.
+ * Questions 21: Remove Nth Node From End of List, LeetCode 19
  */
 private infix fun <T> SingleDirectionNode<T>.deleteFromLast(k: Int): SingleDirectionNode<T>? {
     val n = delete(k)

@@ -7,7 +7,7 @@ fun test17() {
 }
 
 /**
- * Given two strings s and t, find the shortest substring in s that contains all alphabets in t
+ * Questions 17: Minimum Window Substring, LeetCode 76
  */
 private fun minWindow(s: String, t: String): String {
     val map = HashMap<Char, Int>()

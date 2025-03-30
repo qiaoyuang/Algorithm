@@ -19,8 +19,7 @@ fun test71() {
 }
 
 /**
- * Questions 71: Given an IntArray to represent weight, implement a
- * function that return the index by the probability.
+ * Questions 71: Random Pick with Weight, LeetCode 528
  */
 private fun IntArray.pickIndex(): Int {
     var sum = 0
