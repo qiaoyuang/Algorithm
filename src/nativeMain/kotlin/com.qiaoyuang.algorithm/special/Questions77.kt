@@ -9,7 +9,7 @@ fun test77() {
 }
 
 /**
- * Questions 77: Input a head node of a linked list, please sort this linked list
+ * Questions 77: Sort List, LeetCode 148
  */
 private fun SingleDirectionNode<Int>.sort(): SingleDirectionNode<Int> {
     if (next == null)

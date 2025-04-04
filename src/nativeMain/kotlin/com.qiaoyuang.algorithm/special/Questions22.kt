@@ -8,6 +8,11 @@ fun test22() {
 
 /**
  * Questions 22: Linked List Cycle II, LeetCode 22
+ * a = length of out of ring, b = length of ring, c = meet point from entry point
+ * Slow = a + xb + c
+ * Fast = 2(a + xb + c) = a + yb + c
+ * a + c = y - 2xb
+ * a = (y - 2x)b - c
  */
 private fun <T> SingleDirectionNode<T>.firstOfCircle(): SingleDirectionNode<T> {
     var pointer1 = next!!

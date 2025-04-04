@@ -10,8 +10,7 @@ fun test48() {
 }
 
 /**
- * Questions 48: Design an algorithm that can serialize a binary tree to a string
- * and deserialize the string to the binary tree.
+ * Questions 48: Serialize and Deserialize Binary Tree, LeetCode 297
  */
 private fun BinaryTreeNode<Int>.serialize(): String = buildString {
     preOrderSerialize(this)

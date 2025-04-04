@@ -7,7 +7,7 @@ fun test74() {
 }
 
 /**
- * Questions 74: Merge ranges
+ * Questions 74: Merge Intervals, LeetCode 56
  */
 private fun List<IntRange>.merge(): List<IntRange> =
     sortedBy { it.first }.fold(mutableListOf()) { acc, intRange ->
