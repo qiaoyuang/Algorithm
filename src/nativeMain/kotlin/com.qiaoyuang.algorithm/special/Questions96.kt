@@ -6,7 +6,7 @@ fun test96() {
 }
 
 /**
- * Questions 96: Judge whether the string s3 is made by strings s1 and s2
+ * Questions 96: Interleaving String, LeetCode 97
  */
 private fun String.isMadeBy(s1: String, s2: String): Boolean {
     if (length != s1.length + s2.length)

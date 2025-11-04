@@ -11,8 +11,7 @@ fun test91() {
 }
 
 /**
- * Questions 91: Paint houses to red, green or blue. The houses that nearby can't be painted with same color.
- * Given a series IntArrays to represent the cost of painting, find the minimum cost.
+ * Questions 91: Paint House, LeetCode 256
  */
 private fun minCost(costs: Array<IntArray>): Int {
     require(costs.isNotEmpty()) { "The costs can't be empty" }

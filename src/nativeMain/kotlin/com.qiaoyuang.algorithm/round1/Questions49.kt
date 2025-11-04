@@ -17,7 +17,7 @@ fun test49() {
 }
 
 /**
- * Questions 49: Find the nth ugly number(only own factors: 2, 3, 5)
+ * Questions 49: Ugly Number, LeetCode 263
  */
 private fun uglyNumber(n: Int): Int {
     require(n > 0) { "The n must greater than 0" }

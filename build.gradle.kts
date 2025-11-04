@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "2.1.20"
+    kotlin("multiplatform") version "2.2.21"
 }
 
 group = "com.qiaoyuang.algorithm"

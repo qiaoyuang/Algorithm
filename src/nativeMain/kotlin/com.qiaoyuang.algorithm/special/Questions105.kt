@@ -10,8 +10,7 @@ fun test105() {
 }
 
 /**
- * Question105: Use an two-dimensional array to represent an ocean.
- * Please find the maximum islands (the area that equals 1 and connected) area in it
+ * Question 105: Max Area of Island, LeetCode 695
  */
 private inline fun findMaximumIsland(ocean: Array<IntArray>, search: (Array<IntArray>, Array<BooleanArray>, Int, Int) -> Int): Int {
     val rows = ocean.size

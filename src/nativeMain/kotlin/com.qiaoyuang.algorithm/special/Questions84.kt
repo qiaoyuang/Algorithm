@@ -7,7 +7,7 @@ fun test84() {
 }
 
 /**
- * Questions 84: Questions 83: Find the full permutation of an IntArray that contain repeated integers possibly
+ * Questions 84: Find the full permutation of an IntArray that contain repeated integers possibly
  */
 private fun IntArray.fullPermutation(): List<List<Int>> = buildList {
     backTrack(this, this@fullPermutation, 0)

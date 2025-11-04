@@ -11,7 +11,7 @@ fun test113() {
 }
 
 /**
- * Questions 113: Course Schedule II, LeetCode 113
+ * Questions 113: Course Schedule II, LeetCode 210
  */
 private fun findOrder(num: Int, prerequisites: Array<IntArray>): IntArray {
     val inDegrees = IntArray(num)

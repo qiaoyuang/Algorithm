@@ -5,8 +5,7 @@ fun test114() {
 }
 
 /**
- * Questions 114: Given a related sequences of English lowercase letters,
- * please find the possible sequence of the lowercase letters.
+ * Questions 114: Alien Dictionary, LeetCode 269
  */
 private fun findLettersOrder(prerequisites: Array<out String>): String {
     when (prerequisites.size) {

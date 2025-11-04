@@ -8,39 +8,43 @@ fun test87() {
 /**
  * Questions 87: Find the all legal IP addresses that a number could be split
  */
-private fun String.allIPAddresses(): List<String> {
-    require(length >= 4) { "The length of the string must greater or equal than 4" }
-    return buildList {
-        backTrack(this@allIPAddresses, mutableListOf(), 0, 1)
-    }
+private fun allIPAddresses(str: String): List<String> {
+    require(str.length >= 4) { "The length of the string must greater or equal than 4" }
+    val result = ArrayList<String>()
+    backtrack(str, 0, 0, StringBuilder(), result)
+    return result
 }
 
-private fun MutableList<String>.backTrack(str: String, ip: MutableList<String>, i: Int, j: Int) {
-    if (ip.size == 4) {
-        if (j > str.length)
-            add(ip.toIPAddress())
-    } else if (j > str.length) {
-        return
-    } else {
-        val section = str.substring(i, j)
-        if (section.isLegal()) {
-            ip.add(section)
-            backTrack(str, ip, j, j + 1)
-            ip.removeLast()
+private fun backtrack(
+    str: String,
+    count: Int,
+    i: Int,
+    builder: StringBuilder,
+    result: ArrayList<String>,
+) {
+    if (i == str.length) {
+        if (count == 4) {
+            builder.deleteAt(builder.lastIndex)
+            result.add(builder.toString())
+            builder.append('.')
         }
-        backTrack(str, ip, i, j + 1)
+        return
+    }
+    for (j in 1..3) {
+        if (i + j > str.length)
+            return
+        val seg = str.substring(i, i + j)
+        val isEndLoop = seg == "0"
+        if (seg.toInt() > 255)
+            return
+        builder.append(seg)
+        builder.append('.')
+        backtrack(str, count + 1, i + j, builder, result)
+        builder.deleteRange(builder.length - seg.length - 1, builder.length)
+        if (isEndLoop)
+            return
     }
 }
-
-private fun String.isLegal(): Boolean = length == 1 || (first() != '0' && toInt() <= 255)
-
-private fun List<String>.toIPAddress(): String = foldIndexed(StringBuilder()) { index, acc, section ->
-    acc.append(section)
-    if (index == lastIndex)
-        acc
-    else
-        acc.append('.')
-}.toString()
 
 private fun printlnResult(str: String) =
-    println("The number $str could be split to ip addresses: ${str.allIPAddresses()}")
+    println("The number $str could be split to ip addresses: ${allIPAddresses(str)}")

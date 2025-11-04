@@ -7,7 +7,7 @@ fun test52() {
 }
 
 /**
- * Questions 52: Flat binary-search tree
+ * Questions 52: Convert Binary Search Tree to Sorted Doubly Linked List, LeetCode 426
  */
 private fun <T : Comparable<T>> BinaryTreeNode<T>.flat(): BinaryTreeNode<T> = flatInternal().first
 

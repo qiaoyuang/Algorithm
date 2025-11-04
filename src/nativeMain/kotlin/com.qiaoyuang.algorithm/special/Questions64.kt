@@ -18,9 +18,6 @@ private class MagicDictionary(words: List<String>) {
     private val trieTree = TrieTree()
 
     init {
-        for (i in 1 ..< words.size) {
-            trieTree.insert(words[i])
-        }
         words.forEach {
             trieTree.insert(it)
         }

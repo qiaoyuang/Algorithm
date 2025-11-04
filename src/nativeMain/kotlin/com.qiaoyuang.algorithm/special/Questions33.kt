@@ -5,7 +5,7 @@ fun test33() {
 }
 
 /**
- * Questions 33: Give a string array, group strings as anagram
+ * Questions 33: Group Anagrams, LeetCode 49
  */
 private fun groupAnagrams(strings: Array<String>): List<List<String>> {
     val map = HashMap<String, MutableList<String>>()
