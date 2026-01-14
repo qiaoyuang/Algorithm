@@ -24,7 +24,7 @@ fun IntArray.mergeSort1() {
 
 private fun IntArray.mergeSort(aux: IntArray, lo: Int, hi: Int) {
 	if (hi <= lo) return
-	val mid = lo + ((hi - lo) shr 1)
+	val mid = lo + (hi - lo shr 1)
 	mergeSort(aux, lo, mid)
 	mergeSort(aux, mid + 1, hi)
 	merge(aux, lo, mid, hi)

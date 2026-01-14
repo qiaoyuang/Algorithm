@@ -5,7 +5,7 @@ fun test109() {
 }
 
 /**
- * Questions 109: The count of steps of opening a lock with password
+ * Questions 109: Open the Lock, LeetCode 752
  */
 private fun openSteps(password: String, deadLocks: Array<String>): Int {
     val deadLocksSet = deadLocks.toHashSet()
