@@ -12,7 +12,7 @@ fun test100() {
 }
 
 /**
- * Questions 100: Triangle, LeetCode 100
+ * Questions 100: Triangle, LeetCode 120
  */
 private fun smallestPath(triangle: Array<out IntArray>): Int {
     require(triangle.isNotEmpty()) { "The triangle can't be empty" }
